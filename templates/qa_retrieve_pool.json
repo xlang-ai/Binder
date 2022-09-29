@@ -1,0 +1,3885 @@
+[
+  {
+    "id": 142,
+    "qa_question": "map@What is the time span?",
+    "qa_column": "Term",
+    "qa_answer": [
+      "5",
+      "5",
+      "11",
+      "/",
+      "1",
+      "6",
+      "3",
+      "9",
+      "4",
+      "3",
+      "/",
+      "11",
+      "5",
+      "4",
+      "3",
+      "/"
+    ],
+    "table": {
+      "header": [
+        "Term"
+      ],
+      "rows": [
+        [
+          "1859\u20131864"
+        ],
+        [
+          "1864\u20131869"
+        ],
+        [
+          "1869\u20131880"
+        ],
+        [
+          "Term"
+        ],
+        [
+          "1894\u20131895"
+        ],
+        [
+          "1895\u20131901"
+        ],
+        [
+          "1901\u20131904"
+        ],
+        [
+          "1904\u20131913"
+        ],
+        [
+          "1913\u20131917"
+        ],
+        [
+          "1917\u20131920"
+        ],
+        [
+          "Term"
+        ],
+        [
+          "1927\u20131938"
+        ],
+        [
+          "1938\u20131943"
+        ],
+        [
+          "1943\u20131947"
+        ],
+        [
+          "1947\u20131950"
+        ],
+        [
+          "Term"
+        ]
+      ]
+    },
+    "title": "Electoral district of Lachlan"
+  },
+  {
+    "id": 145,
+    "qa_question": "map@Is the date during in 1900's?",
+    "qa_column": "Created",
+    "qa_answer": [
+      "no",
+      "no",
+      "no",
+      "yes",
+      "no",
+      "yes",
+      "no",
+      "yes",
+      "yes",
+      "yes",
+      "yes",
+      "yes",
+      "yes",
+      "yes",
+      "no"
+    ],
+    "table": {
+      "header": [
+        "Created"
+      ],
+      "rows": [
+        [
+          "29 October 1874"
+        ],
+        [
+          "2 January 1857"
+        ],
+        [
+          "26 October 1874"
+        ],
+        [
+          "15 July 1949"
+        ],
+        [
+          "4 August 1821"
+        ],
+        [
+          "24 April 1940"
+        ],
+        [
+          "2 January 1857"
+        ],
+        [
+          "3 March 1970"
+        ],
+        [
+          "12 December 1961"
+        ],
+        [
+          "6 January 1965"
+        ],
+        [
+          "16 March 1964"
+        ],
+        [
+          "13 December 1963"
+        ],
+        [
+          "6 February 1962"
+        ],
+        [
+          "16 August 1921"
+        ],
+        [
+          "2 January 1857"
+        ]
+      ]
+    },
+    "title": "List of districts of Lima"
+  },
+  {
+    "id": 155,
+    "qa_question": "map@Is the time less than a week?",
+    "qa_column": "Length of use",
+    "qa_answer": [
+      "no",
+      "no",
+      "no",
+      "no",
+      "no",
+      "no",
+      "yes",
+      "no",
+      "no",
+      "no",
+      "no",
+      "yes"
+    ],
+    "table": {
+      "header": [
+        "Length of use"
+      ],
+      "rows": [
+        [
+          "14 days"
+        ],
+        [
+          "10 days"
+        ],
+        [
+          "21 days"
+        ],
+        [
+          "7 days"
+        ],
+        [
+          "10 days"
+        ],
+        [
+          "10 days"
+        ],
+        [
+          "Daily"
+        ],
+        [
+          "14 days"
+        ],
+        [
+          "10 days"
+        ],
+        [
+          "14 days"
+        ],
+        [
+          "20 days"
+        ],
+        [
+          "2 hours"
+        ]
+      ]
+    },
+    "title": "Crest Whitestrips"
+  },
+  {
+    "id": 157,
+    "qa_question": "map@Is the eliminated time the first?",
+    "qa_column": "Eliminated",
+    "qa_answer": [
+      "no",
+      "no",
+      "no",
+      "no",
+      "no",
+      "no",
+      "no",
+      "no",
+      "no",
+      "no",
+      "no"
+    ],
+    "table": {
+      "header": [
+        "Eliminated"
+      ],
+      "rows": [
+        [
+          "Winner"
+        ],
+        [
+          "Second Place"
+        ],
+        [
+          "Third Place"
+        ],
+        [
+          "Week 10"
+        ],
+        [
+          "Week 9"
+        ],
+        [
+          "Week 7"
+        ],
+        [
+          "Week 6"
+        ],
+        [
+          "Week 5"
+        ],
+        [
+          "Week 4 & Week 8(Winner of Star Salvation)"
+        ],
+        [
+          "Week 3"
+        ],
+        [
+          "Week 2"
+        ]
+      ]
+    },
+    "title": "Food Network Star"
+  },
+  {
+    "id": 200,
+    "qa_question": "map@Is it in march 1982?",
+    "qa_column": "Date",
+    "qa_answer": [
+      "no",
+      "yes",
+      "yes",
+      "no",
+      "no",
+      "no",
+      "no",
+      "no",
+      "no",
+      "no"
+    ],
+    "table": {
+      "header": [
+        "Date"
+      ],
+      "rows": [
+        [
+          "January 26, 1982"
+        ],
+        [
+          "March 3, 1982"
+        ],
+        [
+          "March 21, 1982"
+        ],
+        [
+          "May 5, 1982"
+        ],
+        [
+          "May 19, 1982"
+        ],
+        [
+          "May 27, 1982"
+        ],
+        [
+          "June 14, 1982"
+        ],
+        [
+          "June 18, 1982"
+        ],
+        [
+          "June 23, 1982"
+        ],
+        [
+          "July 2, 1982"
+        ]
+      ]
+    },
+    "title": "1982 in Brazilian football"
+  },
+  {
+    "id": 578,
+    "qa_question": "map@Is this player from Norway?",
+    "qa_column": "Player",
+    "qa_answer": [
+      "no",
+      "no",
+      "no",
+      "no",
+      "no",
+      "no"
+    ],
+    "table": {
+      "header": [
+        "Player"
+      ],
+      "rows": [
+        [
+          "Raymond van Barneveld"
+        ],
+        [
+          "Raymond van Barneveld"
+        ],
+        [
+          "Adrian Lewis"
+        ],
+        [
+          "Dean Winstanley"
+        ],
+        [
+          "Michael van Gerwen"
+        ],
+        [
+          "Terry Jenkins"
+        ]
+      ]
+    },
+    "title": "PDC World Darts Championship"
+  },
+  {
+    "id": 624,
+    "qa_question": "map@Is it designated?",
+    "qa_column": "Artist(s)",
+    "qa_answer": [
+      "no",
+      "yes",
+      "no",
+      "yes",
+      "yes",
+      "yes",
+      "yes",
+      "yes",
+      "yes"
+    ],
+    "table": {
+      "header": [
+        "Artist(s)"
+      ],
+      "rows": [
+        [
+          "various artists"
+        ],
+        [
+          "Robin"
+        ],
+        [
+          "various artists"
+        ],
+        [
+          "Robin"
+        ],
+        [
+          "Adele"
+        ],
+        [
+          "Jukka Poika"
+        ],
+        [
+          "Jesse Kaikuranta"
+        ],
+        [
+          "Chisu"
+        ],
+        [
+          "Juha Tapio"
+        ]
+      ]
+    },
+    "title": "List of number-one albums of 2012 (Finland)"
+  },
+  {
+    "id": 548,
+    "qa_question": "map@What is the winner's name?",
+    "qa_column": "Winner",
+    "qa_answer": [
+      "Jacinto Sicam",
+      "Romeo Bonzo",
+      "Ruben Carino",
+      "Pepito Calip",
+      "Rolando Pagnanawon",
+      "Reynaldo Dequito",
+      "Armando Catalan",
+      "Gerardo Igos",
+      "Manuel Buenaventura",
+      "Bernardo Llentada",
+      "Renato Dolosa",
+      "Carlo Guieb",
+      "Carlo Guieb",
+      "Renato Dolosa",
+      "Victor Espiritu",
+      "Wong Kam-po",
+      "Warren Davadilla"
+    ],
+    "table": {
+      "header": [
+        "Winner"
+      ],
+      "rows": [
+        [
+          "Jacinto Sicam\u00a0(PHI)"
+        ],
+        [
+          "Romeo Bonzo\u00a0(PHI)"
+        ],
+        [
+          "Ruben Carino\u00a0(PHI)"
+        ],
+        [
+          "Pepito Calip\u00a0(PHI)"
+        ],
+        [
+          "Rolando Pagnanawon\u00a0(PHI)"
+        ],
+        [
+          "Reynaldo Dequito\u00a0(PHI)"
+        ],
+        [
+          "Armando Catalan\u00a0(PHI)"
+        ],
+        [
+          "Gerardo Igos\u00a0(PHI)"
+        ],
+        [
+          "Manuel Buenaventura\u00a0(PHI)"
+        ],
+        [
+          "Bernardo Llentada\u00a0(PHI)"
+        ],
+        [
+          "Renato Dolosa\u00a0(PHI)"
+        ],
+        [
+          "Carlo Guieb\u00a0(PHI)"
+        ],
+        [
+          "Carlo Guieb\u00a0(PHI)"
+        ],
+        [
+          "Renato Dolosa\u00a0(PHI)"
+        ],
+        [
+          "Victor Espiritu\u00a0(PHI)"
+        ],
+        [
+          "Wong Kam-po\u00a0(HKG)"
+        ],
+        [
+          "Warren Davadilla\u00a0(PHI)"
+        ]
+      ]
+    },
+    "title": "Le Tour de Filipinas"
+  },
+  {
+    "id": 149,
+    "qa_question": "map@What is the last name of the whole name?",
+    "qa_column": "Performer",
+    "qa_answer": [
+      "Segura",
+      "Kosta",
+      "Wang",
+      "Peretti",
+      "D'Elia",
+      "Bargatze",
+      "Kondabolu",
+      "Whitehall",
+      "Jackson",
+      "Kinane",
+      "Fulchiron",
+      "Vecchione",
+      "Klein",
+      "Katz",
+      "Larson"
+    ],
+    "table": {
+      "header": [
+        "Performer"
+      ],
+      "rows": [
+        [
+          "Tom Segura"
+        ],
+        [
+          "Michael Kosta"
+        ],
+        [
+          "Sheng Wang"
+        ],
+        [
+          "Chelsea Peretti"
+        ],
+        [
+          "Chris D'Elia"
+        ],
+        [
+          "Nate Bargatze"
+        ],
+        [
+          "Hari Kondabolu"
+        ],
+        [
+          "Jack Whitehall"
+        ],
+        [
+          "Al Jackson"
+        ],
+        [
+          "Kyle Kinane"
+        ],
+        [
+          "Matt Fulchiron"
+        ],
+        [
+          "Mike Vecchione"
+        ],
+        [
+          "Jessi Klein"
+        ],
+        [
+          "Louis Katz"
+        ],
+        [
+          "Jay Larson"
+        ]
+      ]
+    },
+    "title": "List of Comedy Central Presents episodes"
+  },
+  {
+    "id": 159,
+    "qa_question": "map@What is the name outside paratheses?",
+    "qa_column": "Name",
+    "qa_answer": [
+      "Harriet Churchill",
+      "Henrietta Churchill",
+      "Anne Churchill",
+      "John Churchill",
+      "Elizabeth Churchill",
+      "Mary Churchill"
+    ],
+    "table": {
+      "header": [
+        "Name"
+      ],
+      "rows": [
+        [
+          "Harriet Churchill"
+        ],
+        [
+          "Henrietta Churchill (later Godolphin), 2nd Duchess of Marlborough in her own right"
+        ],
+        [
+          "Anne Churchill (later Spencer)"
+        ],
+        [
+          "John Churchill, Marquess of Blandford"
+        ],
+        [
+          "Elizabeth Churchill (later Egerton)"
+        ],
+        [
+          "Mary Churchill (later Montagu)"
+        ]
+      ]
+    },
+    "title": "Sarah Churchill, Duchess of Marlborough"
+  },
+  {
+    "id": 208,
+    "qa_question": "map@Did Kansas State win?",
+    "qa_column": "Winning team",
+    "qa_answer": [
+      "no",
+      "no",
+      "no",
+      "no",
+      "yes",
+      "no",
+      "no",
+      "no",
+      "no",
+      "no",
+      "no",
+      "no",
+      "no",
+      "no",
+      "no",
+      "no",
+      "no",
+      "no",
+      "no",
+      "no",
+      "no",
+      "yes",
+      "yes"
+    ],
+    "table": {
+      "header": [
+        "Winning team"
+      ],
+      "rows": [
+        [
+          "Kansas 16"
+        ],
+        [
+          "Kansas 34"
+        ],
+        [
+          "Kansas 41"
+        ],
+        [
+          "Kansas 28"
+        ],
+        [
+          "Kansas State 6"
+        ],
+        [
+          "Kansas 29"
+        ],
+        [
+          "Kansas 12"
+        ],
+        [
+          "Kansas 5"
+        ],
+        [
+          "Kansas 6"
+        ],
+        [
+          "Kansas 19"
+        ],
+        [
+          "Kansas 26"
+        ],
+        [
+          "Kansas 27"
+        ],
+        [
+          "Kansas 19"
+        ],
+        [
+          "Kansas 0"
+        ],
+        [
+          "Kansas 9"
+        ],
+        [
+          "Kansas 13"
+        ],
+        [
+          "Kansas 16"
+        ],
+        [
+          "Kansas 14"
+        ],
+        [
+          "Kansas 21"
+        ],
+        [
+          "Kansas 7"
+        ],
+        [
+          "Kansas 0"
+        ],
+        [
+          "Kansas State 6"
+        ],
+        [
+          "Kansas State 14"
+        ]
+      ]
+    },
+    "title": "Kansas\u2013Kansas State football rivalry"
+  },
+  {
+    "id": 224,
+    "qa_question": "map@Is the last name start with 'b'?",
+    "qa_column": "Name",
+    "qa_answer": [
+      "yes",
+      "no",
+      "yes",
+      "no",
+      "no",
+      "yes"
+    ],
+    "table": {
+      "header": [
+        "Name"
+      ],
+      "rows": [
+        [
+          "Yelizaveta Bryzhina"
+        ],
+        [
+          "Myriam Soumar\u00e9"
+        ],
+        [
+          "Ksenija Balta"
+        ],
+        [
+          "Niamh Whelan"
+        ],
+        [
+          "Sabina Veit"
+        ],
+        [
+          "Elin Backman"
+        ]
+      ]
+    },
+    "title": "2010 European Athletics Championships \u2013 Women's 200 metres"
+  },
+  {
+    "id": 528,
+    "qa_question": "map@Return the km value.",
+    "qa_column": "Isolation",
+    "qa_answer": [
+      "2649",
+      "8.70",
+      "109",
+      "52",
+      "539",
+      "24",
+      "5",
+      "11",
+      "17",
+      "16",
+      "6.9",
+      "7.7",
+      "16",
+      "7.6",
+      "13"
+    ],
+    "table": {
+      "header": [
+        "Isolation"
+      ],
+      "rows": [
+        [
+          "1,646\u00a0mi\\n2,649\u00a0km"
+        ],
+        [
+          "5.4\u00a0mi\\n8.7\u00a0km"
+        ],
+        [
+          "67\u00a0mi\\n109\u00a0km"
+        ],
+        [
+          "32\u00a0mi\\n52\u00a0km"
+        ],
+        [
+          "335\u00a0mi\\n539\u00a0km"
+        ],
+        [
+          "15\u00a0mi\\n24\u00a0km"
+        ],
+        [
+          "3.1\u00a0mi\\n5.0\u00a0km"
+        ],
+        [
+          "7\u00a0mi\\n11\u00a0km"
+        ],
+        [
+          "11\u00a0mi\\n17\u00a0km"
+        ],
+        [
+          "10\u00a0mi\\n16\u00a0km"
+        ],
+        [
+          "4.3\u00a0mi\\n6.9\u00a0km"
+        ],
+        [
+          "4.8\u00a0mi\\n7.7\u00a0km"
+        ],
+        [
+          "10\u00a0mi\\n16\u00a0km"
+        ],
+        [
+          "4.7\u00a0mi\\n7.6\u00a0km"
+        ],
+        [
+          "8\u00a0mi\\n13\u00a0km"
+        ]
+      ]
+    },
+    "title": "Highest mountain peaks of California"
+  },
+  {
+    "id": 212,
+    "qa_question": "map@Can it go faster than 450km/h?",
+    "qa_column": "Top speed (km/h)",
+    "qa_answer": [
+      "/",
+      "no",
+      "no",
+      "no",
+      "no",
+      "no",
+      "no",
+      "/",
+      "no",
+      "no",
+      "no",
+      "no",
+      "/",
+      "yes"
+    ],
+    "table": {
+      "header": [
+        "Top speed (km/h)"
+      ],
+      "rows": [
+        [
+          ""
+        ],
+        [
+          "90 (1971)"
+        ],
+        [
+          "164 (October 1971)"
+        ],
+        [
+          "140 (September 1972)"
+        ],
+        [
+          "160 / 230 (1974)\u00a0?"
+        ],
+        [
+          "250 (end 1973), 253.2 (21 November 1977)"
+        ],
+        [
+          "401.3 (1974)"
+        ],
+        [
+          ""
+        ],
+        [
+          "36 (or 40\u00a0?)"
+        ],
+        [
+          "75"
+        ],
+        [
+          "302 (1984), 355 (1985), 392 (1987), 406 (1987), 412.6 (January 1988)"
+        ],
+        [
+          "436 (1989), 450 (17 June 1993)"
+        ],
+        [
+          ""
+        ],
+        [
+          "501 (12 November 2003)"
+        ]
+      ]
+    },
+    "title": "Transrapid"
+  },
+  {
+    "id": 223,
+    "qa_question": "map@What is the price money?",
+    "qa_column": "Tournament",
+    "qa_answer": [
+      "10000",
+      "10000",
+      "25000",
+      "25000",
+      "10000",
+      "25000",
+      "10000",
+      "10000",
+      "10000",
+      "10000"
+    ],
+    "table": {
+      "header": [
+        "Tournament"
+      ],
+      "rows": [
+        [
+          "$10,000 Bournemouth, Great Britain"
+        ],
+        [
+          "$10,000 Hatfield, Great Britain"
+        ],
+        [
+          "$25,000 Mount Gambier, Australia"
+        ],
+        [
+          "$25,000 Sunderland, Great Britain"
+        ],
+        [
+          "$10,000 Tipton, Great Britain"
+        ],
+        [
+          "$25,000 Felixstowe, Great Britain"
+        ],
+        [
+          "$10,000 Frinton, Great Britain"
+        ],
+        [
+          "$10,000 Wrexham, Great Britain"
+        ],
+        [
+          "$10,000 Cumberland (London),\\nGreat Britain"
+        ],
+        [
+          "$10,000 Mollerusa, Spain"
+        ]
+      ]
+    },
+    "title": "Jane O'Donoghue"
+  },
+  {
+    "id": 227,
+    "qa_question": "map@What is the height in inch?",
+    "qa_column": "Height",
+    "qa_answer": [
+      "77",
+      "78",
+      "74",
+      "79",
+      "74",
+      "80",
+      "77",
+      "82",
+      "80",
+      "78",
+      "82",
+      "76"
+    ],
+    "table": {
+      "header": [
+        "Height"
+      ],
+      "rows": [
+        [
+          "6'5\""
+        ],
+        [
+          "6'6\""
+        ],
+        [
+          "6'2\""
+        ],
+        [
+          "6'7\""
+        ],
+        [
+          "6'2\""
+        ],
+        [
+          "6'8\""
+        ],
+        [
+          "6'5\""
+        ],
+        [
+          "6'10\""
+        ],
+        [
+          "6'8\""
+        ],
+        [
+          "6'6\""
+        ],
+        [
+          "6'10\""
+        ],
+        [
+          "6'4\""
+        ]
+      ]
+    },
+    "title": "2009\u201310 Fresno State Bulldogs men's basketball team"
+  },
+  {
+    "id": 579,
+    "qa_question": "map@Is it US Bank Plaza?",
+    "qa_column": "Name",
+    "qa_answer": [
+      "no",
+      "no",
+      "yes",
+      "no",
+      "no",
+      "no",
+      "no",
+      "no",
+      "no",
+      "no",
+      "no",
+      "no",
+      "no"
+    ],
+    "table": {
+      "header": [
+        "Name"
+      ],
+      "rows": [
+        [
+          "Zions Bank Building\\n\\n\\n\\n\\nZions Bank Building in Downtown Boise, Idaho"
+        ],
+        [
+          "Boise Airport Air Traffic Control Tower"
+        ],
+        [
+          "US Bank Plaza\\n\\n\\n\\n\\nUS Bank Building in Downtown Boise"
+        ],
+        [
+          "One Capital Center\\n\\n\\n\\n\\nOne Capital Center in Downtown Boise, Idaho"
+        ],
+        [
+          "Idaho State Capitol\\n\\n\\n\\n\\nIdaho State Capitol; Boise, Idaho"
+        ],
+        [
+          "The Grove Hotel\\n\\n\\n\\n\\nGrove Hotel in Downtown Boise, Idaho"
+        ],
+        [
+          "The Aspen\\n\\n\\n\\n\\nAspen Loft Building in Downtown Boise, Idaho"
+        ],
+        [
+          "Wells Fargo Building\\n\\n\\n\\n\\nWells Fargo Building in Downtown Boise, Idaho"
+        ],
+        [
+          "Banner Bank Building\\n\\n\\n\\n\\nBanner Bank Building in Downtown Boise, Idaho"
+        ],
+        [
+          "Key Tower\\n\\n\\n\\n\\nKey Bank Building in Downtown Boise, Idaho"
+        ],
+        [
+          "Bronco Stadium\\n\\n\\n\\n\\nBronco stadium in Boise, Idaho"
+        ],
+        [
+          "Hoff Building\\n\\n\\n\\n\\nHoff Building in Downtown Boise, Idaho"
+        ],
+        [
+          "Chase Tower Plaza\\n\\n\\n\\n\\nChase Building in Downtown Boise, Idaho"
+        ]
+      ]
+    },
+    "title": "List of tallest buildings in Boise"
+  },
+  {
+    "id": 160,
+    "qa_question": "map@is this model crest whitestrip classic?",
+    "qa_column": "Model",
+    "qa_answer": [
+      "yes",
+      "no",
+      "no",
+      "no",
+      "no",
+      "no",
+      "no",
+      "no",
+      "no",
+      "no",
+      "no",
+      "no"
+    ],
+    "table": {
+      "header": [
+        "Model"
+      ],
+      "rows": [
+        [
+          "Crest Whitestrips Classic\\npreviously Crest Whitestrips"
+        ],
+        [
+          "Crest Whitestrips Professional"
+        ],
+        [
+          "Crest Whitestrips Supreme"
+        ],
+        [
+          "Crest Whitestrips Premium"
+        ],
+        [
+          "Crest Whitestrips Pro\\npreviously Crest Whitestrips Premium Plus"
+        ],
+        [
+          "Crest Whitestrips Renewal"
+        ],
+        [
+          "Crest Whitestrips Daily Multicare"
+        ],
+        [
+          "Crest Whitestrips Advanced Seal"
+        ],
+        [
+          "Crest Whitestrips 3D Vivid"
+        ],
+        [
+          "Crest Whitestrips 3D Advanced Vivid"
+        ],
+        [
+          "Crest Whitestrips 3D Professional Effects"
+        ],
+        [
+          "Crest 3D White 2 Hour Express"
+        ]
+      ]
+    },
+    "title": "Crest Whitestrips"
+  },
+  {
+    "id": 216,
+    "qa_question": "map@What is the certification?",
+    "qa_column": "Certifications\\n(sales threshold)",
+    "qa_answer": [
+      "Platinum",
+      "Platinum",
+      "Platinum",
+      "Gold",
+      "Gold"
+    ],
+    "table": {
+      "header": [
+        "Certifications\\n(sales threshold)"
+      ],
+      "rows": [
+        [
+          "RIAA: Platinum\\nMC: Gold"
+        ],
+        [
+          "RIAA: Platinum"
+        ],
+        [
+          "RIAA: Platinum"
+        ],
+        [
+          "RIAA: Gold"
+        ],
+        [
+          "RIAA: Gold"
+        ]
+      ]
+    },
+    "title": "Michael W. Smith discography"
+  },
+  {
+    "id": 220,
+    "qa_question": "map@Contain Promotion of the Chernobyl Program?",
+    "qa_column": "Projects and activities they support",
+    "qa_answer": [
+      "no",
+      "no",
+      "no",
+      "no",
+      "no",
+      "no",
+      "no",
+      "no",
+      "no",
+      "yes",
+      "no",
+      "no",
+      "/"
+    ],
+    "table": {
+      "header": [
+        "Projects and activities they support"
+      ],
+      "rows": [
+        [
+          "Dialogue among Civilizations"
+        ],
+        [
+          "Construction of Knowledge Societies"
+        ],
+        [
+          "Promotion and safeguarding of intangible cultural heritage, especially oral traditions and expressions"
+        ],
+        [
+          "Promotion of ballet dancing (Programme of Intangible Heritage)"
+        ],
+        [
+          "Peace"
+        ],
+        [
+          "Education of young people through seminars, science conferences and projects in the field"
+        ],
+        [
+          "Campaign against HIV/AIDS, human rights, Cultural Heritage"
+        ],
+        [
+          "Education and Social Inclusion"
+        ],
+        [
+          "Fundraising for children in distress and victims of war"
+        ],
+        [
+          "Promotion of the Chernobyl Program, creation of the Six Flags of Tolerance in 1995 and distribution in UNESCO Member States"
+        ],
+        [
+          "Promotion of women's rights, especially for women in the Mediterranean; Environment issues"
+        ],
+        [
+          "Protection of children and the family, empowerment of women and girls in Africa"
+        ],
+        [
+          ""
+        ]
+      ]
+    },
+    "title": "UNESCO Goodwill Ambassador"
+  },
+  {
+    "id": 226,
+    "qa_question": "map@Is this party the Green Wind Party?",
+    "qa_column": "Party",
+    "qa_answer": [
+      "no",
+      "no",
+      "no",
+      "no",
+      "yes",
+      "no",
+      "no"
+    ],
+    "table": {
+      "header": [
+        "Party"
+      ],
+      "rows": [
+        [
+          "Your Party (YP)\\nMinna no T\u014d \u307f\u3093\u306a\u306e\u515a\\n(\"Everybody's Party\")"
+        ],
+        [
+          "Japanese Communist Party (JCP)\\nNihon Ky\u014dsan-t\u014d \u65e5\u672c\u5171\u7523\u515a"
+        ],
+        [
+          "People's Life Party (PLP)\\nSeikatsu no T\u014d \u751f\u6d3b\u306e\u515a"
+        ],
+        [
+          "Social Democratic Party (SDP)\\nShakai Minshu-t\u014d \u793e\u4f1a\u6c11\u4e3b\u515a"
+        ],
+        [
+          "Green Wind\\nMidori no Kaze \u307f\u3069\u308a\u306e\u98a8"
+        ],
+        [
+          "New Party Daichi \u2013 True Democrats\\nShint\u014d Daichi \u2013 Shinminshu \u65b0\u515a\u5927\u5730\u30fb\u771f\u6c11\u4e3b"
+        ],
+        [
+          "New Renaissance Party (NRP)\\nShint\u014d Kaikaku \u65b0\u515a\u6539\u9769\\n(\"New Reform Party\")"
+        ]
+      ]
+    },
+    "title": "List of political parties in Japan"
+  },
+  {
+    "id": 229,
+    "qa_question": "map@Is the language derived from a country?",
+    "qa_column": "Language",
+    "qa_answer": [
+      "yes",
+      "no",
+      "yes",
+      "yes",
+      "yes",
+      "/",
+      "/"
+    ],
+    "table": {
+      "header": [
+        "Language"
+      ],
+      "rows": [
+        [
+          "Polish"
+        ],
+        [
+          "Yiddish"
+        ],
+        [
+          "German"
+        ],
+        [
+          "Russian"
+        ],
+        [
+          "Ukrainian"
+        ],
+        [
+          "Other"
+        ],
+        [
+          "Persons\\nthat didn't name\\ntheir native language"
+        ]
+      ]
+    },
+    "title": "P\u0142ock Governorate"
+  },
+  {
+    "id": 206,
+    "qa_question": "map@What is the year?",
+    "qa_column": "Notes",
+    "qa_answer": [
+      "1933",
+      "1933",
+      "1941",
+      "1941",
+      "1932",
+      "1932",
+      "1932",
+      "1932",
+      "1932",
+      "1932",
+      "1929",
+      "1929"
+    ],
+    "table": {
+      "header": [
+        "Notes"
+      ],
+      "rows": [
+        [
+          "retired 1933"
+        ],
+        [
+          "retired 1933"
+        ],
+        [
+          "became inspection car in 1932 retired 1941"
+        ],
+        [
+          "became inspection car in 1932 retired 1941"
+        ],
+        [
+          "retired 1932"
+        ],
+        [
+          "retired 1932"
+        ],
+        [
+          "retired 1932 preserved Western Railway Museum"
+        ],
+        [
+          "retired 1932"
+        ],
+        [
+          "retired 1932"
+        ],
+        [
+          "converted to express trailer in 1919 retired 1932"
+        ],
+        [
+          "retired 1929"
+        ],
+        [
+          "retired 1929"
+        ]
+      ]
+    },
+    "title": "Petaluma and Santa Rosa Railroad"
+  },
+  {
+    "id": 613,
+    "qa_question": "map@What is the month?",
+    "qa_column": "Dates",
+    "qa_answer": [
+      "17 Jan",
+      "24 Jan",
+      "31 Jan",
+      "7 Feb",
+      "14 Feb",
+      "20 Feb",
+      "28 Feb",
+      "7 Mar",
+      "14 Mar",
+      "28 Mar",
+      "11 Apr",
+      "18 Apr",
+      "25 Apr",
+      "2 May",
+      "9 May",
+      "16 May",
+      "24 May",
+      "31 May",
+      "6 Jun"
+    ],
+    "table": {
+      "header": [
+        "Dates"
+      ],
+      "rows": [
+        [
+          "14\u201317\u00a0Jan"
+        ],
+        [
+          "21\u201324\u00a0Jan"
+        ],
+        [
+          "28\u201331\u00a0Jan"
+        ],
+        [
+          "4\u20137\u00a0Feb"
+        ],
+        [
+          "11\u201314\u00a0Feb"
+        ],
+        [
+          "17\u201320\u00a0Feb"
+        ],
+        [
+          "24\u201328\u00a0Feb"
+        ],
+        [
+          "4\u20137\u00a0Mar"
+        ],
+        [
+          "11\u201314\u00a0Mar"
+        ],
+        [
+          "25\u201328\u00a0Mar"
+        ],
+        [
+          "8\u201311\u00a0Apr"
+        ],
+        [
+          "15\u201318\u00a0Apr"
+        ],
+        [
+          "22\u201325\u00a0Apr"
+        ],
+        [
+          "29\u00a0Apr\u20132\u00a0May"
+        ],
+        [
+          "6\u20139\u00a0May"
+        ],
+        [
+          "13\u201316\u00a0May"
+        ],
+        [
+          "21\u201324\u00a0May"
+        ],
+        [
+          "28\u201331\u00a0May"
+        ],
+        [
+          "3\u20136\u00a0Jun"
+        ]
+      ]
+    },
+    "title": "1999 European Tour"
+  },
+  {
+    "id": 590,
+    "qa_question": "map@Is it below 2:01",
+    "qa_column": "Time",
+    "qa_answer": [
+      "yes",
+      "yes",
+      "yes",
+      "no",
+      "no",
+      "no",
+      "no"
+    ],
+    "table": {
+      "header": [
+        "Time"
+      ],
+      "rows": [
+        [
+          "2:00.06"
+        ],
+        [
+          "2:00.11"
+        ],
+        [
+          "2:00.77"
+        ],
+        [
+          "2:01.39"
+        ],
+        [
+          "2:01.53"
+        ],
+        [
+          "2:01.86"
+        ],
+        [
+          "2:02.64"
+        ]
+      ]
+    },
+    "title": "Athletics at the 2003 Summer Universiade \u2013 Women's 800 metres"
+  },
+  {
+    "id": 543,
+    "qa_question": "map@Is it april fools day?",
+    "qa_column": "Date signed",
+    "qa_answer": [
+      "no",
+      "no",
+      "no",
+      "yes",
+      "no",
+      "no",
+      "no",
+      "/",
+      "no",
+      "no",
+      "no",
+      "no",
+      "no"
+    ],
+    "table": {
+      "header": [
+        "Date signed"
+      ],
+      "rows": [
+        [
+          "March 29"
+        ],
+        [
+          "August 11"
+        ],
+        [
+          "March 27"
+        ],
+        [
+          "April 1"
+        ],
+        [
+          "April 10"
+        ],
+        [
+          "March 25"
+        ],
+        [
+          "June 25"
+        ],
+        [
+          "\u2013"
+        ],
+        [
+          "March 13"
+        ],
+        [
+          "March 15"
+        ],
+        [
+          "March 15"
+        ],
+        [
+          "March 19"
+        ],
+        [
+          "July 29"
+        ]
+      ]
+    },
+    "title": "2013 Chicago Bears season"
+  },
+  {
+    "id": 207,
+    "qa_question": "map@What is the whole points scored?",
+    "qa_column": "Result",
+    "qa_answer": [
+      "8",
+      "5",
+      "5",
+      "18",
+      "5",
+      "5",
+      "5",
+      "7",
+      "7",
+      "13",
+      "/",
+      "22",
+      "15",
+      "16",
+      "29",
+      "17",
+      "4",
+      "10",
+      "8"
+    ],
+    "table": {
+      "header": [
+        "Result"
+      ],
+      "rows": [
+        [
+          "2\u20133\\n3\u20130"
+        ],
+        [
+          "2\u20133"
+        ],
+        [
+          "5\u20130"
+        ],
+        [
+          "0\u20130\\n5\u20130\\n13\u20130"
+        ],
+        [
+          "2\u20133 (AET)"
+        ],
+        [
+          "1\u20130\\n0\u20131\\n2\u20131"
+        ],
+        [
+          "1\u20134"
+        ],
+        [
+          "1\u20130\\n3\u20130\\n0\u20133"
+        ],
+        [
+          "0\u20137"
+        ],
+        [
+          "0\u20132\\n0\u20130\\n6\u20130\\n1\u20134"
+        ],
+        [
+          "not played"
+        ],
+        [
+          "0\u20131 1\u20130\\n12\u20130 8\u20130"
+        ],
+        [
+          "1\u20132 1\u20130\\n7\u20130 4\u20130"
+        ],
+        [
+          "0\u20135\\n2\u20134\\n1\u20134"
+        ],
+        [
+          "21\u20130\\n8\u20130"
+        ],
+        [
+          "17\u20130"
+        ],
+        [
+          "3\u20131"
+        ],
+        [
+          "1\u20131\\n1\u20133\\n1\u20133"
+        ],
+        [
+          "0\u20133\\n1\u20131\\n1\u20132"
+        ]
+      ]
+    },
+    "title": "Australia women's national association football team"
+  },
+  {
+    "id": 0,
+    "qa_question": "map@Did Kansas State lost with 0 points?",
+    "qa_column": "Losing team",
+    "qa_answer": [
+      "yes",
+      "yes",
+      "no",
+      "yes",
+      "no",
+      "no",
+      "no",
+      "no",
+      "yes",
+      "no",
+      "yes",
+      "yes",
+      "no",
+      "yes",
+      "yes",
+      "no",
+      "no",
+      "yes",
+      "no"
+    ],
+    "table": {
+      "header": [
+        "Losing team"
+      ],
+      "rows": [
+        [
+          "Kansas State 0"
+        ],
+        [
+          "Kansas State 0"
+        ],
+        [
+          "Kansas State 4"
+        ],
+        [
+          "Kansas State 0"
+        ],
+        [
+          "Kansas 4"
+        ],
+        [
+          "Kansas State 10"
+        ],
+        [
+          "Kansas State 6"
+        ],
+        [
+          "Kansas State 3"
+        ],
+        [
+          "Kansas State 0"
+        ],
+        [
+          "Kansas State 6"
+        ],
+        [
+          "Kansas State 0"
+        ],
+        [
+          "Kansas State 0"
+        ],
+        [
+          "Kansas State 7"
+        ],
+        [
+          "Kansas State 0"
+        ],
+        [
+          "Kansas State 0"
+        ],
+        [
+          "Kansas State 7"
+        ],
+        [
+          "Kansas State 3"
+        ],
+        [
+          "Kansas State 0"
+        ],
+        [
+          "Kansas State 7"
+        ]
+      ]
+    },
+    "title": "Kansas\u2013Kansas State football rivalry"
+  },
+  {
+    "id": 5,
+    "qa_question": "map@What is the value of in feet?",
+    "qa_column": "Prominence",
+    "qa_answer": [
+      "10080",
+      "1677",
+      "7196",
+      "2894",
+      "9832",
+      "2563",
+      "1936",
+      "1891",
+      "2027",
+      "2648",
+      "2601",
+      "1992",
+      "2339",
+      "2110",
+      "1736"
+    ],
+    "table": {
+      "header": [
+        "Prominence"
+      ],
+      "rows": [
+        [
+          "10,080\u00a0ft\\n3072\u00a0m"
+        ],
+        [
+          "1,677\u00a0ft\\n511\u00a0m"
+        ],
+        [
+          "7,196\u00a0ft\\n2193\u00a0m"
+        ],
+        [
+          "2,894\u00a0ft\\n882\u00a0m"
+        ],
+        [
+          "9,832\u00a0ft\\n2997\u00a0m"
+        ],
+        [
+          "2,563\u00a0ft\\n781\u00a0m"
+        ],
+        [
+          "1,936\u00a0ft\\n590\u00a0m"
+        ],
+        [
+          "1,891\u00a0ft\\n576\u00a0m"
+        ],
+        [
+          "2,027\u00a0ft\\n618\u00a0m"
+        ],
+        [
+          "2,648\u00a0ft\\n807\u00a0m"
+        ],
+        [
+          "2,601\u00a0ft\\n793\u00a0m"
+        ],
+        [
+          "1,992\u00a0ft\\n607\u00a0m"
+        ],
+        [
+          "2,339\u00a0ft\\n713\u00a0m"
+        ],
+        [
+          "2,110\u00a0ft\\n643\u00a0m"
+        ],
+        [
+          "1,736\u00a0ft\\n529\u00a0m"
+        ]
+      ]
+    },
+    "title": "Highest mountain peaks of California"
+  },
+  {
+    "id": 12,
+    "qa_question": "map@What is the height in ft before / ?",
+    "qa_column": "Height\\nft / m",
+    "qa_answer": [
+      "629",
+      "555",
+      "530",
+      "512",
+      "503",
+      "485",
+      "464",
+      "456",
+      "438",
+      "408",
+      "366",
+      "357",
+      "350",
+      "348",
+      "317",
+      "314",
+      "302",
+      "286",
+      "280",
+      "267",
+      "260",
+      "260",
+      "256",
+      "253",
+      "243",
+      "226",
+      "212",
+      "202",
+      "200"
+    ],
+    "table": {
+      "header": [
+        "Height\\nft / m"
+      ],
+      "rows": [
+        [
+          "629 / 192"
+        ],
+        [
+          "555 / 169"
+        ],
+        [
+          "530 / 162"
+        ],
+        [
+          "512 / 156"
+        ],
+        [
+          "503 / 153"
+        ],
+        [
+          "485 / 148"
+        ],
+        [
+          "464 / 141"
+        ],
+        [
+          "456 / 139"
+        ],
+        [
+          "438 / 134"
+        ],
+        [
+          "408 / 124"
+        ],
+        [
+          "366 / 112"
+        ],
+        [
+          "357 / 109"
+        ],
+        [
+          "350 / 107"
+        ],
+        [
+          "348 / 106"
+        ],
+        [
+          "317 / 97"
+        ],
+        [
+          "314 / 96"
+        ],
+        [
+          "302 / 92"
+        ],
+        [
+          "286 / 87"
+        ],
+        [
+          "280 / 85"
+        ],
+        [
+          "267 / 81"
+        ],
+        [
+          "260 / 79"
+        ],
+        [
+          "260 / 79"
+        ],
+        [
+          "256 / 78"
+        ],
+        [
+          "253 / 77"
+        ],
+        [
+          "243 / 74"
+        ],
+        [
+          "226 / 69"
+        ],
+        [
+          "212 / 64.6"
+        ],
+        [
+          "202 / 59.4"
+        ],
+        [
+          "200 / 57.9"
+        ]
+      ]
+    },
+    "title": "List of tallest buildings in Columbus, Ohio"
+  },
+  {
+    "id": 13,
+    "qa_question": "map@The number of series?",
+    "qa_column": "DVD Title",
+    "qa_answer": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8",
+      "9",
+      "10",
+      "11",
+      "12",
+      "/",
+      "/",
+      "/",
+      "/"
+    ],
+    "table": {
+      "header": [
+        "DVD Title"
+      ],
+      "rows": [
+        [
+          "Complete Series 1"
+        ],
+        [
+          "Complete Series 2"
+        ],
+        [
+          "Complete Series 3"
+        ],
+        [
+          "Complete Series 4"
+        ],
+        [
+          "Complete Series 5"
+        ],
+        [
+          "Complete Series 6"
+        ],
+        [
+          "Complete Series 7"
+        ],
+        [
+          "Complete Series 8"
+        ],
+        [
+          "Complete Series 9"
+        ],
+        [
+          "Complete Series 10"
+        ],
+        [
+          "Complete Series 11"
+        ],
+        [
+          "Complete Series 12"
+        ],
+        [
+          "The Christmas Specials"
+        ],
+        [
+          "The Complete Collection"
+        ],
+        [
+          "Two Ronnies In Australia"
+        ],
+        [
+          "The Best of...Volume 1"
+        ]
+      ]
+    },
+    "title": "The Two Ronnies"
+  },
+  {
+    "id": 15,
+    "qa_question": "map@return the number before '-",
+    "qa_column": "W\u2013L",
+    "qa_answer": [
+      "3",
+      "5",
+      "9",
+      "2",
+      "19",
+      "0"
+    ],
+    "table": {
+      "header": [
+        "W\u2013L"
+      ],
+      "rows": [
+        [
+          "3\u20135"
+        ],
+        [
+          "5\u20135"
+        ],
+        [
+          "9\u20134"
+        ],
+        [
+          "2\u20134"
+        ],
+        [
+          "19\u201318"
+        ],
+        [
+          "0\u20132"
+        ]
+      ]
+    },
+    "title": "\u0141ukasz Kubot"
+  },
+  {
+    "id": 16,
+    "qa_question": "map@Is it from alabama?",
+    "qa_column": "Hometown",
+    "qa_answer": [
+      "no",
+      "no",
+      "yes",
+      "no",
+      "no",
+      "no",
+      "no",
+      "no",
+      "no",
+      " no",
+      "no",
+      "no"
+    ],
+    "table": {
+      "header": [
+        "Hometown"
+      ],
+      "rows": [
+        [
+          "Chicago, IL, U.S."
+        ],
+        [
+          "Oklahoma City, OK, U.S."
+        ],
+        [
+          "Montgomery, AL, U.S."
+        ],
+        [
+          "Greenville, MS, U.S."
+        ],
+        [
+          "Stone Mountain, GA, U.S."
+        ],
+        [
+          "Douala, Cameroon"
+        ],
+        [
+          "San Antonio, TX, U.S."
+        ],
+        [
+          "Orlando, FL, U.S."
+        ],
+        [
+          "Conway, AR, U.S."
+        ],
+        [
+          "London, England, U.K."
+        ],
+        [
+          "Nashville, TN, U.S."
+        ],
+        [
+          "Wichita, KS, U.S."
+        ]
+      ]
+    },
+    "title": "2010\u201311 UAB Blazers men's basketball team"
+  },
+  {
+    "id": 17,
+    "qa_question": "map@value of elevation in feet",
+    "qa_column": "Elevation",
+    "qa_answer": [
+      "14505",
+      "14379",
+      "14252",
+      "14248",
+      "14179",
+      "13992",
+      "13982",
+      "13837",
+      "13807",
+      "13758",
+      "13747",
+      "13657",
+      "13565",
+      "13500",
+      "13162"
+    ],
+    "table": {
+      "header": [
+        "Elevation"
+      ],
+      "rows": [
+        [
+          "14,505\u00a0ft\\n4421\u00a0m"
+        ],
+        [
+          "14,379\u00a0ft\\n4383\u00a0m"
+        ],
+        [
+          "14,252\u00a0ft\\n4344\u00a0m"
+        ],
+        [
+          "14,248\u00a0ft\\n4343\u00a0m"
+        ],
+        [
+          "14,179\u00a0ft\\n4322\u00a0m"
+        ],
+        [
+          "13,992\u00a0ft\\n4265\u00a0m"
+        ],
+        [
+          "13,982\u00a0ft\\n4262\u00a0m"
+        ],
+        [
+          "13,837\u00a0ft\\n4218\u00a0m"
+        ],
+        [
+          "13,807\u00a0ft\\n4209\u00a0m"
+        ],
+        [
+          "13,758\u00a0ft\\n4193\u00a0m"
+        ],
+        [
+          "13,747\u00a0ft\\n4190\u00a0m"
+        ],
+        [
+          "13,657\u00a0ft\\n4163\u00a0m"
+        ],
+        [
+          "13,565\u00a0ft\\n4135\u00a0m"
+        ],
+        [
+          "13,500\u00a0ft\\n4115\u00a0m"
+        ],
+        [
+          "13,162\u00a0ft\\n4012\u00a0m"
+        ]
+      ]
+    },
+    "title": "Highest mountain peaks of California"
+  },
+  {
+    "id": 19,
+    "qa_question": "map@What is his/her country?",
+    "qa_column": "Driver",
+    "qa_answer": [
+      "uk",
+      "us",
+      "uk",
+      "australia",
+      "south africa",
+      "new zealand",
+      "uk",
+      "uk",
+      "us",
+      "netherlands",
+      "switzerland",
+      "belgium",
+      "scotland",
+      "france",
+      "uk",
+      "us",
+      "uk",
+      "us",
+      "uk"
+    ],
+    "table": {
+      "header": [
+        "Driver"
+      ],
+      "rows": [
+        [
+          "Jim Clark"
+        ],
+        [
+          "Richie Ginther"
+        ],
+        [
+          "Graham Hill"
+        ],
+        [
+          "Jack Brabham"
+        ],
+        [
+          "Tony Maggs"
+        ],
+        [
+          "Bruce McLaren"
+        ],
+        [
+          "Mike Hailwood"
+        ],
+        [
+          "Ian Burgess"
+        ],
+        [
+          "Peter Revson"
+        ],
+        [
+          "Carel Godin de Beaufort"
+        ],
+        [
+          "Jo Siffert"
+        ],
+        [
+          "Andr\u00e9 Pilette"
+        ],
+        [
+          "Innes Ireland"
+        ],
+        [
+          "Bernard Collomb"
+        ],
+        [
+          "Ian Raby"
+        ],
+        [
+          "Dan Gurney"
+        ],
+        [
+          "Mike Beckwith"
+        ],
+        [
+          "Masten Gregory"
+        ],
+        [
+          "Trevor Taylor"
+        ]
+      ]
+    },
+    "title": "1963 International Gold Cup"
+  },
+  {
+    "id": 23,
+    "qa_question": "map@What is the number?",
+    "qa_column": "Serial format",
+    "qa_answer": [
+      "12345",
+      "123",
+      "123",
+      "123",
+      "123",
+      "123",
+      "123",
+      "123",
+      "123"
+    ],
+    "table": {
+      "header": [
+        "Serial format"
+      ],
+      "rows": [
+        [
+          "A-12345"
+        ],
+        [
+          "ABC-123"
+        ],
+        [
+          "ABC-123"
+        ],
+        [
+          "ABC-123"
+        ],
+        [
+          "ABC-123"
+        ],
+        [
+          "ABC-123"
+        ],
+        [
+          "ABC-123"
+        ],
+        [
+          "ABC-123"
+        ],
+        [
+          "123\u00b7ABC"
+        ]
+      ]
+    },
+    "title": "Vehicle registration plates of Arizona"
+  },
+  {
+    "id": 28,
+    "qa_question": "map@Is sabaru impreza?",
+    "qa_column": "Car",
+    "qa_answer": [
+      "no",
+      "no",
+      "yes",
+      "no",
+      "no",
+      "no",
+      "yes",
+      "no",
+      "no",
+      "yes",
+      "yes",
+      "yes",
+      "yes",
+      "yes",
+      "yes",
+      "yes",
+      "yes"
+    ],
+    "table": {
+      "header": [
+        "Car"
+      ],
+      "rows": [
+        [
+          "Toyota Celica ST 185"
+        ],
+        [
+          "Toyota Supra"
+        ],
+        [
+          "Subaru Impreza"
+        ],
+        [
+          "Toyota Supra"
+        ],
+        [
+          "Mitsubishi Lancer Evo 4"
+        ],
+        [
+          "-"
+        ],
+        [
+          "Subaru Impreza WRX"
+        ],
+        [
+          "Mitsubishi Lancer Evo 4"
+        ],
+        [
+          "Mitsubishi Lancer Evo 4"
+        ],
+        [
+          "Subaru Impreza N10"
+        ],
+        [
+          "Subaru Impreza N8"
+        ],
+        [
+          "Subaru Impreza N10"
+        ],
+        [
+          "Subaru Impreza N10"
+        ],
+        [
+          "Subaru Impreza N8"
+        ],
+        [
+          "Subaru Impreza N10"
+        ],
+        [
+          "Subaru Impreza N8"
+        ],
+        [
+          "Subaru Impreza N12"
+        ]
+      ]
+    },
+    "title": "Pearl of Africa Rally"
+  },
+  {
+    "id": 30,
+    "qa_question": "map@When did it scrapped",
+    "qa_column": "Fate",
+    "qa_answer": [
+      "1972",
+      "1974",
+      "1959",
+      "1960",
+      "1969",
+      "1966",
+      "1960",
+      "1966",
+      "1964",
+      "1970",
+      "1959",
+      "1963",
+      "1960",
+      "1960",
+      "1971",
+      "1963",
+      "1960",
+      "1977",
+      "1966"
+    ],
+    "table": {
+      "header": [
+        "Fate"
+      ],
+      "rows": [
+        [
+          "Scrapped in 1972"
+        ],
+        [
+          "Scrapped in 1974"
+        ],
+        [
+          "Scrapped in 1959"
+        ],
+        [
+          "Scrapped in 1960"
+        ],
+        [
+          "Scrapped in 1969"
+        ],
+        [
+          "Scrapped in 1966"
+        ],
+        [
+          "Scrapped in 1960"
+        ],
+        [
+          "Scrapped in 1966"
+        ],
+        [
+          "Scrapped in 1964"
+        ],
+        [
+          "Scrapped in 1970"
+        ],
+        [
+          "Scrapped in 1959"
+        ],
+        [
+          "Scrapped in 1963"
+        ],
+        [
+          "Sold as oil hulk in 1960"
+        ],
+        [
+          "Scrapped in 1960"
+        ],
+        [
+          "Scrapped in 1971"
+        ],
+        [
+          "Scrapped in 1963"
+        ],
+        [
+          "Scrapped in 1960"
+        ],
+        [
+          "Scrapped in 1977"
+        ],
+        [
+          "Scrapped in 1966"
+        ]
+      ]
+    },
+    "title": "Wave-class oiler"
+  },
+  {
+    "id": 31,
+    "qa_question": "map@What is the max number instead of year?",
+    "qa_column": "Top speed (km/h)",
+    "qa_answer": [
+      "/",
+      "90",
+      "164",
+      "140",
+      "160",
+      "250",
+      "401.3",
+      "/",
+      "36",
+      "75",
+      "412.6",
+      "450",
+      "/",
+      "501"
+    ],
+    "table": {
+      "header": [
+        "Top speed (km/h)"
+      ],
+      "rows": [
+        [
+          ""
+        ],
+        [
+          "90 (1971)"
+        ],
+        [
+          "164 (October 1971)"
+        ],
+        [
+          "140 (September 1972)"
+        ],
+        [
+          "160 / 230 (1974)\u00a0?"
+        ],
+        [
+          "250 (end 1973), 253.2 (21 November 1977)"
+        ],
+        [
+          "401.3 (1974)"
+        ],
+        [
+          ""
+        ],
+        [
+          "36 (or 40\u00a0?)"
+        ],
+        [
+          "75"
+        ],
+        [
+          "302 (1984), 355 (1985), 392 (1987), 406 (1987), 412.6 (January 1988)"
+        ],
+        [
+          "436 (1989), 450 (17 June 1993)"
+        ],
+        [
+          ""
+        ],
+        [
+          "501 (12 November 2003)"
+        ]
+      ]
+    },
+    "title": "Transrapid"
+  },
+  {
+    "id": 44,
+    "qa_question": "map@Is it in united states?",
+    "qa_column": "Location",
+    "qa_answer": [
+      "no",
+      "no",
+      "no",
+      "no",
+      "no",
+      "no",
+      "no",
+      "france",
+      "yes",
+      "no",
+      "no",
+      "no",
+      "no",
+      "no",
+      "yes",
+      "no",
+      "no",
+      "no",
+      "no",
+      "no",
+      "no",
+      "no",
+      "no",
+      "no",
+      "yes",
+      "no",
+      "no",
+      "no",
+      "no",
+      "no",
+      "no",
+      "no",
+      "no"
+    ],
+    "table": {
+      "header": [
+        "Location"
+      ],
+      "rows": [
+        [
+          "Basel"
+        ],
+        [
+          "Rome"
+        ],
+        [
+          "Moscow"
+        ],
+        [
+          "Prague"
+        ],
+        [
+          "Dortmund"
+        ],
+        [
+          "Ljubljana"
+        ],
+        [
+          "Varna"
+        ],
+        [
+          "Strasbourg"
+        ],
+        [
+          "Fort Worth"
+        ],
+        [
+          "Moscow"
+        ],
+        [
+          "Budapest"
+        ],
+        [
+          "Montreal"
+        ],
+        [
+          "Rotterdam"
+        ],
+        [
+          "Stuttgart"
+        ],
+        [
+          "Indianapolis"
+        ],
+        [
+          "Paris"
+        ],
+        [
+          "Birmingham"
+        ],
+        [
+          "Brisbane"
+        ],
+        [
+          "Sabae"
+        ],
+        [
+          "San Juan"
+        ],
+        [
+          "Lausanne"
+        ],
+        [
+          "Tianjin"
+        ],
+        [
+          "Ghent"
+        ],
+        [
+          "Debrecen"
+        ],
+        [
+          "Anaheim"
+        ],
+        [
+          "Melbourne"
+        ],
+        [
+          "Aarhus"
+        ],
+        [
+          "Stuttgart"
+        ],
+        [
+          "London"
+        ],
+        [
+          "Rotterdam"
+        ],
+        [
+          "Tokyo"
+        ],
+        [
+          "Antwerp"
+        ],
+        [
+          "Nanning"
+        ]
+      ]
+    },
+    "title": "World Artistic Gymnastics Championships \u2013 Women's floor"
+  },
+  {
+    "id": 65,
+    "qa_question": "map@Which country is the company from?",
+    "qa_column": "Company (country)",
+    "qa_answer": [
+      "us",
+      "us",
+      "uk",
+      "us",
+      "us",
+      "us",
+      "france",
+      "italy",
+      "us",
+      "us",
+      "france",
+      "china",
+      "us",
+      "us",
+      "france",
+      "us",
+      "uk",
+      "us",
+      "us",
+      "us",
+      "us"
+    ],
+    "table": {
+      "header": [
+        "Company (country)"
+      ],
+      "rows": [
+        [
+          "Lockheed Martin"
+        ],
+        [
+          "Boeing"
+        ],
+        [
+          "BAE Systems"
+        ],
+        [
+          "General Dynamics"
+        ],
+        [
+          "Raytheon"
+        ],
+        [
+          "Northrop Grumman"
+        ],
+        [
+          "Airbus Group"
+        ],
+        [
+          "Finmeccanica"
+        ],
+        [
+          "L-3 Communications"
+        ],
+        [
+          "United Technologies Corporation"
+        ],
+        [
+          "Thales Group"
+        ],
+        [
+          "SAIC"
+        ],
+        [
+          "Huntington Ingalls Industries"
+        ],
+        [
+          "Honeywell"
+        ],
+        [
+          "SAFRAN"
+        ],
+        [
+          "Computer Sciences Corp."
+        ],
+        [
+          "Rolls-Royce"
+        ],
+        [
+          "United Aircraft Corporation"
+        ],
+        [
+          "Oshkosh Corporation"
+        ],
+        [
+          "General Electric"
+        ],
+        [
+          "ITT Corp."
+        ]
+      ]
+    },
+    "title": "List of defense contractors"
+  },
+  {
+    "id": 73,
+    "qa_question": "map@Is the result a win?",
+    "qa_column": "Result",
+    "qa_answer": [
+      "yes",
+      "no",
+      "yes",
+      "yes",
+      "yes",
+      "no",
+      "no",
+      "no",
+      "no",
+      "yes"
+    ],
+    "table": {
+      "header": [
+        "Result"
+      ],
+      "rows": [
+        [
+          "W\u00a044\u20136"
+        ],
+        [
+          "L\u00a014\u201324"
+        ],
+        [
+          "W\u00a025\u201320"
+        ],
+        [
+          "W\u00a029\u201322"
+        ],
+        [
+          "W\u00a034\u201327"
+        ],
+        [
+          "L\u00a010\u201341"
+        ],
+        [
+          "L\u00a010\u201313"
+        ],
+        [
+          "L\u00a06\u201320"
+        ],
+        [
+          "L\u00a017\u201337"
+        ],
+        [
+          "W\u00a031\u201317"
+        ]
+      ]
+    },
+    "title": "1987 Oregon Ducks football team"
+  },
+  {
+    "id": 88,
+    "qa_question": "map@NA inside?",
+    "qa_column": "Regions",
+    "qa_answer": [
+      "no",
+      "yes",
+      "yes",
+      "no",
+      "yes",
+      "yes",
+      "no",
+      "yes",
+      "no",
+      "no",
+      "no",
+      "no"
+    ],
+    "table": {
+      "header": [
+        "Regions"
+      ],
+      "rows": [
+        [
+          "JP"
+        ],
+        [
+          "JP, NA"
+        ],
+        [
+          "JP, NA"
+        ],
+        [
+          "JP"
+        ],
+        [
+          "JP, NA"
+        ],
+        [
+          "JP, NA"
+        ],
+        [
+          "JP"
+        ],
+        [
+          "JP, NA"
+        ],
+        [
+          "JP"
+        ],
+        [
+          "JP"
+        ],
+        [
+          "JP"
+        ],
+        [
+          "JP"
+        ]
+      ]
+    },
+    "title": "Super Chinese"
+  },
+  {
+    "id": 103,
+    "qa_question": "map@Is he/she a brazilian?",
+    "qa_column": "Gold",
+    "qa_answer": [
+      "no",
+      "no",
+      "no",
+      "no",
+      "no",
+      "no",
+      "no",
+      "no",
+      "no",
+      "no",
+      "no",
+      "no",
+      "no",
+      "no",
+      " no",
+      "no",
+      "no",
+      "no",
+      "no",
+      "no",
+      "no",
+      "no",
+      "no",
+      "no",
+      "yes",
+      "no",
+      "no",
+      "no",
+      "no",
+      "no",
+      "no",
+      "no",
+      "/"
+    ],
+    "table": {
+      "header": [
+        "Gold"
+      ],
+      "rows": [
+        [
+          "Helena Rakoczy"
+        ],
+        [
+          "Tamara Manina"
+        ],
+        [
+          "Eva Bos\u00e1kov\u00e1"
+        ],
+        [
+          "Larisa Latynina"
+        ],
+        [
+          "Natalia Kutchinskaya"
+        ],
+        [
+          "Ludmila Turicheva"
+        ],
+        [
+          "Ludmila Turicheva"
+        ],
+        [
+          "Nellie Kim\\n Elena Mukhina"
+        ],
+        [
+          "Emilia Eberle"
+        ],
+        [
+          "Natalia Ilienko"
+        ],
+        [
+          "Ekaterina Szabo"
+        ],
+        [
+          "Oksana Omelianchik"
+        ],
+        [
+          "Daniela Siliva\u015f\\n Elena Shushunova"
+        ],
+        [
+          "Daniela Siliva\u015f\\n Svetlana Boguinskaya"
+        ],
+        [
+          "Cristina Bonta\u015f\\n Oksana Chusovitina"
+        ],
+        [
+          "Kim Zmeskal"
+        ],
+        [
+          "Shannon Miller"
+        ],
+        [
+          "Dina Kochetkova"
+        ],
+        [
+          "Gina Gogean"
+        ],
+        [
+          "Kui Yuan-Yuan\\n Gina Gogean"
+        ],
+        [
+          "Gina Gogean"
+        ],
+        [
+          "Andreea R\u0103ducan"
+        ],
+        [
+          "Andreea R\u0103ducan"
+        ],
+        [
+          "Elena G\u00f3mez"
+        ],
+        [
+          "Daiane Dos Santos"
+        ],
+        [
+          "Alicia Sacramone"
+        ],
+        [
+          "Cheng Fei"
+        ],
+        [
+          "Shawn Johnson"
+        ],
+        [
+          "Elizabeth Tweddle"
+        ],
+        [
+          "Lauren Mitchell"
+        ],
+        [
+          "Ksenia Afanasyeva"
+        ],
+        [
+          "Simone Biles"
+        ],
+        [
+          ""
+        ]
+      ]
+    },
+    "title": "World Artistic Gymnastics Championships \u2013 Women's floor"
+  },
+  {
+    "id": 124,
+    "qa_question": "map@What is the country?",
+    "qa_column": "Team",
+    "qa_answer": [
+      "switzerland",
+      "italy",
+      "united states",
+      "switzerland",
+      "italy",
+      "germany",
+      "austria",
+      "germany",
+      "spain",
+      "austria",
+      "norway",
+      "great britain",
+      "sweden",
+      "romania",
+      "poland",
+      "sweden",
+      "great britain",
+      "france",
+      "united states",
+      "romania"
+    ],
+    "table": {
+      "header": [
+        "Team"
+      ],
+      "rows": [
+        [
+          "Switzerland\u00a0(SUI) Switzerland I"
+        ],
+        [
+          "Italy\u00a0(ITA) Italy II"
+        ],
+        [
+          "United States\u00a0(USA) USA I"
+        ],
+        [
+          "Switzerland\u00a0(SUI) Switzerland II"
+        ],
+        [
+          "Italy\u00a0(ITA) Italy I"
+        ],
+        [
+          "Germany\u00a0(GER) Germany I"
+        ],
+        [
+          "Austria\u00a0(AUT) Austria II"
+        ],
+        [
+          "Germany\u00a0(GER) Germany II"
+        ],
+        [
+          "Spain\u00a0(ESP) Spain I"
+        ],
+        [
+          "Austria\u00a0(AUT) Austria I"
+        ],
+        [
+          "Norway\u00a0(NOR) Norway I"
+        ],
+        [
+          "Great Britain\u00a0(GBR) Great Britain I"
+        ],
+        [
+          "Sweden\u00a0(SWE) Sweden II"
+        ],
+        [
+          "Romania\u00a0(ROU) Romania I"
+        ],
+        [
+          "Poland\u00a0(POL) Poland I"
+        ],
+        [
+          "Sweden\u00a0(SWE) Sweden I"
+        ],
+        [
+          "Great Britain\u00a0(GBR) Great Britain II"
+        ],
+        [
+          "France\u00a0(FRA) France I"
+        ],
+        [
+          "United States\u00a0(USA) USA II"
+        ],
+        [
+          "Romania\u00a0(ROU) Romania II"
+        ]
+      ]
+    },
+    "title": "Bobsleigh at the 1956 Winter Olympics \u2013 Four-man"
+  },
+  {
+    "id": 127,
+    "qa_question": "map@What is the last name?",
+    "qa_column": "Menteri Besar",
+    "qa_answer": [
+      "Mohamed",
+      "Mahbob",
+      "Jaafar",
+      "Jaafar",
+      "Yusof",
+      "Majid",
+      "Jaafar",
+      "Mohamed"
+    ],
+    "table": {
+      "header": [
+        "Menteri Besar"
+      ],
+      "rows": [
+        [
+          "Jaafar Mohamed"
+        ],
+        [
+          "Mohamed Mahbob"
+        ],
+        [
+          "Abdullah Jaafar"
+        ],
+        [
+          "Mustapha Jaafar"
+        ],
+        [
+          "Abdul Hamid Yusof"
+        ],
+        [
+          "Ungku Abdul Aziz Abdul Majid"
+        ],
+        [
+          "Onn Jaafar"
+        ],
+        [
+          "Syed Abdul Kadir Mohamed"
+        ]
+      ]
+    },
+    "title": "Menteri Besar of Johor"
+  },
+  {
+    "id": 131,
+    "qa_question": "map@Is it a tie competition?",
+    "qa_column": "Place",
+    "qa_answer": [
+      "yes",
+      "yes",
+      "no",
+      "no",
+      "no",
+      "no",
+      "yes",
+      "yes",
+      "no",
+      "no",
+      "no"
+    ],
+    "table": {
+      "header": [
+        "Place"
+      ],
+      "rows": [
+        [
+          "4th (tie)"
+        ],
+        [
+          "10th (tie)"
+        ],
+        [
+          "8th"
+        ],
+        [
+          "1st"
+        ],
+        [
+          "12th"
+        ],
+        [
+          "2nd"
+        ],
+        [
+          "4th (tie)"
+        ],
+        [
+          "10th (tie)"
+        ],
+        [
+          "9th"
+        ],
+        [
+          "6th"
+        ],
+        [
+          "7th"
+        ]
+      ]
+    },
+    "title": "Israel in the Eurovision Song Contest 1986"
+  },
+  {
+    "id": 134,
+    "qa_question": "map@Is it a win?",
+    "qa_column": "Result",
+    "qa_answer": [
+      "yes",
+      "yes",
+      "no",
+      "yes",
+      "yes",
+      "yes",
+      "yes",
+      "yes",
+      "yes",
+      "yes",
+      "no"
+    ],
+    "table": {
+      "header": [
+        "Result"
+      ],
+      "rows": [
+        [
+          "W\u00a010-0"
+        ],
+        [
+          "W\u00a038-7"
+        ],
+        [
+          "L\u00a028-29"
+        ],
+        [
+          "W\u00a035-7"
+        ],
+        [
+          "W\u00a046-0"
+        ],
+        [
+          "W\u00a027-6"
+        ],
+        [
+          "W\u00a035-15"
+        ],
+        [
+          "W\u00a042-0"
+        ],
+        [
+          "W\u00a035-0"
+        ],
+        [
+          "W\u00a035-7"
+        ],
+        [
+          "L\u00a06-14"
+        ]
+      ]
+    },
+    "title": "1977 Ohio State Buckeyes football team"
+  },
+  {
+    "id": 138,
+    "qa_question": "map@What is the album name?",
+    "qa_column": "Album",
+    "qa_answer": [
+      "Go West Young Man",
+      "Change Your World",
+      "I'll Lead You Home",
+      "Live the Life",
+      "Christmastime"
+    ],
+    "table": {
+      "header": [
+        "Album"
+      ],
+      "rows": [
+        [
+          "Go West Young Man\\n\\nReleased: October 1, 1990\\nLabel: Reunion\\nFormat: CD"
+        ],
+        [
+          "Change Your World\\n\\nReleased: September 1, 1992\\nLabel: Reunion\\nFormat: CD"
+        ],
+        [
+          "I'll Lead You Home\\n\\nReleased: August 29, 1995\\nLabel: Reunion\\nFormat: CD"
+        ],
+        [
+          "Live the Life\\n\\nReleased: April 28, 1998\\nLabel: Reunion\\nFormat: CD"
+        ],
+        [
+          "Christmastime\\n\\nReleased: October 13, 1998\\nLabel: Reunion\\nFormat: CD"
+        ]
+      ]
+    },
+    "title": "Michael W. Smith discography"
+  },
+  {
+    "id": 139,
+    "qa_question": "map@What is the number in km?",
+    "qa_column": "Event",
+    "qa_answer": [
+      "20",
+      "20",
+      "20",
+      "50",
+      "20",
+      "50",
+      "5",
+      "50",
+      "50",
+      "50",
+      "50",
+      "20",
+      "50",
+      "50",
+      "50",
+      "20",
+      "50",
+      "20",
+      "20",
+      "50",
+      "50",
+      "20",
+      "50",
+      "50"
+    ],
+    "table": {
+      "header": [
+        "Event"
+      ],
+      "rows": [
+        [
+          "20\u00a0km walk"
+        ],
+        [
+          "20\u00a0km walk"
+        ],
+        [
+          "20\u00a0km walk"
+        ],
+        [
+          "50\u00a0km walk"
+        ],
+        [
+          "20\u00a0km walk"
+        ],
+        [
+          "50\u00a0km walk"
+        ],
+        [
+          "5000 m walk"
+        ],
+        [
+          "50\u00a0km walk"
+        ],
+        [
+          "50\u00a0km walk"
+        ],
+        [
+          "50\u00a0km walk"
+        ],
+        [
+          "50\u00a0km walk"
+        ],
+        [
+          "20\u00a0km walk"
+        ],
+        [
+          "50\u00a0km walk"
+        ],
+        [
+          "50\u00a0km walk"
+        ],
+        [
+          "50\u00a0km walk"
+        ],
+        [
+          "20\u00a0km walk"
+        ],
+        [
+          "50\u00a0km walk"
+        ],
+        [
+          "20\u00a0km walk"
+        ],
+        [
+          "20\u00a0km walk"
+        ],
+        [
+          "50\u00a0km walk"
+        ],
+        [
+          "50\u00a0km walk"
+        ],
+        [
+          "20,000 m walk"
+        ],
+        [
+          "50\u00a0km walk"
+        ],
+        [
+          "50\u00a0km walk"
+        ]
+      ]
+    },
+    "title": "Robert Korzeniowski"
+  },
+  {
+    "id": 140,
+    "qa_question": "map@Is the etymology a battle?",
+    "qa_column": "Etymology",
+    "qa_answer": [
+      "yes",
+      "no",
+      "no",
+      "no",
+      "no",
+      "no",
+      "no",
+      "no",
+      "no",
+      "no",
+      "no",
+      "no",
+      "no",
+      "no",
+      "no",
+      "no",
+      "no",
+      "no",
+      "no",
+      "no",
+      "no",
+      "no",
+      "no",
+      "no",
+      "no",
+      "no",
+      "no",
+      "no",
+      "no",
+      "no",
+      "no"
+    ],
+    "table": {
+      "header": [
+        "Etymology"
+      ],
+      "rows": [
+        [
+          "The Battle of Alamance which was derived from the local Native American word meaning \"blue clay\" found in the Great Alamance Creek"
+        ],
+        [
+          "William J. Alexander, member of the legislature and Speaker of the North Carolina House of Commons"
+        ],
+        [
+          "Derived from a corruption of the Delaware Indian name for the Allegheny and Ohio Rivers and is said to have meant \"a fine stream\""
+        ],
+        [
+          "George, Lord Anson (1697\u20131762), a celebrated English admiral who circumnavigated the globe"
+        ],
+        [
+          "Samuel Ashe (1725\u20131813), a Revolutionary patriot, superior court judge, and governor of North Carolina"
+        ],
+        [
+          "Waightstill Avery (1741\u20131821), a soldier of the Revolution and Attorney General of North Carolina"
+        ],
+        [
+          "Henry Somerset, Duke of Beaufort, who in 1709 became one of the Lords Proprietor"
+        ],
+        [
+          "James or Henry Bertie, two Lords Proprietor of colonial North Carolina"
+        ],
+        [
+          "Martin Bladen, a member of the Board of Trade"
+        ],
+        [
+          "George I of Great Britain (1660\u20131727), Duke of Brunswick and L\u00fcneburg"
+        ],
+        [
+          "Edward Buncombe, a Revolutionary soldier, who was wounded and captured at the Battle of Germantown, and died a paroled prisoner in Philadelphia"
+        ],
+        [
+          "Thomas Burke (1747\u20131783), a member of the Continental Congress and governor of North Carolina"
+        ],
+        [
+          "Stephen Cabarrus (1754\u20131808), member of the legislature and Speaker of the North Carolina House of Commons"
+        ],
+        [
+          "Joseph Caldwell (1773\u20131835), the first president of the University of North Carolina"
+        ],
+        [
+          "Charles Pratt, 1st Earl Camden (1714\u20131794), who opposed the taxation of the American colonists"
+        ],
+        [
+          "John Carteret, 2nd Earl Granville (1690\u20131763), who inherited one-eighth share in the Province of Carolina through his great-grandfather George Carteret"
+        ],
+        [
+          "Richard Caswell (1729\u20131789), member of the first Continental Congress and first governor of North Carolina after the Declaration of Independence"
+        ],
+        [
+          "Catawba Nation"
+        ],
+        [
+          "William Pitt, 1st Earl of Chatham (1708\u20131778), Secretary of State during the French and Indian War and was later Prime Minister of Great Britain"
+        ],
+        [
+          "Cherokee Nation"
+        ],
+        [
+          "Chowan Native American tribe"
+        ],
+        [
+          "Henry Clay (1777\u20131852), statesman and orator who represented Kentucky in both the House of Representatives and Senate"
+        ],
+        [
+          "Benjamin Cleveland (1738\u20131806), a colonel in the American Revolutionary War who took part in the Battle of Kings Mountain"
+        ],
+        [
+          "Christopher Columbus (1451\u20131507), navigator, explorer, and one of the first Europeans to explore the Americas"
+        ],
+        [
+          "William Craven, 1st Earl of Craven (1608\u20131697), who was a Lords Proprietor of colonial North Carolina"
+        ],
+        [
+          "Prince William, Duke of Cumberland (1721\u20131765), a military leader and son of George II"
+        ],
+        [
+          "Traditionally said to be an American Indian word for wild geese, also rendered \"Coratank\""
+        ],
+        [
+          "Virginia Dare (b. 1587), the first child born of English parents in America"
+        ],
+        [
+          "William Lee Davidson (1746\u20131781), an American Revolutionary War general who was mortally wounded at Cowan's Ford"
+        ],
+        [
+          "William Richardson Davie (1756\u20131820), a member of the Federal Convention and governor of North Carolina"
+        ],
+        [
+          "Thomas Hay, Viscount Dupplin (1710\u20131787), who was the 9th Earl of Kinnoull"
+        ]
+      ]
+    },
+    "title": "List of counties in North Carolina"
+  },
+  {
+    "id": 142,
+    "qa_question": "map@What is the time span?",
+    "qa_column": "Term",
+    "qa_answer": [
+      "5",
+      "5",
+      "11",
+      "/",
+      "1",
+      "6",
+      "3",
+      "9",
+      "4",
+      "3",
+      "/",
+      "11",
+      "5",
+      "4",
+      "3",
+      "/"
+    ],
+    "table": {
+      "header": [
+        "Term"
+      ],
+      "rows": [
+        [
+          "1859\u20131864"
+        ],
+        [
+          "1864\u20131869"
+        ],
+        [
+          "1869\u20131880"
+        ],
+        [
+          "Term"
+        ],
+        [
+          "1894\u20131895"
+        ],
+        [
+          "1895\u20131901"
+        ],
+        [
+          "1901\u20131904"
+        ],
+        [
+          "1904\u20131913"
+        ],
+        [
+          "1913\u20131917"
+        ],
+        [
+          "1917\u20131920"
+        ],
+        [
+          "Term"
+        ],
+        [
+          "1927\u20131938"
+        ],
+        [
+          "1938\u20131943"
+        ],
+        [
+          "1943\u20131947"
+        ],
+        [
+          "1947\u20131950"
+        ],
+        [
+          "Term"
+        ]
+      ]
+    },
+    "title": "Electoral district of Lachlan"
+  },
+  {
+    "id": 112,
+    "qa_question": "map@What is his/her country?",
+    "qa_column": "Rider",
+    "qa_answer": [
+      "italy",
+      "spain",
+      "finland",
+      "us",
+      "spain",
+      "italy",
+      "japan",
+      "spain",
+      "thailand",
+      "italy",
+      "czech republic",
+      "italy",
+      "hungray",
+      "czech republic",
+      "italy",
+      "spain",
+      "indonesia",
+      "japan",
+      "italy",
+      "spain",
+      "italy",
+      "spain",
+      "italy"
+    ],
+    "table": {
+      "header": [
+        "Rider"
+      ],
+      "rows": [
+        [
+          "Marco Simoncelli"
+        ],
+        [
+          "\u00c1lvaro Bautista"
+        ],
+        [
+          "Mika Kallio"
+        ],
+        [
+          "Julian Simon"
+        ],
+        [
+          "Alex Debon"
+        ],
+        [
+          "Roberto Locatelli"
+        ],
+        [
+          "Yuki Takahashi"
+        ],
+        [
+          "Aleix Espargaro"
+        ],
+        [
+          "Ratthapark Wilairot"
+        ],
+        [
+          "Fabrizio Lai"
+        ],
+        [
+          "Karel Abraham"
+        ],
+        [
+          "Alex Baldolini"
+        ],
+        [
+          "Imre Toth"
+        ],
+        [
+          "Lukas Pesek"
+        ],
+        [
+          "Simone Grotzkyj"
+        ],
+        [
+          "Daniel Arcas"
+        ],
+        [
+          "Doni Tata Pradita"
+        ],
+        [
+          "Hiroshi Aoyama"
+        ],
+        [
+          "Mattia Pasini"
+        ],
+        [
+          "H\u00e9ctor Faubel"
+        ],
+        [
+          "Federico Sandi"
+        ],
+        [
+          "Manuel Hernandez"
+        ],
+        [
+          "Stefano Bianco"
+        ]
+      ]
+    },
+    "title": "2008 Australian motorcycle Grand Prix"
+  }
+]

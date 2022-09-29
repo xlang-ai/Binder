@@ -1,0 +1,426 @@
+Generate Python given the question and table to answer the question correctly.
+If question-relevant column(s) contents require external knowledge or unsupported Python grammar, map it to a new column by calling function qa_map(table, question, column(s)).
+The `qa_map()` function definition is listed to help know its functionality better:
+<code>
+def qa_map(db: pd.DataFrame, question: str, columns: List[str]) -> pd.DataFrame:
+    qa_model = OpenAIQAModel()
+    new_db = NeuralDB([{"title": "", "table": {"header": db.columns.values.tolist(), "rows": db.values.tolist()}}])
+    sql_executed_sub_tables = []
+    for column in columns:
+        column = f"`{column}`"
+        sql_executed_sub_tables.append(new_db.execute_query(column))
+        sub_table = qa_model.qa(question, sql_executed_sub_tables,)
+        new_db.add_subtable(sub_table, verbose=verbose)
+    table = new_db.get_table()
+    return pd.DataFrame(table["rows"], columns=table["header"])
+</code>
+
+Here are some examples.
+
+CREATE TABLE Fabrice Santoro(
+	row_id int,
+	name text,
+	2001 text,
+	2002 text,
+	2003 text,
+	2004 text,
+	2005 text,
+	2006 text,
+	2007 text,
+	2008 text,
+	2009 text,
+	2010 text,
+	career\nsr text,
+	career\nwin-loss text)
+/*
+3 example rows:
+SELECT * FROM w LIMIT 3;
+row_id	name	2001	2002	2003	2004	2005	2006	2007	2008	2009	2010	career\nsr	career\nwin-loss
+0	australian open	2r	1r	3r	2r	1r	qf	3r	2r	3r	1r	0 / 18	22–18
+1	french open	4r	2r	2r	3r	1r	1r	1r	2r	1r	a	0 / 20	17–20
+2	wimbledon	3r	2r	2r	2r	2r	2r	2r	1r	2r	a	0 / 14	11–14
+*/
+Q: did he win more at the australian open or indian wells?
+NeuralPython:
+def solve(table: pd.DataFrame):
+    table = qa_map(table, "how many wins?", ["career\\nwin-loss"])
+    sub_table = table[(table['name'] == 'australian open') | (table['name'] == 'indian wells')]
+    tmp = [(x, y) for x, y in zip(sub_table['name'], sub_table['how many wins?'])]
+    tmp = sorted(tmp, key=lambda x: x[1], reverse=True)
+    result = list(map(lambda x: x[0], tmp))[0]
+    return result
+
+
+CREATE TABLE 2007 New Orleans Saints season(
+	row_id int,
+	week int,
+	date text,
+	opponent text,
+	time text,
+	game site text,
+	tv text,
+	result text,
+	record text)
+/*
+3 example rows:
+SELECT * FROM w LIMIT 3;
+row_id	week	date	opponent	time	game site	tv	result	record
+0	1	2007-9-6	indianapolis colts	t20:30 edt	rca dome	nbc	l	0–1
+1	2	2007-9-16	tampa bay buccaneers	t13:0 edt	raymond james stadium	fox	l	0–2
+2	3	2007-9-24	tennessee titans	t20:30 edt	louisiana superdome	espn	l	0–3
+*/
+Q: what number of games were lost at home?
+NeuralNeuralPython:
+def solve(table: pd.DataFrame):
+    sub_table = table[(table['result'] == 'l') & (table['game site'] == 'louisiana superdome')]
+    result = len(sub_table)
+    return result
+
+
+CREATE TABLE Electricity in Sri Lanka(
+	row_id int,
+	filledcolumnname text,
+	2005 int,
+	2006 int,
+	2007 int,
+	2008 int,
+	2009 int,
+	2010 int,
+	2011 int,
+	2012 int)
+/*
+3 example rows:
+SELECT * FROM w LIMIT 3;
+row_id	filledcolumnname	2005	2006	2007	2008	2009	2010	2011	2012
+0	hydro power	1293	1316	1326	1357	1379	1382	1401	1584
+1	thermal	1155	1155	1155	1285	1290	1390	1690	1638
+2	other renewables	3	3	3	3	15	45	50	90
+*/
+Q: did the hydro power increase or decrease from 2010 to 2012?
+NeuralPython:
+def solve(table: pd.DataFrame):
+    result = table[table['filledcolumnname'] == 'hydro power']['2010'].values[0] - table[table['filledcolumnname'] == 'hydro power']['2012'].values[0]
+    if result > 0:
+        return 'decrease'
+    else:
+        return 'increase'
+
+
+CREATE TABLE 2007 New Orleans Saints season(
+	row_id int,
+	week int,
+	date text,
+	opponent text,
+	time text,
+	game site text,
+	tv text,
+	result/score text,
+	record text)
+/*
+3 example rows:
+SELECT * FROM w LIMIT 3;
+row_id	week	date	opponent	time	game site	tv	result/score	record
+0	1	2007-9-6	indianapolis colts	t20:30 edt	rca dome	nbc	l 41 – 10	0–1
+1	2	2007-9-16	tampa bay buccaneers	t13:0 edt	raymond james stadium	fox	l 31 – 14	0–2
+2	3	2007-9-24	tennessee titans	t20:30 edt	louisiana superdome	espn	l 31 – 14	0–3
+*/
+Q: what number of games were lost at home?
+NeuralPython:
+def solve(table: pd.DataFrame):
+    table = qa_map(table, "is it a loss?", ["result/score"])
+    table = qa_map(table, "is it the home court of is it the home court of New Orleans Saints?", ["game site"])
+    sub_table = table[(table['is it a loss?'] == 'yes') & (table['is it the home court of is it the home court of New Orleans Saints?'] == 'yes')]
+    result = len(sub_table)
+    return result
+
+
+CREATE TABLE Portugal in the Eurovision Song Contest 1979(
+	row_id int,
+	draw int,
+	artist text,
+	song text,
+	points int,
+	place text)
+/*
+3 example rows:
+SELECT * FROM w LIMIT 3;
+row_id	draw	artist	song	points	place
+0	1	gonzaga coutinho	"tema para um homem só"	102	5th
+1	2	pedro osório s.a.r.l.	"uma canção comercial"	123	3rd
+2	3	concha	"qualquer dia, quem diria"	78	6th
+*/
+Q: who was the last draw in the table?
+NeuralPython:
+def solve(table: pd.DataFrame):
+    sub_table = table
+    tmp = [(x, y) for x, y in zip(sub_table['artist'], sub_table['row_id'])]
+    tmp = sorted(tmp, key=lambda x: x[1], reverse=True)
+    result = list(map(lambda x: x[0], tmp))[0]
+    return result
+
+
+CREATE TABLE Highest mountain peaks of California(
+	row_id int,
+	rank int,
+	mountain peak text,
+	mountain range text,
+	elevation text,
+	prominence text,
+	isolation text,
+	location text)
+/*
+3 example rows:
+SELECT * FROM w LIMIT 3;
+row_id	rank	mountain peak	mountain range	elevation	prominence	isolation	location
+0	1	mount whitney	sierra nevada	14505 ft; 4421 m	10080 ft; 3072 m	1646 mi; 2649 km	36°34′43″n 118°17′31″w﻿ / ﻿36.5786°n 118.292°w
+1	2	mount williamson	sierra nevada	14379 ft; 4383 m	1677 ft; 511 m	5.4 mi; 8.7 km	36°39′21″n 118°18′40″w﻿ / ﻿36.6559°n 118.3111°w
+2	3	white mountain peak	white mountains	14252 ft; 4344 m	7196 ft; 2193 m	67 mi; 109 km	37°38′3″n 118°15′21″w﻿ / ﻿37.6341°n 118.2557°w
+*/
+Q: which mountain peak has a prominence more than 10,000 ft?
+NeuralPython:
+def solve(table: pd.DataFrame):
+    table = qa_map(table, "how many feet is the prominence?", ["prominence"])
+    sub_table = table[(table['how many feet is the prominence?'] > 10000)]
+    result = [x for x in sub_table['mountain peak']]
+    return result
+
+
+CREATE TABLE List of spans(
+	row_id int,
+	tramway text,
+	country text,
+	city text,
+	height of pylons text,
+	span width,\nleaning straight line text,
+	span width,\nhorizontal measurement text,
+	height of cable over ground text,
+	year of inauguration text,
+	notes text)
+/*
+3 example rows:
+SELECT * FROM w LIMIT 3;
+row_id	tramway	country	city	height of pylons	span width,\nleaning straight line	span width,\nhorizontal measurement	notes
+0	peak 2 peak gondola	canada	whistler	65m	3024 m	3019 m	436 m	2008	3s aerial tramway constructed by doppelmayr
+1	hut of regensburg material transport aerial railway	austria	falbeson	?	?	?	430 m	?	none
+2	vanoise express	france	vanoise	none	1850 m	1800 m	380 m	2003	none
+*/
+Q: was the sandia peak tramway innagurate before or after the 3s aerial tramway?
+NeuralPython:
+def solve(table: pd.DataFrame):
+    result = table[table['tramway'] == 'sandia peak tramway']['year of inauguration'].values[0] - table[table['tramway'] == '3s aerial tramway']['year of inauguration'].values[0]
+    if result > 0:
+        return 'after'
+    else:
+        return 'before'
+
+
+CREATE TABLE WSL World Heavyweight Championship(
+	id int,
+	wrestler: text,
+	times: text,
+	date: text,
+	location: text,
+	notes: text)
+/*
+3 example rows:
+SELECT * FROM w LIMIT 3;
+id	wrestler:	times:	date:	location:	notes:
+0	jonnie stewart	1	1996-6-6	rochester, minnesota	defeated larry gligorovich to win the awa superstars of wrestling world heavyweight championship.
+1	king kong bundy	1	1999-3-31	oshkosh, wisconsin	later stripped of the title by owner dale gagne.
+2	the patriot; (danny dominion)	1	2000-7-29	pine bluff, arkansas	defeated dale gagne in an impromptu match to win the title.
+*/
+Q: when did steve corino win his first wsl title?
+NeuralPython:
+    sub_table = table[(table['wrestler:'] == 'steve corino')]
+    tmp = [x for x in sub_table['date:']]
+    tmp = sorted(tmp, reverse=False)
+    result = tmp[0]
+    return result
+
+
+CREATE TABLE Shikoku Pilgrimage(
+	row_id int,
+	no. int,
+	temple text,
+	honzon (main image) text,
+	city/town/village text,
+	prefecture text)
+/*
+3 example rows:
+SELECT * FROM w LIMIT 3;
+row_id	no.	temple	honzon (main image)	city/town/village	prefecture
+0	1	ryōzen-ji (霊山寺)	shaka nyorai	naruto	tokushima prefecture
+1	2	gokuraku-ji (極楽寺)	amida nyorai	naruto	tokushima prefecture
+2	3	konsen-ji (金泉寺)	shaka nyorai	itano	tokushima prefecture
+*/
+Q: what is the difference in the number of temples between imabari and matsuyama?
+NeuralPython:
+def solve(table: pd.DataFrame):
+    sub_table1 = table[(table['city/town/village'] == 'imabari')]
+    sub_table2 = table[(table['city/town/village'] == 'matsuyama')]
+    result = math.abs(len(sub_table1) - len(sub_table2))
+    return result
+
+
+CREATE TABLE FC Seoul in Asian football(
+	row_id int,
+	# int,
+	season int,
+	competition text,
+	date text,
+	round text,
+	opponent text,
+	h / a text,
+	result text,
+	scorer (s) text)
+/*
+3 example rows:
+SELECT * FROM w LIMIT 3;
+row_id	#	season	competition	date	round	opponent	h / a	result	scorer (s)
+0	35	2011	afc; champions league	2011-03-02 00:00:00	group stage	al-ain	a	1–0	s : dejan damjanović
+1	36	2011	afc; champions league	2011-03-15 00:00:00	group stage	hangzhou greentown	h	3–0	s : dejan damjanović, ou kyoung-jun, mauricio molina
+2	37	2011	afc; champions league	2011-04-06 00:00:00	group stage	nagoya grampus	a	1–1	s : choi hyun-tae; n : kensuke nagai
+*/
+Q: how many consecutive games did dejan damjanovic score a goal in during the 2013 season?
+NeuralPython:
+def solve(table: pd.DataFrame):
+    result = 0
+    consecutive_flag = False
+    for row_id, row in table.iterrows():
+        if row['season'] == 2013 and row['scorer (s)'] == 'dejan damjanović':
+            result += 1
+            consecutive_flag = True
+        elif consecutive_flag:
+            break
+    return result
+
+
+CREATE TABLE Płock Governorate(
+	row_id int,
+	language text,
+	number int,
+	percentage (%) text,
+	males int,
+	females int)
+/*
+3 example rows:
+SELECT * FROM w LIMIT 3;
+row_id	language	number	percentage (%)	males	females
+0	polish	447685	80.86	216794	230891
+1	yiddish	51215	9.25	24538	26677
+2	german	35931	6.49	17409	18522
+*/
+Q: how many male and female german speakers are there?
+NeuralPython:
+def solve(table: pd.DataFrame):
+    sub_table = table[(table['language'] == 'german')]
+    result = sum([x + y for x, y in zip(sub_table['males'], sub_table['females'])])
+    return result
+
+
+CREATE TABLE Saint Helena, Ascension and Tristan da Cunha(
+	row_id int,
+	administrative\narea text,
+	area\nkm2 real,
+	area\nsq mi int,
+	population int,
+	administrative\ncentre text)
+/*
+3 example rows:
+SELECT * FROM w LIMIT 3;
+row_id	administrative\narea	area\nkm2	area\nsq mi	population	administrative\ncentre
+0	saint helena	122.0	47	5809	jamestown
+1	ascension island	91.0	35	1532	georgetown
+2	tristan da cunha	184.0	71	388	edinburgh of the 7 seas
+*/
+Q: is the are of saint helena more than that of nightingale island?
+NeuralPython:
+def solve(table: pd.DataFrame):
+    result = table[table['administrative\\narea'] == 'saint helena']['area\\nkm2'].values[0] - table[table['administrative\\narea'] == 'nightingale island']['area\\nkm2'].values[0]
+    if result > 0:
+        return 'yes'
+    else:
+        return 'no'
+
+
+CREATE TABLE List of political parties in Japan(
+	row_id int,
+	party text,
+	diet representation\nrepresentatives int,
+	diet representation\ncouncillors int,
+	party leader(s) text,
+	comments text)
+/*
+3 example rows:
+SELECT * FROM w LIMIT 3;
+row_id	party	diet representation\nrepresentatives	diet representation\ncouncillors	party leader(s)	comments
+0	your party (yp); minna no tō みんなの党; ("everybody's party")	18	18	yoshimi watanabe reps.	conservative liberalism, neoliberalism, economic liberalism, libertarianism, anti-nuclear
+1	japanese communist party (jcp); nihon kyōsan-tō 日本共産党	8	11	kazuo shii reps.	the japanese communist party is japan's oldest party. it was formed in 1922 as an underground organization in the empire of japan, but was legalized after world war ii during the occupation. it used to be a communist party, but the party has past_ref shifted to a socialist party.
+2	people's life party (plp); seikatsu no tō 生活の党	7	2	ichirō ozawa reps.	life party was founded by ichirō ozawa and 14 other diet members who were in the 2022-7-4 party of japan after a leadership dispute between ozawa and yukiko kada.
+*/
+Q: what party is listed previous to the new renaissance party?
+NeuralPython:
+def solve(table: pd.DataFrame):
+    result = []
+    for row_id, row in table.iterrows():
+        if row['party'] == 'new renaissance party':
+            result.append(table.iloc[row_id - 1]['party'])
+    return result
+
+
+CREATE TABLE 1975 24 Hours of Le Mans(
+	row_id int,
+	pos int,
+	class text,
+	no int,
+	team text,
+	drivers text,
+	chassis text,
+	engine text)
+/*
+3 example rows:
+SELECT * FROM w LIMIT 3;
+row_id	pos	class	no	team	drivers	chassis	engine
+0	32	s; 2	27	société roc	laurent ferrier;  xavier lapeyre;  christian ethuin	lola t294	roc-simca 2.0l i4
+1	33	s; 2	29	société roc	pierre-marie painvin;  franz hummel	lola t292	roc-simca 2.0l i4
+2	34	s; 3	3	christian poirot	christian poirot;  gérard cuynet;  guillermo ortega;  jean-claude lagniez	porsche 454	porsche 3.0l flat-8
+*/
+Q: which country has the most teams on the list?
+NeuralPython:
+def solve(table: pd.DataFrame):
+    table = qa_map(table, "what is the country?", ["team"])
+    result = table['what is the country?'].value_counts().idxmax()
+    return result
+
+
+CREATE TABLE Fabrice Santoro(
+	row_id int,
+	name text,
+	2001 text,
+	2002 text,
+	2003 text,
+	2004 text,
+	2005 text,
+	2006 text,
+	2007 text,
+	2008 text,
+	2009 text,
+	2010 text,
+	career\nsr text,
+	wins int)
+/*
+3 example rows:
+SELECT * FROM w LIMIT 3;
+row_id	name	2001	2002	2003	2004	2005	2006	2007	2008	2009	2010	career\nsr	wins
+0	australian open	2r	1r	3r	2r	1r	qf	3r	2r	3r	1r	0 / 18	22
+1	french open	4r	2r	2r	3r	1r	1r	1r	2r	1r	a	0 / 20	17
+2	wimbledon	3r	2r	2r	2r	2r	2r	2r	1r	2r	a	0 / 14	11
+*/
+Q: did he win more at the australian open or indian wells?
+NeuralPython:
+def solve(table: pd.DataFrame):
+    sub_table = table[(table['name'] == 'australian open') | (table['name'] == 'indian wells')]
+    tmp = [(x, y) for x, y in zip(sub_table['name'], sub_table['wins'])]
+    tmp = sorted(tmp, key=lambda x: x[1], reverse=True)
+    result = list(map(lambda x: x[0], tmp))[0]
+    return result

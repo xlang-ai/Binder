@@ -1,0 +1,36 @@
+Generate answer to answer the question correctly.
+
+Q: did he win more at the australian open or indian wells?
+A: australian open
+
+
+Q: what movies was morrison involved with in 2007?
+A: music and lyrics, dan in real life, i think i love my wife
+
+
+Q: what number of games were lost at home?
+A: 5
+
+
+Q: which hispanic population had the greatest growth from 2000 to 2005?
+A: white
+
+
+Q: which mountain peak has a prominence more than 10,000 ft?
+A: mount whitney
+
+
+Q: how far did they make it in the fa cup after 2009?
+A: round of 16
+
+
+Q: who was the last draw?
+A: manuela bravo
+
+
+Q: was the sandia peak tramway innagurate before or after the 3s aerial tramway?
+A: before
+
+
+Q: how many male and female german speakers are there?
+A: 35931

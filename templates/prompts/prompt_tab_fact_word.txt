@@ -1,0 +1,228 @@
+Generate answer given the question and table to answer the question correctly.
+
+CREATE TABLE 1981 oakland raiders season(
+	row_id int,
+	round int,
+	overall int,
+	player text,
+	position text,
+	college text)
+/*
+All rows of the table:
+SELECT * FROM w;
+row_id	round	overall	player	position	college
+0	1	21	ted watts	cb	texas tech
+1	1	23	curt marsh	ot	washington
+2	2	48	howie long	de	villanova
+3	4	111	johnny robinson	dt	louisiana tech
+4	5	118	james davis	cb	southern
+5	9	248	curt mohl	ot	ucla
+6	10	276	frank hawkins	hb	nevada
+7	11	304	chester willis	hb	auburn
+8	12	332	phil nelson	te	delaware
+*/
+Q: the oakland raider drafter more defensive player than offensive player in the 1981 nlf draft
+A: entailed
+
+
+CREATE TABLE 1981 oakland raiders season(
+	row_id int,
+	round int,
+	overall int,
+	player text,
+	position text,
+	college text)
+/*
+All rows of the table:
+SELECT * FROM w;
+row_id	round	overall	player	position	college
+0	1	21	ted watts	cb	texas tech
+1	1	23	curt marsh	ot	washington
+2	2	48	howie long	de	villanova
+3	4	111	johnny robinson	dt	louisiana tech
+4	5	118	james davis	cb	southern
+5	9	248	curt mohl	ot	ucla
+6	10	276	frank hawkins	hb	nevada
+7	11	304	chester willis	hb	auburn
+8	12	332	phil nelson	te	delaware
+*/
+Q: the raider pick up halfback in back to back round in the 1981 nfl draft
+A: refuted
+
+
+CREATE TABLE wake forest demon deacons football , 1980 - 89(
+	row_id int,
+	date text,
+	opponent text,
+	location text,
+	result text,
+	attendance int)
+/*
+All rows of the table:
+SELECT * FROM w;
+row_id	date	opponent	location	result	attendance
+0	1988-09-03 00:00:00	villanova	villanova stadium villanova , pa	w 31 - 11	11624
+1	1988-09-10 00:00:00	illinois state	groves stadium winston - salem , nc	w 35 - 0	22250
+2	1988-09-17 00:00:00	north carolina state	carter - finley stadium raleigh , nc	l 6 - 14	48000
+3	1988-09-24 00:00:00	19 michigan	michigan stadium ann arbor , mi	l 9 - 19	102776
+4	1988-10-08 00:00:00	north carolina	groves stadium winston - salem , nc	w 42 - 24	33500
+5	1988-10-15 00:00:00	maryland	byrd stadium college park , md	w 27 - 24	41278
+6	1988-10-22 00:00:00	virginia	groves stadium winston - salem , nc	l 14 - 34	21300
+7	1988-10-29 00:00:00	15 clemson	groves stadium winston - salem , nc	l 21 - 38	27300
+8	1988-11-05 00:00:00	duke	wallace wade stadium durham , nc	w 35 - 16	35500
+9	1988-11-12 00:00:00	georgia tech	groves stadium winston - salem , nc	w 28 - 24	21500
+10	1988-11-19 00:00:00	appalachian state	groves stadium winston - salem , nc	t 34 - 34	21050
+*/
+Q: the demon deacon finish the season with a 6 - 4 - 1 record
+A: refuted
+
+
+CREATE TABLE wake forest demon deacons football , 1980 - 89(
+	row_id int,
+	date text,
+	opponent text,
+	location text,
+	result text,
+	attendance int)
+/*
+All rows of the table:
+SELECT * FROM w;
+row_id	date	opponent	location	result	attendance
+0	1988-09-03 00:00:00	villanova	villanova stadium villanova , pa	w 31 - 11	11624
+1	1988-09-10 00:00:00	illinois state	groves stadium winston - salem , nc	w 35 - 0	22250
+2	1988-09-17 00:00:00	north carolina state	carter - finley stadium raleigh , nc	l 6 - 14	48000
+3	1988-09-24 00:00:00	19 michigan	michigan stadium ann arbor , mi	l 9 - 19	102776
+4	1988-10-08 00:00:00	north carolina	groves stadium winston - salem , nc	w 42 - 24	33500
+5	1988-10-15 00:00:00	maryland	byrd stadium college park , md	w 27 - 24	41278
+6	1988-10-22 00:00:00	virginia	groves stadium winston - salem , nc	l 14 - 34	21300
+7	1988-10-29 00:00:00	15 clemson	groves stadium winston - salem , nc	l 21 - 38	27300
+8	1988-11-05 00:00:00	duke	wallace wade stadium durham , nc	w 35 - 16	35500
+9	1988-11-12 00:00:00	georgia tech	groves stadium winston - salem , nc	w 28 - 24	21500
+10	1988-11-19 00:00:00	appalachian state	groves stadium winston - salem , nc	t 34 - 34	21050
+*/
+Q: wake forest lose the only 5 game they play versus rank opponent
+A: entailed
+
+
+CREATE TABLE 2008 women 's british open(
+	row_id int,
+	place text,
+	player text,
+	country text,
+	score int,
+	to par int)
+/*
+All rows of the table:
+SELECT * FROM w;
+row_id	place	player	country	score	to par
+0	1	juli inkster	united states	65	7
+1	t2	momoko ueda	japan	66	6
+2	t2	laura diaz	united states	66	6
+3	t2	ji young oh	south korea	66	6
+4	t2	yuri fudoh	japan	66	6
+5	t2	johanna head	england	66	6
+6	t2	stacy prammanasudh	united states	66	6
+7	t2	jiyai shin	south korea	66	6
+8	t9	kristy mcpherson	united states	67	5
+9	t9	karen stupples	england	67	5
+10	t9	rebecca hudson	england	67	5
+11	t9	sherri steinhauer	united states	67	5
+*/
+Q: 7 of the player have an identical score in the 2008 woman 's british open
+A: refuted
+
+
+CREATE TABLE 2008 women 's british open(
+	row_id int,
+	place text,
+	player text,
+	country text,
+	score int,
+	to par int)
+/*
+All rows of the table:
+SELECT * FROM w;
+row_id	place	player	country	score	to par
+0	1	juli inkster	united states	65	7
+1	t2	momoko ueda	japan	66	6
+2	t2	laura diaz	united states	66	6
+3	t2	ji young oh	south korea	66	6
+4	t2	yuri fudoh	japan	66	6
+5	t2	johanna head	england	66	6
+6	t2	stacy prammanasudh	united states	66	6
+7	t2	jiyai shin	south korea	66	6
+8	t9	kristy mcpherson	united states	67	5
+9	t9	karen stupples	england	67	5
+10	t9	rebecca hudson	england	67	5
+11	t9	sherri steinhauer	united states	67	5
+*/
+Q: there be 3 player total from the united state
+A: entailed
+
+
+CREATE TABLE espn sunday night football results (1987 - 2005)(
+	row_id int,
+	date text,
+	visiting team text,
+	final score text,
+	host team text,
+	stadium text)
+/*
+All rows of the table:
+SELECT * FROM w;
+row_id	date	visiting team	final score	host team	stadium
+0	september 11	indianapolis colts	24 - 7	baltimore ravens	m&t bank stadium
+1	september 18	kansas city chiefs	23 - 17	oakland raiders	mcafee coliseum
+2	september 25	new york giants	23 - 45	san diego chargers	qualcomm stadium
+3	october 2	san francisco 49ers	14 - 31	arizona cardinals	estadio azteca
+4	october 9	cincinnati bengals	20 - 23	jacksonville jaguars	alltel stadium
+5	october 16	houston texans	10 - 42	seattle seahawks	qwest field
+6	october 30	buffalo bills	16 - 21	new england patriots	gillette stadium
+7	november 6	philadelphia eagles	10 - 17	washington redskins	fedex field
+8	november 13	cleveland browns	21 - 34	pittsburgh steelers	heinz field
+9	november 20	kansas city chiefs	45 - 17	houston texans	reliant stadium
+10	november 27	new orleans saints	21 - 19	new york jets	giants stadium
+11	december 4	oakland raiders	10 - 34	san diego chargers	qualcomm stadium
+12	december 11	detroit lions	13 - 16	green bay packers	lambeau field
+13	december 17	denver broncos	28 - 17	buffalo bills	ralph wilson stadium
+14	december 18	atlanta falcons	3 - 16	chicago bears	soldier field
+15	december 25	minnesota vikings	23 - 30	baltimore ravens	m&t bank stadium
+16	december 31	new york giants	30 - 21	oakland raiders	mcafee coliseum
+17	january 1 (2006)	st louis rams	20 - 10	dallas cowboys	texas stadium
+*/
+Q: the visiting team be the new york giant on new year 's eve , and st louis ram on new year 's day
+A: refuted
+
+
+CREATE TABLE espn sunday night football results (1987 - 2005)(
+	row_id int,
+	date text,
+	visiting team text,
+	final score text,
+	host team text,
+	stadium text)
+/*
+All rows of the table:
+SELECT * FROM w;
+row_id	date	visiting team	final score	host team	stadium
+0	september 11	indianapolis colts	24 - 7	baltimore ravens	m&t bank stadium
+1	september 18	kansas city chiefs	23 - 17	oakland raiders	mcafee coliseum
+2	september 25	new york giants	23 - 45	san diego chargers	qualcomm stadium
+3	october 2	san francisco 49ers	14 - 31	arizona cardinals	estadio azteca
+4	october 9	cincinnati bengals	20 - 23	jacksonville jaguars	alltel stadium
+5	october 16	houston texans	10 - 42	seattle seahawks	qwest field
+6	october 30	buffalo bills	16 - 21	new england patriots	gillette stadium
+7	november 6	philadelphia eagles	10 - 17	washington redskins	fedex field
+8	november 13	cleveland browns	21 - 34	pittsburgh steelers	heinz field
+9	november 20	kansas city chiefs	45 - 17	houston texans	reliant stadium
+10	november 27	new orleans saints	21 - 19	new york jets	giants stadium
+11	december 4	oakland raiders	10 - 34	san diego chargers	qualcomm stadium
+12	december 11	detroit lions	13 - 16	green bay packers	lambeau field
+13	december 17	denver broncos	28 - 17	buffalo bills	ralph wilson stadium
+14	december 18	atlanta falcons	3 - 16	chicago bears	soldier field
+15	december 25	minnesota vikings	23 - 30	baltimore ravens	m&t bank stadium
+16	december 31	new york giants	30 - 21	oakland raiders	mcafee coliseum
+17	january 1 (2006)	st louis rams	20 - 10	dallas cowboys	texas stadium
+*/
+Q: the indianapolis colt and kansas city chief be the only visit team in september
+A: entailed

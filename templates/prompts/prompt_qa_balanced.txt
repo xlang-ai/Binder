@@ -1,0 +1,275 @@
+Generate answer given the question and table to answer the question correctly.
+
+CREATE TABLE Fabrice Santoro(
+	row_id int,
+	name text,
+	1989 text,
+	1990 text,
+	1991 text,
+	1992 text,
+	1993 text,
+	1994 text,
+	1995 text,
+	1996 text,
+	1997 text,
+	1998 text,
+	1999 text,
+	2000 text,
+	2001 text,
+	2002 text,
+	2003 text,
+	2004 text,
+	2005 text,
+	2006 text,
+	2007 text,
+	2008 text,
+	2009 text,
+	2010 text,
+	career\nsr text,
+	career\nwin-loss text)
+/*
+All rows of the table:
+SELECT * FROM w;
+row_id	name	1989	1990	1991	1992	1993	1994	1995	1996	1997	1998	1999	2000	2001	2002	2003	2004	2005	2006	2007	2008	2009	2010	career\nsr	career\nwin-loss
+0	australian open	a	a	1r	a	2r	3r	2r	1r	a	3r	4r	1r	2r	1r	3r	2r	1r	qf	3r	2r	3r	1r	0 / 18	22–18
+1	french open	1r	2r	4r	1r	1r	3r	1r	a	1r	3r	1r	2r	4r	2r	2r	3r	1r	1r	1r	2r	1r	a	0 / 20	17–20
+2	wimbledon	a	1r	a	a	a	a	1r	a	1r	a	2r	2r	3r	2r	2r	2r	2r	2r	2r	1r	2r	a	0 / 14	11–14
+3	us open	a	3r	1r	2r	1r	a	1r	a	1r	3r	3r	1r	2r	1r	2r	3r	2r	1r	2r	1r	1r	a	0 / 18	13–18
+4	grand slam sr	0 / 1	0 / 3	0 / 3	0 / 2	0 / 3	0 / 2	0 / 4	0 / 1	0 / 3	0 / 3	0 / 4	0 / 4	0 / 4	0 / 4	0 / 4	0 / 4	0 / 4	0 / 4	0 / 4	0 / 4	0 / 4	0 / 1	0 / 70	n/a
+5	grand slam win-loss	0–1	3–3	3–3	1–2	1–3	4–2	1–4	0–1	0–3	6–3	6–4	2–4	7–4	2–4	5–4	6–4	2–4	5–4	4–4	2–4	3–4	0–1	n/a	63–70
+6	indian wells	nme	a	3r	1r	qf	3r	2r	a	a	1r	a	3r	2r	3r	1r	1r	4r	1r	a	a	a	a	0 / 13	16–13
+7	miami	nme	2r	2r	1r	3r	a	a	a	a	4r	3r	2r	4r	2r	a	1r	a	2r	3r	3r	2r	a	0 / 14	15–14
+8	monte carlo	nme	1r	2r	2r	1r	a	3r	3r	sf	qf	a	2r	1r	1r	1r	3r	2r	1r	a	1r	a	a	0 / 16	17–16
+9	rome	nme	a	qf	3r	3r	a	3r	a	2r	1r	3r	3r	2r	1r	1r	a	2r	3r	a	1r	a	a	0 / 14	18–14
+10	hamburg	nme	2r	a	a	a	a	1r	a	a	qf	2r	1r	qf	1r	1r	a	1r	1r	a	a	nme	nme	0 / 10	8–10
+11	canada	nme	a	a	a	a	a	a	a	qf	2r	qf	1r	sf	qf	1r	qf	1r	1r	a	a	a	a	0 / 10	17–10
+12	cincinnati	nme	a	a	a	a	a	a	a	2r	1r	2r	qf	2r	1r	2r	qf	2r	1r	a	a	a	a	0 / 10	11–10
+13	stuttgart/madrid	nme	a	a	a	a	a	a	a	3r	1r	2r	2r	1r	sf	a	a	a	a	1r	a	a	a	0 / 7	8–7
+14	paris	nme	1r	1r	1r	a	a	a	a	2r	2r	2r	qf	2r	1r	2r	a	2r	1r	3r	a	1r	a	0 / 14	10–14
+15	masters series sr	n/a	0 / 4	0 / 5	0 / 5	0 / 4	0 / 1	0 / 4	0 / 1	0 / 6	0 / 9	0 / 7	0 / 9	0 / 9	0 / 9	0 / 7	0 / 5	0 / 7	0 / 8	0 / 3	0 / 3	0 / 2	0 / 0	0 / 108	n/a
+16	p1y win-loss	n/a	2–4	7–5	3–5	6–4	2–1	5–4	2–1	12–6	10–9	10–7	12–9	13–9	9–9	2–7	8–5	7–7	3–8	4–3	2–3	1–2	0–0	n/a	120–108
+17	year end ranking	235	62	43	43	55	46	102	118	29	41	34	31	22	35	62	52	58	52	37	52	68	–	n/a	none
+*/
+Q: did he win more at the australian open or indian wells?
+A: australian open
+
+
+CREATE TABLE Matthew Morrison(
+	row_id int,
+	year int,
+	title text,
+	role text,
+	notes text)
+/*
+All rows of the table:
+SELECT * FROM w;
+row_id	year	title	role	notes
+0	1999	bob rizzo's simply funk with suzanne	[himself]	as matthew j. morrison
+1	2003	marci x	boyz r us	as matthew j. morrison
+2	2005	once upon a mattress	sir harry	none
+3	2006	blinders	scott	none
+4	2007	music and lyrics	ray	none
+5	2007	dan in real life	policeman	none
+6	2007	i think i love my wife	salesman #2	none
+7	2011	the muppets	mahna mahna host	none
+8	2012	what to expect when you're expecting	evan	none
+*/
+Q: what movies was morrison involved with in 2007?
+A: music and lyrics, dan in real life, i think i love my wife
+
+
+CREATE TABLE 2007 New Orleans Saints season(
+	row_id int,
+	week int,
+	date text,
+	opponent text,
+	time text,
+	game site text,
+	tv text,
+	result/score text,
+	record text)
+/*
+All rows of the table:
+SELECT * FROM w;
+row_id	week	date	opponent	time	game site	tv	result/score	record
+0	1	2007-9-6	indianapolis colts	t20:30 edt	rca dome	nbc	l 41 – 10	0–1
+1	2	2007-9-16	tampa bay buccaneers	t13:0 edt	raymond james stadium	fox	l 31 – 14	0–2
+2	3	2007-9-24	tennessee titans	t20:30 edt	louisiana superdome	espn	l 31 – 14	0–3
+3	4	bye	bye	bye	bye	bye	bye	none
+4	5	2007-10-7	carolina panthers	t13:0 edt	louisiana superdome	fox	l 16 – 13	0–4
+5	6	2007-10-14	seattle seahawks	t20:15 edt	qwest field	nbc	w 28 – 17	1–4
+6	7	2007-10-21	atlanta falcons	t13:0 edt	louisiana superdome	fox	w 22 – 16	2–4
+7	8	2007-10-28	san francisco 49ers	t16:15 edt	monster park	fox	w 31 – 10	3–4
+8	9	2007-11-4	jacksonville jaguars	t13:0 est	louisiana superdome	cbs	w 41 – 24	4–4
+9	10	2007-11-11	st. louis rams	t13:0 est	louisiana superdome	fox	l 37 – 29	4–5
+10	11	2007-11-18	houston texans	t13:0 est	reliant stadium	fox	l 23 – 10	4–6
+11	12	2007-11-25	carolina panthers	t13:0 est	bank of america stadium	fox	w 31 – 6	5–6
+12	13	2007-12-2	tampa bay buccaneers	t13:0 est	louisiana superdome	fox	l 27 – 23	5–7
+13	14	2007-12-10	atlanta falcons	t20:30 est	georgia dome	espn	w 34 – 14	6–7
+14	15	2007-12-16	arizona cardinals	t13:0 est	louisiana superdome	fox	w 31–24	7–7
+15	16	2007-12-23	philadelphia eagles	t13:0 est	louisiana superdome	fox	l 38–23	7–8
+16	17	2007-12-30	chicago bears	t13:0 est	soldier field	fox	l 33–25	7–9
+*/
+Q: what number of games were lost at home?
+A: 5
+
+
+CREATE TABLE Demographics of Alaska(
+	row_id int,
+	by race text,
+	white text,
+	black text,
+	aian* text,
+	asian text,
+	nhpi* text)
+/*
+All rows of the table:
+SELECT * FROM w;
+row_id	by race	white	black	aian*	asian	nhpi*
+0	2000 (total population)	75.43%	4.46%	19.06%	5.24%	0.88%
+1	2000 (hispanic only)	3.42%	0.33%	0.45%	0.16%	0.06%
+2	2005 (total population)	74.71%	4.72%	18.77%	5.9%	0.88%
+3	2005 (hispanic only)	4.32%	0.38%	0.48%	0.19%	0.05%
+4	growth 2000–5 (total population)	4.85%	12.03%	4.27%	19.23%	5.35%
+5	growth 2000–5 (non-hispanic only)	3.49%	11.3%	4.02%	18.96%	5.86%
+6	growth 2000–5 (hispanic only)	33.56%	21.02%	14.52%	27.89%	-1.95%
+*/
+Q: which hispanic population had the greatest growth from 2000 to 2005?
+A: white
+
+
+CREATE TABLE Highest mountain peaks of California(
+	row_id int,
+	rank int,
+	mountain peak text,
+	mountain range text,
+	elevation text,
+	prominence text,
+	isolation text,
+	location text)
+/*
+All rows of the table:
+SELECT * FROM w;
+row_id	rank	mountain peak	mountain range	elevation	prominence	isolation	location
+0	1	mount whitney	sierra nevada	14505 ft; 4421 m	10080 ft; 3072 m	1646 mi; 2649 km	36°34′43″n 118°17′31″w﻿ / ﻿36.5786°n 118.292°w
+1	2	mount williamson	sierra nevada	14379 ft; 4383 m	1677 ft; 511 m	5.4 mi; 8.7 km	36°39′21″n 118°18′40″w﻿ / ﻿36.6559°n 118.3111°w
+2	3	white mountain peak	white mountains	14252 ft; 4344 m	7196 ft; 2193 m	67 mi; 109 km	37°38′3″n 118°15′21″w﻿ / ﻿37.6341°n 118.2557°w
+3	4	north palisade	sierra nevada	14248 ft; 4343 m	2894 ft; 882 m	32 mi; 52 km	37°5′39″n 118°30′52″w﻿ / ﻿37.0943°n 118.5145°w
+4	5	mount shasta	cascade range	14179 ft; 4322 m	9832 ft; 2997 m	335 mi; 539 km	41°24′33″n 122°11′42″w﻿ / ﻿41.4092°n 122.1949°w
+5	6	mount humphreys	sierra nevada	13992 ft; 4265 m	2563 ft; 781 m	15 mi; 24 km	37°16′14″n 118°40′23″w﻿ / ﻿37.2705°n 118.673°w
+6	7	mount keith	sierra nevada	13982 ft; 4262 m	1936 ft; 590 m	3.1 mi; 5 km	36°42′0″n 118°20′37″w﻿ / ﻿36.7001°n 118.3436°w
+7	8	mount darwin	sierra nevada	13837 ft; 4218 m	1891 ft; 576 m	7 mi; 11 km	37°10′1″n 118°40′20″w﻿ / ﻿37.1669°n 118.6721°w
+8	9	mount kaweah	sierra nevada	13807 ft; 4209 m	2027 ft; 618 m	11 mi; 17 km	36°31′34″n 118°28′43″w﻿ / ﻿36.5261°n 118.4785°w
+9	10	mount morgan	sierra nevada	13758 ft; 4193 m	2648 ft; 807 m	10 mi; 16 km	37°24′19″n 118°43′58″w﻿ / ﻿37.4053°n 118.7329°w
+10	11	mount gabb	sierra nevada	13747 ft; 4190 m	2601 ft; 793 m	4.3 mi; 6.9 km	37°22′37″n 118°48′9″w﻿ / ﻿37.3769°n 118.8025°w
+11	12	mount tom	sierra nevada	13657 ft; 4163 m	1992 ft; 607 m	4.8 mi; 7.7 km	37°22′34″n 119°10′44″w﻿ / ﻿37.3762°n 119.1789°w
+12	13	mount dubois	white mountains	13565 ft; 4135 m	2339 ft; 713 m	10 mi; 16 km	37°47′0″n 118°20′36″w﻿ / ﻿37.7834°n 118.3432°w
+13	14	mount pinchot	sierra nevada	13500 ft; 4115 m	2110 ft; 643 m	4.7 mi; 7.6 km	36°56′50″n 118°24′19″w﻿ / ﻿36.9473°n 118.4054°w
+14	15	red slate mountain	sierra nevada	13162 ft; 4012 m	1736 ft; 529 m	8 mi; 13 km	37°30′27″n 118°52′9″w﻿ / ﻿37.5075°n 118.8693°w
+15	16	mount ritter	sierra nevada	13149 ft; 4008 m	3990 ft; 1216 m	22 mi; 35 km	37°41′21″n 119°11′59″w﻿ / ﻿37.6891°n 119.1996°w
+*/
+Q: which mountain peak has a prominence more than 10,000 ft?
+A: mount whitney
+
+
+CREATE TABLE Daegu FC(
+	row_id int,
+	season int,
+	division int,
+	tms. int,
+	pos. int,
+	fa cup text,
+	afc cl real)
+/*
+All rows of the table:
+SELECT * FROM w;
+row_id	season	division	tms.	pos.	fa cup	afc cl
+0	2003	1	12	11	quarter final	nan
+1	2004	1	13	10	round of 32	nan
+2	2005	1	13	8	quarter final	nan
+3	2006	1	14	7	quarter final	nan
+4	2007	1	14	12	round of 16	nan
+5	2008	1	14	11	semi final	nan
+6	2009	1	15	15	quarter-final	nan
+7	2010	1	15	15	round of 32	nan
+8	2011	1	16	12	round of 32	nan
+9	2012	1	16	10	round of 16	nan
+*/
+Q: how far did they make it in the fa cup after 2009?
+A: round of 16
+
+CREATE TABLE Portugal in the Eurovision Song Contest 1979(
+	row_id int,
+	draw int,
+	artist text,
+	song text,
+	points int,
+	place text)
+/*
+All rows of the table:
+SELECT * FROM w;
+row_id	draw	artist	song	points	place
+0	1	gonzaga coutinho	"tema para um homem só"	102	5th
+1	2	pedro osório s.a.r.l.	"uma canção comercial"	123	3rd
+2	3	concha	"qualquer dia, quem diria"	78	6th
+3	4	gabriela schaaf	"eu só quero"	132	2nd
+4	5	tózé brito	"novo canto português"	110	4th
+5	6	teresa silva carvalho	"cantemos até ser dia"	52	9th
+6	7	florência	"o combóio do tua"	63	8th
+7	8	manuel josé soares	"quando chego a casa"	76	7th
+8	9	manuela bravo	"sobe, sobe, balão sobe"	149	1st
+*/
+Q: who was the last draw?
+A: manuela bravo
+
+
+CREATE TABLE List of spans(
+	row_id int,
+	tramway text,
+	country text,
+	city text,
+	height of pylons text,
+	span width,\nleaning straight line text,
+	span width,\nhorizontal measurement text,
+	height of cable over ground text,
+	year of inauguration text,
+	notes text)
+/*
+All rows of the table:
+SELECT * FROM w;
+row_id	tramway	country	city	height of pylons	span width,\nleaning straight line	span width,\nhorizontal measurement	height of cable over ground	year of inauguration	notes
+0	peak 2 peak gondola	canada	whistler	65m	3024 m	3019 m	436 m	2008	3s aerial tramway constructed by doppelmayr
+1	hut of regensburg material transport aerial railway	austria	falbeson	?	?	?	430 m	?	none
+2	vanoise express	france	vanoise	none	1850 m	1800 m	380 m	2003	none
+3	aiguille du midi	france	chamonix	none	2867 m	2500 m	?	1955	2nd section
+4	vallee blanche aerial tramway	france	mont blanc	none	2831 m, 1684 m	span is almost horizontal	appr. 300 m	1958	rock anchored support structure
+5	3s aerial tramway	austria	kitzbühel	0 m, 80m	2507 m	?	400 m	2004	none
+6	sandia peak tramway	usa	albuquerque	70.7 m, 21.33 m	2353 m	?	274 m	1966	none
+7	feldmoos-chli-titlis aerial tramway	switzerland	titlis	37.6 m	3476.2 m	?	?	1979	temp. site tramway, demolished in 1986
+*/
+Q: was the sandia peak tramway innagurate before or after the 3s aerial tramway?
+A: before
+
+
+CREATE TABLE Płock Governorate(
+	row_id int,
+	language text,
+	number int,
+	percentage (%) text,
+	males int,
+	females int)
+/*
+All rows of the table:
+SELECT * FROM w;
+row_id	language	number	percentage (%)	males	females
+0	polish	447685	80.86	216794	230891
+1	yiddish	51215	9.25	24538	26677
+2	german	35931	6.49	17409	18522
+3	russian	15137	2.73	13551	1586
+4	ukrainian	2350	0.42	2302	48
+5	other	1285	0.23	1041	244
+6	persons; that didn't name; their native language	27	>0.01	14	13
+7	total	553633	100	275652	277981
+*/
+Q: how many male and female german speakers are there?
+A: 35931
