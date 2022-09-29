@@ -35,3 +35,5 @@ After the annotation generation, feed the file name of the generated file into t
 ```bash
 python multiprocess_execute_NSQL.py
 ```
+
+Worth noticing that, due to the speed limitation from OpenAI, if the program get stuck at request, please adjust hyper-parameter `num_parallel_prompts`(which control the number of examples to be packed into a request) to shorten the tokens per request.
