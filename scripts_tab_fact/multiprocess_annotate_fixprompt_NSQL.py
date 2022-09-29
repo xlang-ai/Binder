@@ -323,7 +323,7 @@ if __name__ == '__main__':
     parser.add_argument('--dataset_split', type=str, default='test', choices=['train', 'validation', 'test'])
     parser.add_argument('--template_dir', type=str, default='../templates/')
     parser.add_argument('--save_dir', type=str, default='../results_tab_fact_500/')
-    parser.add_argument('--prompt_file', type=str, default='prompt_tab_fact_sql_sqllike_v3.txt')
+    parser.add_argument('--prompt_file', type=str, default='prompt_tab_fact_sqllike_v3.txt')
     parser.add_argument('--api_keys_file', type=str, default='../key.txt')
 
     # multiprocess options

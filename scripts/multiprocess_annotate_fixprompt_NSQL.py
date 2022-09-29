@@ -58,7 +58,7 @@ def worker_annotate(
             generate_prompt = generator.build_generate_prompt(
                 data_item=g_data_item,
                 phase='generate',
-                generate_type=('sql',),
+                generate_type=('nsql',),
                 retrieve_content=args.retrieve_content,
                 keep_row_order=args.keep_row_order,
             )
@@ -83,7 +83,7 @@ def worker_annotate(
             response_dict = generator.generate_one_pass(
                 prompts=built_few_shot_prompts,
                 phase='generate',
-                generate_type=('sql',),
+                generate_type=('nsql',),
                 verbose=args.verbose
             )
             for eid, g_pairs in response_dict.items():
@@ -99,7 +99,7 @@ def worker_annotate(
         response_dict = generator.generate_one_pass(
             prompts=built_few_shot_prompts,
             phase='generate',
-            generate_type=('sql',),
+            generate_type=('nsql',),
             verbose=args.verbose
         )
         for eid, g_pairs in response_dict.items():
@@ -316,7 +316,7 @@ if __name__ == '__main__':
     parser.add_argument('--dataset_split', type=str, default='test', choices=['train', 'validation', 'test'])
     parser.add_argument('--template_dir', type=str, default='../templates/')
     parser.add_argument('--save_dir', type=str, default='../results_wikitq_full/')
-    parser.add_argument('--prompt_file', type=str, default='prompt_w_sql_v3_no_CoT_based_sql_able_prompt.txt')
+    parser.add_argument('--prompt_file', type=str, default='prompt_wikitq_v3.txt')
     parser.add_argument('--api_keys_file', type=str, default='../key.txt')
 
     # multiprocess options
@@ -329,7 +329,7 @@ if __name__ == '__main__':
                                  'create_table_select_3',
                                  'create_table_select_3_hidden',
                                  'create_table'])
-    parser.add_argument('--num_shots', type=int, default=15)
+    parser.add_argument('--num_shots', type=int, default=14)
     parser.add_argument('--num_generations_per_sample', type=int, default=1)
     parser.add_argument('--retrieve_content', action='store_true')
     parser.add_argument('--keep_row_order', action='store_true')
@@ -361,7 +361,7 @@ if __name__ == '__main__':
 
     # codex options
     parser.add_argument('--engine', type=str, default="code-davinci-002")
-    parser.add_argument('--num_parallel_prompts', type=int, default=2)
+    parser.add_argument('--num_parallel_prompts', type=int, default=1)
     parser.add_argument('--max_tokens', type=int, default=512)
     parser.add_argument('--temperature', type=float, default=0.4)
     parser.add_argument('--sampling_n', type=int, default=20)

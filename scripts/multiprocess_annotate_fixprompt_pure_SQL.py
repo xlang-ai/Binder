@@ -315,7 +315,7 @@ if __name__ == '__main__':
     parser.add_argument('--dataset_split', type=str, default='validation', choices=['train', 'validation', 'test'])
     parser.add_argument('--template_dir', type=str, default='../templates/')
     parser.add_argument('--save_dir', type=str, default='../results_wikitq_full/')
-    parser.add_argument('--prompt_file', type=str, default='prompt_w_sql_v3_no_CoT_based_sql_able_prompt.txt')
+    parser.add_argument('--prompt_file', type=str, default='prompt_wikitq_puresql_v3.txt')
     parser.add_argument('--api_keys_file', type=str, default='../key.txt')
 
     # multiprocess options
@@ -360,7 +360,7 @@ if __name__ == '__main__':
 
     # codex options
     parser.add_argument('--engine', type=str, default="code-davinci-002")
-    parser.add_argument('--num_parallel_prompts', type=int, default=3)
+    parser.add_argument('--num_parallel_prompts', type=int, default=1)
     parser.add_argument('--max_tokens', type=int, default=512)
     parser.add_argument('--temperature', type=float, default=0.4)
     parser.add_argument('--sampling_n', type=int, default=20)
