@@ -227,24 +227,3 @@ class OpenAIQARetriever(object):
             return retrieved_items
         else:
             raise ValueError(f'Retrieve method {method} is not supported.')
-
-
-if __name__ == '__main__':
-    dataset = load_dataset(
-        path="../datasets/{}.py".format('missing_squall'),
-        cache_dir="../datasets/data")['validation']
-    with open(os.path.join('../generation/templates/', f'templates_missing_squall.json'), 'r') as f:
-        template_dict = json.load(f)
-
-    target_eid = 44
-    target_data_item = dataset[target_eid]
-    nsqls = list(template_dict.values())[0]
-    retriever = Retriever(args=None)
-    r_nsqls = retriever.retrieve(
-        target_data_item,
-        dataset,
-        nsqls,
-        3,
-        'q2q_bleu'
-    )
-    print(json.dumps(r_nsqls, indent=2))

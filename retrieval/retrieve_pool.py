@@ -68,10 +68,3 @@ class QAItem(object):
     qa_answer: str = None
     table: Dict = None
     title: str = None
-
-
-if __name__ == '__main__':
-    pool = OpenAIQARetrievePool(data_path='../generation/raw_annotations/qa_pool.json')
-    for i in pool:
-        print(i)
-    print(pool[0])
