@@ -87,20 +87,17 @@ def retrieve_wtq_query_answer(_engine, _table_content, _sql_struct: List):
         _execute_sql = []
         for _ex_tuple in _ex_sql_struct:
             keyword = str(_ex_tuple[1])
-            # @Tianbao modified here
             # upper the keywords.
             if keyword in ALL_KEY_WORDS:
                 keyword = str(keyword).upper()
 
             # extra column, which we do not need in result
             if keyword == "w" or keyword == "from":
-                # @Tianbao modified here
                 # add 'FROM w' make it executable
                 _encode_sql.append(keyword)
             elif re.fullmatch(r"c\d+(_.+)?", keyword):
                 # only take the first part
                 index_key = int(keyword.split("_")[0][1:]) - 1
-                # @Tianbao modified here
                 # wrap it with `` to make it executable
                 _encode_sql.append("`{}`".format(headers[index_key]))
             else:
