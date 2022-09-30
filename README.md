@@ -1,4 +1,20 @@
 # Binder
+<p align="left">
+    <a href="https://img.shields.io/badge/PRs-Welcome-red">
+        <img src="https://img.shields.io/badge/PRs-Welcome-red">
+    </a>
+    <a href="https://img.shields.io/github/last-commit/HKUNLP/Binder?color=green">
+        <img src="https://img.shields.io/github/last-commit/HKUNLP/Binder?color=green">
+    </a>
+    <br/>
+</p>
+
+Code for paper [Binding Language Models in Symbolic Languages](). Please refer to our [demo page]() to have an instant experience of Binder.
+
+<img src="pics/binder.png" align="middle" width="100%">
+
+
+## Updates
 
 ## Dependencies
 To establish the environment run this code in the shell:
