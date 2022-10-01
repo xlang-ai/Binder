@@ -1,1 +1,0 @@
-Please get the `tab_fact_in_context_examples_test_from_train.json` through https://www.dropbox.com/s/qr0nz9ys1cf8s8j/tab_fact_in_context_examples_test_from_train.json?dl=0
