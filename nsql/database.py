@@ -5,7 +5,6 @@ import records
 import sqlalchemy
 import pandas as pd
 from typing import Dict, List
-import pickle
 import uuid
 
 from utils.normalizer import convert_df_type, prepare_df_for_neuraldb_from_table
@@ -26,7 +25,7 @@ def check_in_and_return(key: str, source: dict):
 
 
 class NeuralDB(object):
-    def __init__(self, tables: List[Dict[str, Dict]], eid: int = -1, tid: str = None, passages=None, images=None):
+    def __init__(self, tables: List[Dict[str, Dict]], passages=None, images=None):
         self.raw_tables = copy.deepcopy(tables)
         self.passages = {}
         self.images = {}
@@ -47,7 +46,7 @@ class NeuralDB(object):
                 self.images[title] = picture
                 self.image_captions[title] = get_caption(_id)
 
-        # Link grounding resources from other modality(passages, images).
+        # Link grounding resources from other modalities(passages, images).
         if self.raw_tables[0]['table'].get('rows_with_links', None):
             rows = self.raw_tables[0]['table']['rows']
             rows_with_links = self.raw_tables[0]['table']['rows_with_links']
@@ -74,24 +73,8 @@ class NeuralDB(object):
                 if linked_cell:
                     self.image_linker[linked_cell] = title
 
-        # Preprocess tables
-        if tid is not None:
-            df_cache_path = os.path.join('./df_cache/', "{}.cache".format(tid))
-            if os.path.exists(df_cache_path):
-                with open(os.path.join(df_cache_path), "br") as f:
-                    df = pickle.load(f)
-                # Only load one table now
-                tables[0]['table'] = df
-            else:
-                for table_info in tables:
-                    table_info['table'] = prepare_df_for_neuraldb_from_table(table_info['table'])
-                # Only cache one table now
-                df = tables[0]['table']
-                with open(df_cache_path, "bw") as f:
-                    pickle.dump(df, f)
-        else:
-            for table_info in tables:
-                table_info['table'] = prepare_df_for_neuraldb_from_table(table_info['table'])
+        for table_info in tables:
+            table_info['table'] = prepare_df_for_neuraldb_from_table(table_info['table'])
 
         self.tables = tables
 
@@ -115,8 +98,6 @@ class NeuralDB(object):
         # Records conn
         self.db = records.Database('sqlite:///{}'.format(self.db_path))
         self.records_conn = self.db.get_connection()
-
-        self.eid = eid
 
     def __str__(self):
         return str(self.execute_query("SELECT * FROM {}".format(self.table_name)))
@@ -178,7 +159,7 @@ class NeuralDB(object):
             # Here we use a hack that when a value is surrounded by '' or "", the sql will return a column of the value,
             # while for variable, no ''/"" surrounded, this sql will query for the column.
             out = self.records_conn.query(new_sql_query)
-        # When the sql query wants all cols or col_id, which is no needed for us to add 'row_id'.
+        # When the sql query wants all cols or col_id, which is no need for us to add 'row_id'.
         elif sql_query.lower().startswith("select *") or sql_query.startswith("select col_id"):
             out = self.records_conn.query(sql_query)
         else:

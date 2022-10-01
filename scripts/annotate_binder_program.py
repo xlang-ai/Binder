@@ -40,7 +40,7 @@ def worker_annotate(
                 'generations': [],
                 'ori_data_item': copy.deepcopy(g_data_item)
             }
-            db = NeuralDB(  # TODO: Add tid?
+            db = NeuralDB(
                 tables=[{'title': g_data_item['table']['page_title'], 'table': g_data_item['table']}]
             )
             g_data_item['table'] = db.get_table_df()
