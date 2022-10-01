@@ -22,7 +22,8 @@ def worker_execute(
         pid,
         args,
         dataset,
-        nsql_dict
+        nsql_dict,
+        keys
 ):
     """
     A worker process for execution.
@@ -40,7 +41,7 @@ def worker_execute(
         n_total_samples += 1
         table = data_item['table']
         title = table['page_title']
-        executor = Executor()
+        executor = Executor(args, keys)
         # Execute
         exec_answer_list = []
         nsql_exec_answer_dict = dict()
@@ -126,6 +127,10 @@ def main():
     start_time = time.time()
     dataset = load_data_split(args.dataset, args.dataset_split)
 
+    # Load openai keys
+    with open(args.api_keys_file, 'r') as f:
+        keys = [line.strip() for line in f.readlines()]
+
     # Load programs and process as a unified format
     with open(os.path.join(args.save_dir, args.input_program_file), 'r') as f:
         data = json.load(f)
@@ -151,7 +156,8 @@ def main():
             pid,
             args,
             dataset,
-            nsql_dict_group[pid]
+            nsql_dict_group[pid],
+            keys
         )))
 
     # Merge worker results
@@ -190,6 +196,7 @@ if __name__ == '__main__':
     parser.add_argument('--dataset_split', type=str, default='validation', choices=['train', 'validation', 'test'])
     parser.add_argument('--api_keys_file', type=str, default='key.txt')
     parser.add_argument('--save_dir', type=str, default='results/')
+    parser.add_argument('--qa_retrieve_pool_file', type=str, default='templates/prompts/qa_retrieve_pool.txt')
     parser.add_argument('--input_program_file', type=str,
                         default='binder_program_tab_fact_validation.json')
     parser.add_argument('--output_program_execution_file', type=str,

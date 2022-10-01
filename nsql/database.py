@@ -1,7 +1,6 @@
 import copy
 import os
 import sqlite3
-import time
 import records
 import sqlalchemy
 import pandas as pd
@@ -202,7 +201,7 @@ class NeuralDB(object):
 
         return {"header": headers, "rows": unmerged_results}
 
-    def add_subtable(self, sub_table, table_name=None, verbose=True):
+    def add_sub_table(self, sub_table, table_name=None, verbose=True):
         """
         Add sub_table into the table.
         @return:

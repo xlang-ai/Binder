@@ -7,9 +7,9 @@ from nsql.parser import get_cfg_tree, get_steps, remove_duplicate, TreeNode, par
 
 
 class Executor(object):
-    def __init__(self):
+    def __init__(self, args, keys=None):
         self.new_col_name_id = 0
-        self.qa_model = OpenAIQAModel()
+        self.qa_model = OpenAIQAModel(args, keys)
 
     def generate_new_col_names(self, number):
         col_names = ["col_{}".format(i) for i in range(self.new_col_name_id, self.new_col_name_id + number)]
@@ -118,7 +118,7 @@ class Executor(object):
                                                            new_col_name_s=step.produced_col_name_s,
                                                            eid=db.eid,
                                                            verbose=verbose)
-                        db.add_subtable(sub_table, verbose=verbose)
+                        db.add_sub_table(sub_table, verbose=verbose)
                         col_idx += 1
                     else:  # This step is the final step
                         sub_table: Dict = self.qa_model.qa(question,
@@ -143,16 +143,6 @@ class Executor(object):
                         step.rename_father_val(answer)
                     else:  # This step is the final step
                         return answer
-
-                elif question.lower() in [op.lower() for op in self.qa_model.apis.keys()]:
-                    answer = self.qa_model.api(question, sql_executed_sub_tables, verbose=verbose)
-                    if not isinstance(answer, List):
-                        answer = [answer]
-                    if step.father:
-                        step.rename_father_val(answer)
-                    else:  # This step is the final step
-                        return answer
-
                 else:
                     raise ValueError(
                         "Except for operators or NL question must start with 'map@' or 'ans@'!, check '{}'".format(
@@ -161,7 +151,3 @@ class Executor(object):
             else:
                 sub_table = self.sql_exec(nsql, db, verbose=verbose)
                 return extract_answers(sub_table)
-
-
-if __name__ == '__main__':
-    pass
