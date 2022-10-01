@@ -6,12 +6,6 @@ from typing import List, Dict
 import json
 
 
-class RetrievePool(object):
-    def __init__(self, data_path):
-        # TODO
-        pass
-
-
 class OpenAIQARetrievePool(object):
     def __init__(self, data_path):
         with open(data_path, 'r') as f:
@@ -49,15 +43,6 @@ class OpenAIQARetrievePool(object):
 
     def __len__(self):
         return len(self.data)
-
-
-@dataclass
-class NSQLItem(object):
-    id: int = None
-    question: str = None
-    answer: str = None
-    nsql: str = None
-    table: Dict = None
 
 
 @dataclass

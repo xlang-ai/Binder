@@ -46,48 +46,10 @@ class Generator(object):
         prompt = new_prompt_part1 + '\n' + prompt_part2
         return prompt
 
-    def build_few_shot_prompt(
-            self,
-            dataset,
-            template: str,
-            nsqls: Dict,
-            phase: str,
-            prompt_type: Tuple,
-            num_shots: int = None,
-            retrieve_content: bool = False,
-            keep_row_order: bool = False,
-    ):
-        """
-        Build few-shot prompt for generation.
-        """
-
-        few_shot_prompt_list = []
-        for eid, nsql_dict in nsqls.items():
-            eid = int(eid)
-            data_item = dataset[eid]
-            data_item['eid'] = eid
-            data_item['nsql'] = nsql_dict['nsql']
-            data_item['target_columns'] = nsql_dict['target_columns']
-            data_item['operators'] = nsql_dict['operators']
-            data_item['nested_levels'] = nsql_dict['nested_levels']
-            one_shot_prompt = self.prompt_builder.build_one_shot_prompt(
-                **data_item,
-                phase=phase,
-                prompt_type=prompt_type,
-                retrieve_content=retrieve_content,
-                keep_row_order=keep_row_order,
-            )
-            few_shot_prompt_list.append(one_shot_prompt)
-        if num_shots is not None:
-            few_shot_prompt = '\n'.join(few_shot_prompt_list[:num_shots])
-        else:
-            few_shot_prompt = '\n'.join(few_shot_prompt_list[:self.args.num_shots])
-        return few_shot_prompt
-
     def build_few_shot_prompt_from_file(
             self,
             file_path: str,
-            num_shots: int
+            n_shots: int
     ):
         """
         Build few-shot prompt for generation from file.
@@ -105,7 +67,7 @@ class Generator(object):
                 one_shot_prompt += line
             last_line = line
         few_shot_prompt_list.append(one_shot_prompt)
-        few_shot_prompt_list = few_shot_prompt_list[:num_shots]
+        few_shot_prompt_list = few_shot_prompt_list[:n_shots]
         few_shot_prompt_list[-1] = few_shot_prompt_list[-1].strip()  # It is essential for prompting to remove extra '\n'
         few_shot_prompt = '\n'.join(few_shot_prompt_list)
         return few_shot_prompt
@@ -113,7 +75,6 @@ class Generator(object):
     def build_generate_prompt(
             self,
             data_item: Dict,
-            phase: str,
             generate_type: Tuple,
             retrieve_content: bool = False,
             keep_row_order: bool = False,
@@ -123,7 +84,6 @@ class Generator(object):
         """
         return self.prompt_builder.build_generate_prompt(
             **data_item,
-            phase=phase,
             generate_type=generate_type,
             retrieve_content=retrieve_content,
             keep_row_order=keep_row_order,
@@ -132,8 +92,6 @@ class Generator(object):
     def generate_one_pass(
             self,
             prompts: List[Tuple],
-            phase: str,
-            generate_type: Tuple,
             verbose: bool = False
     ):
         """
@@ -149,7 +107,7 @@ class Generator(object):
         result = self._call_codex_api(
             engine=self.args.engine,
             prompt=prompts,
-            max_tokens=self.args.max_tokens,
+            max_tokens=self.args.max_generation_tokens,
             temperature=self.args.temperature,
             top_p=self.args.top_p,
             n=self.args.sampling_n,
@@ -170,87 +128,12 @@ class Generator(object):
             try:
                 text = g['text']
                 logprob = sum(g['logprobs']['token_logprobs'])
-                if phase == 'generate':
-                    if generate_type == ('nsql', 'question'):
-                        g_nsql, g_question = text.split('Q:')
-                        g_nsql, g_question = g_nsql.strip(), g_question.strip()
-                    elif generate_type == ('question', 'nsql'):
-                        g_question, g_nsql = text.split('NeuralSQL:')
-                        g_question, g_nsql = g_question.strip(), g_nsql.strip()
-                    elif generate_type == ('question', 'sql'):
-                        g_question, g_nsql = text.split('SQL:')
-                        g_question, g_nsql = g_question.strip(), g_nsql.strip()
-                    elif generate_type == ('nsql',):
-                        g_nsql, g_question = text, None
-                    elif generate_type == ('sql',):
-                        g_nsql, g_question = text, None
-                    elif generate_type == ('answer',):
-                        g_nsql, g_question = text, None
-                    elif generate_type == ('chain of thought',):
-                        g_cot = text.split('So the SQL answer is:')[0].strip()
-                        g_nsql = text.split('So the SQL answer is:')[-1].strip()
-                        # Normalize logprob by removing chain of thought text tokens
-                        try:
-                            tokens, token_logprobs = g['logprobs']['tokens'], g['logprobs']['token_logprobs']
-                            nsql_start_tidx, nsql_end_tidx = 0, len(tokens)
-                            for tidx in range(len(tokens)):
-                                if tokens[tidx: tidx + 6] == \
-                                        ['So', ' the', ' SQL', ' answer', ' is', ':']:
-                                    nsql_start_tidx = tidx + 6
-                                if tokens[tidx] in self.args.stop_tokens:
-                                    nsql_end_tidx = tidx
-                                    break
-                            logprob = sum(token_logprobs[nsql_start_tidx: nsql_end_tidx])
-                        except Exception as e:
-                            logprob = -100
-                            print(f"Find 'So the SQL answer is:' phrase fails: {e}\n"
-                                  f"Set logprob=-100")
-                    elif generate_type == ('chain of thought of qa',):
-                        g_cot = text.split('So the answer is:')[0].strip()
-                        g_nsql = text.split('So the answer is:')[-1].strip()
-                        # Normalize logprob by removing chain of thought text tokens
-                        try:
-                            tokens, token_logprobs = g['logprobs']['tokens'], g['logprobs']['token_logprobs']
-                            nsql_start_tidx, nsql_end_tidx = 0, len(tokens)
-                            for tidx in range(len(tokens)):
-                                if tokens[tidx: tidx + 5] == \
-                                        ['So', ' the', ' answer', ' is', ':']:
-                                    nsql_start_tidx = tidx + 5
-                                if tokens[tidx] in self.args.stop_tokens:
-                                    nsql_end_tidx = tidx
-                                    break
-                            logprob = sum(token_logprobs[nsql_start_tidx: nsql_end_tidx])
-                        except Exception as e:
-                            logprob = -100
-                            print(f"Find 'So the answer is:' phrase fails: {e}\n"
-                                  f"Set logprob=-100")
-                    elif generate_type == ('npython',):
-                        g_nsql, g_question = text, None
-                    elif generate_type == ('python',):
-                        g_nsql, g_question = text, None
-                    else:
-                        raise ValueError(f'generate type={generate_type} is not supported in phase={phase}')
-                elif phase == 'filter':
-                    if generate_type == ('nsql',):
-                        g_nsql, g_question = text, None
-                    elif generate_type == ('sql',):
-                        g_nsql, g_question = text, None
-                    elif generate_type == ('question',):
-                        g_question, g_nsql = text, None
-                    else:
-                        raise ValueError(f'generate type={generate_type} is not supported in phase={phase}')
-
                 eid = result_idx_to_eid[idx]
                 eid_pairs = response_dict.get(eid, None)
                 if eid_pairs is None:
                     eid_pairs = []
                     response_dict[eid] = eid_pairs
-
-                # TODO: Wrap return values into a Class
-                if generate_type in [('chain of thought',), ('chain of thought of qa',)]:
-                    eid_pairs.append((g_nsql, g_cot, logprob))
-                else:
-                    eid_pairs.append((g_nsql, g_question, logprob))
+                eid_pairs.append((text, logprob))
 
                 if verbose:
                     print(text)
@@ -265,7 +148,6 @@ class Generator(object):
 
         return response_dict
 
-    # @backoff.on_exception(backoff.expo, (openai.error.RateLimitError, openai.error.APIConnectionError))
     def _call_codex_api(
             self,
             engine: str,
@@ -294,7 +176,7 @@ class Generator(object):
                     stop=stop,
                     logprobs=1
                 )
-                print('openai api inference time:', time.time() - start_time)
+                print('Openai api inference time:', time.time() - start_time)
                 return result
             except Exception as e:
                 print(e, 'Retry.')

@@ -190,20 +190,15 @@ class PromptBuilder(object):
 
     def build_one_shot_prompt(
             self,
-            phase: str,
             prompt_type: Tuple,
+            table: pd.DataFrame,
             question: str,
             answer_text: str,
-            table: pd.DataFrame,
             nsql: str,
             passages: Dict = None,
             images: Dict = None,
-            supporting_context: Dict = None,
-            only_title: bool = False,
             title: str = None,
-            target_columns: str = None,
-            operators: str = None,
-            nested_levels: str = None,
+            only_title: bool = False,
             retrieve_content: bool = False,
             keep_row_order: bool = False,
             **kwargs
@@ -221,9 +216,7 @@ class PromptBuilder(object):
                 use_retriever=retrieve_content,
                 keep_row_order=keep_row_order
             )
-        elif self.prompt_style in ['create_table_select_3_full_table',
-                                   'create_table_select_3',
-                                   'create_table_select_3_hidden']:
+        elif self.prompt_style in ['create_table_select_3_full_table', 'create_table_select_3']:
             one_shot_prompt += self._create_table_prompt(table, title)
             one_shot_prompt += self._select_x_prompt(
                 df=table,
@@ -280,20 +273,8 @@ class PromptBuilder(object):
         else:
             raise ValueError('{} is not supported.'.format(self.prompt_style))
 
-        # controllable generation options
-        if phase == 'generate':
-            if self.args.ctr_target_columns:
-                one_shot_prompt += 'Target columns:{}\n'.format(target_columns)
-            if self.args.ctr_operators:
-                one_shot_prompt += 'Operators:{}\n'.format(operators)
-            if self.args.ctr_nested_levels:
-                one_shot_prompt += 'Nested levels:{}\n'.format(nested_levels)
-
         # question and nsql pairs
-        if prompt_type == ('nsql', 'question'):
-            one_shot_prompt += 'NeuralSQL:{}\n'.format(nsql)
-            one_shot_prompt += 'Q: {}\n'.format(question)
-        elif prompt_type == ('question', 'nsql'):
+        if prompt_type == ('question', 'nsql'):
             one_shot_prompt += 'Q: {}\n'.format(question)
             one_shot_prompt += 'NeuralSQL: {}\n'.format(nsql)
         elif prompt_type == ('question', 'sql'):
@@ -302,14 +283,6 @@ class PromptBuilder(object):
         elif prompt_type == ('question', 'answer'):
             one_shot_prompt += 'Q: {}\n'.format(question)
             one_shot_prompt += 'A: {}\n'.format(', '.join(answer_text))
-        elif prompt_type == ('question', 'nsql', 'answer'):
-            one_shot_prompt += 'Q: {}\n'.format(question)
-            one_shot_prompt += 'NeuralSQL: {}\n'.format(nsql)
-            one_shot_prompt += 'A: {}\n'.format(', '.join(answer_text))
-        elif prompt_type == ('question', 'sql', 'answer'):
-            one_shot_prompt += 'Q: {}\n'.format(question)
-            one_shot_prompt += 'SQL: {}\n'.format(nsql)
-            one_shot_prompt += 'A: {}\n'.format(', '.join(answer_text))
         else:
             raise ValueError(f'Prompt type {prompt_type} is not supported.')
 
@@ -317,18 +290,16 @@ class PromptBuilder(object):
 
     def build_generate_prompt(
             self,
-            phase: str,
             generate_type: Tuple,
             table: pd.DataFrame,
-            title: str = None,
             question: str = None,
-            nsql: str = None,
             passages: Dict = None,
             images: Dict = None,
+            title: str = None,
+            only_title: bool = False,
             supporting_context: Dict = None,
             retrieve_content: bool = False,
             keep_row_order: bool = False,
-            only_title: bool = False,
             **kwargs
     ):
         """
@@ -337,30 +308,18 @@ class PromptBuilder(object):
         generate_prompt = ""
 
         # task instruction
-        if phase == 'generate':
-            if generate_type == ('answer',):
-                generate_prompt += """\n-- Answer the question based on the given table below.\n\n"""
-            elif generate_type == ('nsql',):
-                generate_prompt += """\n-- Parse the question into NeuralSQL based on the given table below.\n\n"""
-            elif generate_type == ('sql',):
-                generate_prompt += """\n-- Parse the question into SQL based on the given table below.\n\n"""
-            elif generate_type in [('chain of thought',), ('chain of thought of qa',)]:
-                generate_prompt += """\n"""
-            elif generate_type == ('npython',):
-                generate_prompt += """\n-- Parse the question into NeuralPython based on the given table below.\n\n"""
-            elif generate_type == ('python',):
-                generate_prompt += """\n-- Parse the question into Python based on the given table below.\n\n"""
-            else:
-                generate_prompt += """\n-- Generate NeuralSQL and question pairs based on the given table below.\n\n"""
-        elif phase == 'filter':
-            if generate_type == ('nsql',):
-                generate_prompt += """\n-- Parse question to NeuralSQL based on the given table and question below.\n\n """
-            elif generate_type == ('question',):
-                generate_prompt += """\n-- Parse NeuralSQL to question based on the given table and question below.\n\n """
-            elif generate_type == ('sql',):
-                generate_prompt += """\n-- Parse SQL to question based on the given table and question below.\n\n"""
-            else:
-                raise ValueError(f'Generate type {generate_type} is not supported.')
+        if generate_type == ('answer',):
+            generate_prompt += """\n-- Answer the question based on the given table below.\n\n"""
+        elif generate_type == ('nsql',):
+            generate_prompt += """\n-- Parse the question into NeuralSQL based on the given table below.\n\n"""
+        elif generate_type == ('sql',):
+            generate_prompt += """\n-- Parse the question into SQL based on the given table below.\n\n"""
+        elif generate_type == ('npython',):
+            generate_prompt += """\n-- Parse the question into NeuralPython based on the given table below.\n\n"""
+        elif generate_type == ('python',):
+            generate_prompt += """\n-- Parse the question into Python based on the given table below.\n\n"""
+        else:
+            generate_prompt += """\n-- Generate NeuralSQL and question pairs based on the given table below.\n\n"""
 
         # table prompt
         if self.prompt_style in ['create_table_select_full_table', 'create_table_select_3_full_table']:
@@ -373,7 +332,7 @@ class PromptBuilder(object):
                 keep_row_order=keep_row_order,
                 few_shot_demonstration=False
             )
-        elif self.prompt_style in ['create_table_select_3', 'create_table_select_3_hidden']:
+        elif self.prompt_style in ['create_table_select_3']:
             generate_prompt += self._create_table_prompt(table, title)
             generate_prompt += self._select_x_prompt(
                 df=table,
@@ -471,58 +430,16 @@ class PromptBuilder(object):
         else:
             raise ValueError('{} is not supported.'.format(self.prompt_style))
 
-        # controllable generation options
-        if phase == 'generate':
-            if self.args.ctr_target_columns:
-                target_columns = self._pick_target_columns(table, self.args.ctr_target_columns_strategy)
-            if self.args.ctr_operators:
-                operators = self._pick_operators(table, self.args.ctr_operators_strategy)
-            if self.args.ctr_nested_levels:
-                nested_levels = self._pick_nested_levels(table, self.args.ctr_nested_levels_strategy)
-                generate_prompt += 'Nested levels:{}\n'.format(nested_levels)
-
-            # re-pick if target column dtype not compatible with operations
-            if self.args.ctr_target_columns and self.args.ctr_operators:
-                while True:
-                    valid_control = self._check_valid_controls(
-                        df=table,
-                        target_columns=target_columns,
-                        operators=operators
-                    )
-
-                    if valid_control:
-                        break
-
-                    operators = self._pick_operators(table, self.args.ctr_operators_strategy)
-
-                generate_prompt += 'Target columns: {}\n'.format(target_columns)
-                generate_prompt += 'Operators: {}\n'.format(operators)
-                print(f'Target Columns: [{target_columns}], Ops: [{operators}]')
-
         # determine the target to generate
-        if generate_type == ('nsql', 'question'):
-            generate_prompt += 'NeuralSQL: '
-        elif generate_type == ('sql', 'question'):
-            generate_prompt += 'SQL: '
-        elif generate_type == ('question', 'nsql'):
-            generate_prompt += 'Q: '
-        elif generate_type == ('question', 'sql'):
-            generate_prompt += 'Q: '
+        if generate_type == ('answer',):
+            generate_prompt += 'Q: {}\n'.format(question)
+            generate_prompt += 'A: '
         elif generate_type == ('nsql',):
             generate_prompt += 'Q: {}\n'.format(question)
             generate_prompt += 'NeuralSQL: '
         elif generate_type == ('sql',):
             generate_prompt += 'Q: {}\n'.format(question)
             generate_prompt += 'SQL: '
-        elif generate_type == ('question',):
-            generate_prompt += 'NeuralSQL: {}\n'.format(nsql)
-            generate_prompt += 'Q: '
-        elif generate_type == ('answer',):
-            generate_prompt += 'Q: {}\n'.format(question)
-            generate_prompt += 'A: '
-        elif generate_type in [('chain of thought',), ('chain of thought of qa',)]:
-            generate_prompt += 'Q: {}\n'.format(question)
-            generate_prompt += 'A: '
         elif generate_type == ('npython',):
             generate_prompt += 'Q: {}\n'.format(question)
             generate_prompt += 'NeuralPython: '
@@ -533,31 +450,6 @@ class PromptBuilder(object):
             raise ValueError(f'Generate type {generate_type} is not supported.')
 
         return generate_prompt
-
-    def _check_valid_controls(
-            self,
-            df: pd.DataFrame,
-            target_columns: str,
-            operators: str,
-    ):
-        """
-        Check if the control combination is valid:
-        (1) MAX/MIN/SUM can only be applied on number/datetime column.
-        """
-        try:
-            if target_columns == '*' and operators != 'count':
-                return False
-
-            if operators in ['max', 'min', 'sum']:
-                if target_columns in ['Year', 'Time'] and operators == 'sum':
-                    return False
-
-                return df[target_columns].dtype in ['int64', 'float64', 'datetime64']
-        except Exception as e:
-            print(e)
-            return False
-
-        return True
 
 
 class OpenAIQAPromptBuilder(object):

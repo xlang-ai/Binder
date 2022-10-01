@@ -25,7 +25,7 @@ class OpenAIQAModel(object):
         self.type_options = ['Number', 'Boolean', 'DateTime', 'Others']  # Find it useless, aborted
 
         self.key_current_id = 0
-        with open("keys.txt", "r") as f:
+        with open("../key.txt", "r") as f:
             self.keys = [line.strip() for line in f.readlines()]
         random.seed(42)
         random.shuffle(self.keys)
