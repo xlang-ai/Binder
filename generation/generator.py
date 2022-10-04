@@ -8,6 +8,7 @@ import time
 
 from generation.prompt import PromptBuilder
 
+
 class Generator(object):
     """
     Codex generation wrapper.
@@ -68,7 +69,8 @@ class Generator(object):
             last_line = line
         few_shot_prompt_list.append(one_shot_prompt)
         few_shot_prompt_list = few_shot_prompt_list[:n_shots]
-        few_shot_prompt_list[-1] = few_shot_prompt_list[-1].strip()  # It is essential for prompting to remove extra '\n'
+        few_shot_prompt_list[-1] = few_shot_prompt_list[
+            -1].strip()  # It is essential for prompting to remove extra '\n'
         few_shot_prompt = '\n'.join(few_shot_prompt_list)
         return few_shot_prompt
 

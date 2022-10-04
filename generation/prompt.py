@@ -1,6 +1,10 @@
 """
 Build NSQL generation prompt.
+Two main parts:
+1) PromptBuilder makes prompt for calling codex to generate NSQL(Binder-SQL).
+2) OpenAIQAPromptBuilder makes prompt for calling codex to generate QA answers.
 """
+
 import random
 from typing import Dict, Tuple
 import pandas as pd
@@ -10,8 +14,29 @@ from utils.errors import DuplicateColumnsError
 from utils.image.image_stuff import get_caption_map
 from retrieval.retrieve_pool import QAItem
 
-from generation.tablecontentretriever import TableContentRetriever
 from utils.normalizer import prepare_df_for_neuraldb_from_table
+
+
+def _create_table_prompt(df: pd.DataFrame, title: str):
+    """
+    Return the CREATE TABLE clause as prompt.
+    """
+    string = "CREATE TABLE {}(\n".format(title)
+    for header in df.columns:
+        column_type = 'text'
+        try:
+            if df[header].dtype == 'int64':
+                column_type = 'int'
+            elif df[header].dtype == 'float64':
+                column_type = 'real'
+            elif df[header].dtype == 'datetime64':
+                column_type = 'datetime'
+        except AttributeError as e:
+            raise DuplicateColumnsError(e)
+
+        string += '\t{} {},\n'.format(header, column_type)
+    string = string.rstrip(',\n') + ')\n'
+    return string
 
 
 class PromptBuilder(object):
@@ -20,44 +45,26 @@ class PromptBuilder(object):
         self.prompt_style = args.prompt_style
         random.seed(args.seed)
 
-    def _create_table_prompt(self, df: pd.DataFrame, title: str):
-        """
-        Return the CREATE TABLE clause as prompt.
-        """
-        string = "CREATE TABLE {}(\n".format(title)
-        for header in df.columns:
-            column_type = 'text'
-            try:
-                if df[header].dtype == 'int64':
-                    column_type = 'int'
-                elif df[header].dtype == 'float64':
-                    column_type = 'real'
-                elif df[header].dtype == 'datetime64':
-                    column_type = 'datetime'
-            except AttributeError as e:
-                raise DuplicateColumnsError(e)
-
-            string += '\t{} {},\n'.format(header, column_type)
-        string = string.rstrip(',\n') + ')\n'
-        return string
-
-    def _select_x_prompt(self, df: pd.DataFrame, num_rows: int, question: str, use_retriever: bool = False,
-                         keep_row_order: bool = False, few_shot_demonstration=True):
+    def _select_x_prompt(self, df: pd.DataFrame, num_rows: int,
+                         few_shot_demonstration=True):
         """
         Return the first X rows table contents as prompt.
         """
-        if self.prompt_style in ['create_table_select_full_table',
-                                 'create_table_select_3_full_table_w_gold_passage_image',
-                                 'create_table_select_3_full_table_w_all_passage_image'
-                                 ]:
+        if self.prompt_style == 'create_table_select_full_table':
             string = '/*\nAll rows of the table:\nSELECT * FROM w;\n'
         elif self.prompt_style == 'create_table_select_3':
             string = '/*\n{} example rows:\nSELECT * FROM w LIMIT {};\n'.format(num_rows, num_rows)
         elif self.prompt_style == 'create_table_select_3_hidden':
             string = '/*\n{} example rows:\n'.format(num_rows)
-        elif few_shot_demonstration is True and self.prompt_style == "create_table_select_3_full_table":
+        elif few_shot_demonstration is True and self.prompt_style in \
+                ["create_table_select_3_full_table",
+                 "create_table_select_3_full_table_w_gold_passage_image",
+                 "create_table_select_3_full_table_w_all_passage_image"]:
             string = '/*\n{} example rows:\nSELECT * FROM w LIMIT {};\n'.format(num_rows, num_rows)
-        elif few_shot_demonstration is False and self.prompt_style == "create_table_select_3_full_table":
+        elif few_shot_demonstration is False and self.prompt_style in \
+                ["create_table_select_3_full_table",
+                 "create_table_select_3_full_table_w_gold_passage_image",
+                 "create_table_select_3_full_table_w_all_passage_image"]:
             string = '/*\nAll rows of the table:\nSELECT * FROM w;\n'
         else:
             raise ValueError(f"Select x prompt style {self.prompt_style} is not supported.")
@@ -67,14 +74,6 @@ class PromptBuilder(object):
             if column_id != len(df.columns) - 1:
                 string += '\t'
         string += '\n'
-        if use_retriever:
-            row_retriever = TableContentRetriever()
-            df = row_retriever.retrieve_rows(
-                df=df,
-                question=question,
-                strategy="question",
-                row_num=num_rows,
-                keep_row_order=keep_row_order)
 
         for row_id, row in df.iloc[:num_rows].iterrows():
             for column_id, header in enumerate(df.columns):
@@ -110,12 +109,11 @@ class PromptBuilder(object):
                 _header.append(passage['title'])
                 _rows[0].append(passage['text'])
             passage_table = prepare_df_for_neuraldb_from_table({"header": _header, "rows": _rows})
-            passage_table_prompt += self._create_table_prompt(passage_table, "Passages")
+            passage_table_prompt += _create_table_prompt(passage_table, "Passages")
             if not only_title:
                 passage_table_prompt += self._select_x_prompt(
                     df=passage_table,
-                    num_rows=passage_table.shape[0],
-                    question=""
+                    num_rows=passage_table.shape[0]
                 )
             return passage_table_prompt
 
@@ -143,12 +141,11 @@ class PromptBuilder(object):
                 _header.append(image['title'])
                 _rows[0].append(image['caption'])
             image_table = prepare_df_for_neuraldb_from_table({"header": _header, "rows": _rows})
-            image_table_prompt += self._create_table_prompt(image_table, "Images")
+            image_table_prompt += _create_table_prompt(image_table, "Images")
             if not only_title:
                 image_table_prompt += self._select_x_prompt(
                     df=image_table,
-                    num_rows=image_table.shape[0],
-                    question=""
+                    num_rows=image_table.shape[0]
                 )
             return image_table_prompt
 
@@ -199,8 +196,6 @@ class PromptBuilder(object):
             images: Dict = None,
             title: str = None,
             only_title: bool = False,
-            retrieve_content: bool = False,
-            keep_row_order: bool = False,
             **kwargs
     ):
         """
@@ -208,38 +203,28 @@ class PromptBuilder(object):
         """
         one_shot_prompt = ""
         if self.prompt_style == 'create_table_select_full_table':
-            one_shot_prompt += self._create_table_prompt(table, title)
+            one_shot_prompt += _create_table_prompt(table, title)
             one_shot_prompt += self._select_x_prompt(
                 df=table,
-                num_rows=table.shape[0],
-                question=question,
-                use_retriever=retrieve_content,
-                keep_row_order=keep_row_order
+                num_rows=table.shape[0]
             )
         elif self.prompt_style in ['create_table_select_3_full_table', 'create_table_select_3']:
-            one_shot_prompt += self._create_table_prompt(table, title)
+            one_shot_prompt += _create_table_prompt(table, title)
             one_shot_prompt += self._select_x_prompt(
                 df=table,
                 num_rows=3,
-                question=question,
-                use_retriever=retrieve_content,
-                keep_row_order=keep_row_order
             )
         elif self.prompt_style == 'create_table':
-            one_shot_prompt += self._create_table_prompt(table, title)
+            one_shot_prompt += _create_table_prompt(table, title)
         elif self.prompt_style == 'no_table':
             # No table input, to test Codex QA with only internal knowledge
             pass
         elif self.prompt_style in ['create_table_select_3_full_table_w_all_passage_image']:
             assert passages is not None and images is not None
-            one_shot_prompt += self._create_table_prompt(table, title)
+            one_shot_prompt += _create_table_prompt(table, title)
             one_shot_prompt += self._select_x_prompt(
                 df=table,
                 num_rows=3,
-                question=question,
-                use_retriever=retrieve_content,
-                keep_row_order=keep_row_order,
-                few_shot_demonstration=False
             )
             all_passages, all_images = [], []
             caption_map = get_caption_map()
@@ -298,8 +283,6 @@ class PromptBuilder(object):
             title: str = None,
             only_title: bool = False,
             supporting_context: Dict = None,
-            retrieve_content: bool = False,
-            keep_row_order: bool = False,
             **kwargs
     ):
         """
@@ -323,39 +306,30 @@ class PromptBuilder(object):
 
         # table prompt
         if self.prompt_style in ['create_table_select_full_table', 'create_table_select_3_full_table']:
-            generate_prompt += self._create_table_prompt(table, title)
+            generate_prompt += _create_table_prompt(table, title)
             generate_prompt += self._select_x_prompt(
                 df=table,
                 num_rows=table.shape[0],
-                question=question,
-                use_retriever=retrieve_content,
-                keep_row_order=keep_row_order,
                 few_shot_demonstration=False
             )
         elif self.prompt_style in ['create_table_select_3']:
-            generate_prompt += self._create_table_prompt(table, title)
+            generate_prompt += _create_table_prompt(table, title)
             generate_prompt += self._select_x_prompt(
                 df=table,
                 num_rows=3,
-                question=question,
-                use_retriever=retrieve_content,
-                keep_row_order=keep_row_order,
                 few_shot_demonstration=False
             )
         elif self.prompt_style == 'create_table':
-            generate_prompt += self._create_table_prompt(table, title)
+            generate_prompt += _create_table_prompt(table, title)
         elif self.prompt_style == 'no_table':
             # No table input, to test Codex QA with only internal knowledge
             pass
         elif self.prompt_style in ['create_table_select_3_full_table_w_all_passage_image']:
             assert passages is not None and images is not None
-            generate_prompt += self._create_table_prompt(table, title)
+            generate_prompt += _create_table_prompt(table, title)
             generate_prompt += self._select_x_prompt(
                 df=table,
                 num_rows=table.shape[0],
-                question=question,
-                use_retriever=retrieve_content,
-                keep_row_order=keep_row_order,
                 few_shot_demonstration=False
             )
             all_passages, all_images = [], []
@@ -389,13 +363,10 @@ class PromptBuilder(object):
             )
         elif self.prompt_style in ['create_table_select_3_full_table_w_gold_passage_image']:
             assert passages is not None and images is not None
-            generate_prompt += self._create_table_prompt(table, title)
+            generate_prompt += _create_table_prompt(table, title)
             generate_prompt += self._select_x_prompt(
                 df=table,
                 num_rows=table.shape[0],
-                question=question,
-                use_retriever=retrieve_content,
-                keep_row_order=keep_row_order,
                 few_shot_demonstration=False
             )
             gold_passages, gold_images = [], []
@@ -510,7 +481,8 @@ class OpenAIQAPromptBuilder(object):
                 db_prompt_lines_with_answer = []
                 db_prompt_lines_with_answer.append("/*")
                 db_prompt_lines_with_answer.append(db_prompt_lines[0])
-                assert len(db_prompt_lines[1:]) == len(item.qa_answer), "answer items and table rows must be in the same number, check annotations"
+                assert len(db_prompt_lines[1:]) == len(
+                    item.qa_answer), "answer items and table rows must be in the same number, check annotations"
                 for db_prompt_line, qa_answer_item in zip(db_prompt_lines[1:], item.qa_answer):
                     db_prompt_lines_with_answer.append(
                         "{}{}{}".format(db_prompt_line, db_mapping_token, qa_answer_item))
