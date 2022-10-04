@@ -79,7 +79,6 @@ def process_table_structure(_wtq_table_content: Dict, _add_all_column: bool = Fa
 def retrieve_wtq_query_answer(_engine, _table_content, _sql_struct: List):
     # do not append id / agg
     headers = _table_content["header"]
-    from utils.normalizer import normalize_header
 
     def flatten_sql(_ex_sql_struct: List):
         # [ "Keyword", "select", [] ], [ "Column", "c4", [] ]

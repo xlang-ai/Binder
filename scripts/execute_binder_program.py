@@ -11,7 +11,7 @@ import os
 import time
 
 from nsql.nsql_exec import Executor, NeuralDB
-from utils.normalizer import normalize_sql, postprosess_sql
+from utils.normalizer import post_process_sql
 from utils.utils import load_data_split, majority_vote
 from utils.evaluator import Evaluator
 
@@ -54,19 +54,12 @@ def worker_execute(
                     db = NeuralDB(
                         tables=[{"title": title, "table": table}]
                     )
-                    # TODO: Unify these two as one postprocess?
-                    nsql = normalize_sql(
+                    nsql = post_process_sql(
                         sql_str=nsql,
-                        all_headers=db.get_table_df().columns.to_list(),
+                        df=db.get_table_df(),
+                        process_program_with_fuzzy_match_on_db=args.process_program_with_fuzzy_match_on_db,
                         table_title=title
                     )
-                    try:
-                        nsql = postprosess_sql(
-                            sql_str=nsql,
-                            df=db.get_table_df(),
-                        )
-                    except:
-                        pass
                     exec_answer = executor.nsql_exec(nsql, db, verbose=args.verbose)
                     if isinstance(exec_answer, str):
                         exec_answer = [exec_answer]
@@ -220,6 +213,8 @@ if __name__ == '__main__':
                         help='The answer to be biased w. answer_biased_weight in majority vote.')
     parser.add_argument('--answer_biased_weight', type=float, default=None,
                         help='The weight of the answer to be biased in majority vote.')
+    parser.add_argument('--process_program_with_fuzzy_match_on_db', action='store_false',
+                        help='Whether use fuzzy match with db and program to improve on program.')
 
     # Debugging options
     parser.add_argument('--verbose', action='store_true')
