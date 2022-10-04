@@ -135,3 +135,6 @@ Temporary Items
 
 # PyCharm
 **/.idea/**/*
+
+# Cached data from dataset
+datasets/data
