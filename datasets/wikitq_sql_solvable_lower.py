@@ -17,8 +17,8 @@
 import json
 import os
 import datasets
-from utils.wtq_utils import _load_table_w_page as _load_table
-from utils.wtq_utils import WTQDBEngine, process_table_structure, retrieve_wtq_query_answer
+from utils.wtq.utils import _load_table_w_page as _load_table
+from utils.wtq.utils import WTQDBEngine, process_table_structure, retrieve_wtq_query_answer
 import shutil
 
 # Find for instance the citation on arxiv or on the dataset repo/website

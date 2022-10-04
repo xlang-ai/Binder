@@ -17,7 +17,7 @@
 import json
 import os
 import datasets
-from utils.wtq_utils import _load_table_w_page as _load_table
+from utils.wtq.utils import _load_table_w_page as _load_table
 
 # Find for instance the citation on arxiv or on the dataset repo/website
 _CITATION = """\

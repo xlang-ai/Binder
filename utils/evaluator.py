@@ -1,7 +1,7 @@
 import re
 
 from utils.normalizer import str_normalize
-from utils.wikitq_evaluator import to_value_list, check_denotation
+from utils.wtq.evaluator import to_value_list, check_denotation
 
 
 class Evaluator:

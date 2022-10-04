@@ -19,7 +19,7 @@ import json
 import os
 import datasets
 import shutil
-from utils.wtq_utils import _load_table_w_page as _load_table
+from utils.wtq.utils import _load_table_w_page as _load_table
 
 # Find for instance the citation on arxiv or on the dataset repo/website
 _CITATION = """\
@@ -42,7 +42,7 @@ _LICENSE = "CC-BY-SA-4.0 License"
 _URL = "https://github.com/ppasupat/WikiTableQuestions/archive/refs/heads/master.zip"
 _SQUALL_URL = "https://github.com/tzshi/squall/archive/refs/heads/main.zip"
 
-from utils.wtq_utils import WTQDBEngine, process_table_structure, retrieve_wtq_query_answer
+from utils.wtq.utils import WTQDBEngine, process_table_structure, retrieve_wtq_query_answer
 
 class WikiTableQuestion(datasets.GeneratorBasedBuilder):
     """The Squall dataset"""

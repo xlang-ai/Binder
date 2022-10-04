@@ -6,8 +6,8 @@ import re
 import unicodedata
 from fuzzywuzzy import fuzz
 
-from utils.extraction_from_sql import *
-from utils.sql_stuff import ALL_KEY_WORDS
+from utils.sql.extraction_from_sql import *
+from utils.sql.all_keywords import ALL_KEY_WORDS
 
 culture = Culture.English
 
