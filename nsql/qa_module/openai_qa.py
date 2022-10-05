@@ -24,7 +24,7 @@ class OpenAIQAModel(object):
         random.shuffle(self.keys)
 
         retrieve_pool = OpenAIQARetrievePool(
-            data_path=os.path.join(ROOT_DIR, args.qa_pool_dir)
+            data_path=os.path.join(ROOT_DIR, args.qa_retrieve_pool_file)
         )
         self.retriever = OpenAIQARetriever(retrieve_pool)
         self.generator = Generator(args=None, keys=self.keys)  # Just to use its call api function
