@@ -77,18 +77,14 @@ class Generator(object):
     def build_generate_prompt(
             self,
             data_item: Dict,
-            generate_type: Tuple,
-            retrieve_content: bool = False,
-            keep_row_order: bool = False,
+            generate_type: Tuple
     ):
         """
         Build the generate prompt
         """
         return self.prompt_builder.build_generate_prompt(
             **data_item,
-            generate_type=generate_type,
-            retrieve_content=retrieve_content,
-            keep_row_order=keep_row_order,
+            generate_type=generate_type
         )
 
     def generate_one_pass(
