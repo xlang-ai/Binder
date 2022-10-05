@@ -18,7 +18,7 @@ TOKENIZER_FALSE = "export TOKENIZERS_PARALLELISM=false\n"
 # wikitq nsql execution command
 os.system(fr"""{TOKENIZER_FALSE}python {ROOT_DIR}/scripts/execute_binder_program.py --dataset wikitq \
 --dataset_split test \
---qa_retrieve_pool_file templates/prompts/qa_retrieve_pool.json \
+--qa_retrieve_pool_file templates/qa_retrieve_pool.json \
 --input_program_file binder_program_wikitq_test.json \
 --output_program_execution_file binder_program_wikitq_test_exec.json \
 --vote_method simple""")
