@@ -135,6 +135,9 @@ def main():
     start_time = time.time()
     dataset = load_data_split(args.dataset, args.dataset_split)
 
+    # Load dataset for retrieve
+    dataset_for_retrieve = load_data_split("tab_fact", "train")
+
     # For TabFact test split, we load the small test set (about 2k examples) to test,
     # since it is expensive to test on full set
     if args.dataset == "tab_fact" and args.dataset_split == "test":
@@ -165,6 +168,7 @@ def main():
             generator,
             generate_eids_group[pid],
             dataset,
+            dataset_for_retrieve,
             tokenizer
         )))
 
