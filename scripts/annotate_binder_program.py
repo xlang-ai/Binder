@@ -7,8 +7,8 @@ import json
 import argparse
 import copy
 import os
-import traceback
-from typing import List, Tuple, Dict
+
+from typing import List
 import platform
 import multiprocessing
 
@@ -32,7 +32,6 @@ def worker_annotate(
     """
     g_dict = dict()
     built_few_shot_prompts = []
-    # TODO: Tabfact use retrieved examples, ref "multiprocess_annotate_fixprompt_NSQL_examples_sampling_generate50.py"
     for g_eid in g_eids:
         try:
             g_data_item = dataset[g_eid]
@@ -52,9 +51,7 @@ def worker_annotate(
             )
             generate_prompt = generator.build_generate_prompt(
                 data_item=g_data_item,
-                generate_type=(args.generate_type,),
-                retrieve_content=args.retrieve_content,
-                keep_row_order=args.keep_row_order,
+                generate_type=(args.generate_type,)
             )
             prompt = few_shot_prompt + "\n\n" + generate_prompt
 
@@ -168,7 +165,7 @@ if __name__ == '__main__':
 
     # File path or name
     parser.add_argument('--dataset', type=str, default='tab_fact',
-                        choices=['wikitq', 'tab_fact', 'mmqa'])
+                        choices=['wikitq', 'tab_fact'])
     parser.add_argument('--dataset_split', type=str, default='validation', choices=['train', 'validation', 'test'])
     parser.add_argument('--api_keys_file', type=str, default='key.txt')
     parser.add_argument('--prompt_file', type=str, default='templates/prompts/prompt_wikitq_v3.txt')
@@ -189,8 +186,6 @@ if __name__ == '__main__':
     parser.add_argument('--generate_type', type=str, default='nsql',
                         choices=['nsql', 'sql', 'answer', 'npython', 'python'])
     parser.add_argument('--n_shots', type=int, default=14)
-    parser.add_argument('--retrieve_content', action='store_true')
-    parser.add_argument('--keep_row_order', action='store_true')
     parser.add_argument('--seed', type=int, default=42)
 
     # Codex options

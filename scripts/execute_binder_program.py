@@ -2,10 +2,8 @@
 Multiprocess executing binder programs.
 """
 
-import time
 import json
 import argparse
-from functools import cmp_to_key
 import platform, multiprocessing
 import os
 import time
@@ -121,7 +119,7 @@ def main():
         with open(os.path.join(ROOT_DIR, "utils", "tab_fact", "small_test_id.json"), "r") as f:
             small_test_ids_for_iter = json.load(f)
         dataset = [data_item for data_item in dataset if data_item['table']['id'] in small_test_ids_for_iter]
-    
+
     # Load openai keys
     with open(args.api_keys_file, 'r') as f:
         keys = [line.strip() for line in f.readlines()]
@@ -187,7 +185,7 @@ if __name__ == '__main__':
 
     # File path or name
     parser.add_argument('--dataset', type=str, default='tab_fact',
-                        choices=['wikitq', 'tab_fact', 'mmqa'])
+                        choices=['wikitq', 'tab_fact'])
     parser.add_argument('--dataset_split', type=str, default='validation', choices=['train', 'validation', 'test'])
     parser.add_argument('--api_keys_file', type=str, default='key.txt')
     parser.add_argument('--save_dir', type=str, default='results/')
