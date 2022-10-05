@@ -102,11 +102,6 @@ def worker_execute(
             print(f'Process#{pid}: Wrong.')
         print(f'Process#{pid}: Accuracy: {n_correct_samples}/{n_total_samples}')
 
-    # Save tmp execution answers
-    # TODO: whether to save the temp results in released version
-    with open(os.path.join(args.save_dir, f'{args.output_program_execution_file[:-5]}_tmp_{pid}.json'), 'w') as f:
-        json.dump(nsql_dict, f, indent=4)
-
     return result_dict
 
 
