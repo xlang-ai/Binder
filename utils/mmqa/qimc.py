@@ -13,11 +13,11 @@ class Question_Image_Match_Classifier(object):
         self.qi_pairs_should_retrieve = None
         self.load_retrieve_info()
         self.caption_info = None
-        with open(os.path.join(ROOT_DIR, "mmqa_captions.json"), "r") as f:
+        with open(os.path.join(ROOT_DIR, "utils", "mmqa", "mmqa_captions.json"), "r") as f:
             self.caption_info = json.load(f)
 
     def load_retrieve_info(self):
-        df_qc = pd.read_csv(os.path.join(ROOT_DIR, "qc_mmqa_dev.csv"))
+        df_qc = pd.read_csv(os.path.join(ROOT_DIR, "utils", "mmqa", "qc_mmqa_dev.csv"))
         whether_retrieve_image = {}
         for index, row in df_qc.iterrows():
             _id = row['id']
@@ -25,7 +25,7 @@ class Question_Image_Match_Classifier(object):
             whether_retrieve_image[_id] = True if prediction == "['yes']" else False
         self.whether_retrieve_image = whether_retrieve_image
 
-        df_qimc = pd.read_csv(os.path.join(ROOT_DIR, "qimc_mmqa_dev.csv"))
+        df_qimc = pd.read_csv(os.path.join(ROOT_DIR, "utils", "mmqa", "qimc_mmqa_dev.csv"))
         qi_pairs_should_retrieve = {}
         for index, row in df_qimc.iterrows():
             qa = row['question'].lower()

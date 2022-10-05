@@ -12,7 +12,7 @@ class Question_Passage_Match_Classifier(object):
         self.load_retrieve_info()
 
     def load_retrieve_info(self):
-        df = pd.read_csv(os.path.join(ROOT_DIR, "qpmc_mmqa_dev.csv"))
+        df = pd.read_csv(os.path.join(ROOT_DIR, "utils", "mmqa", "qpmc_mmqa_dev.csv"))
         qa_pairs_should_retrieve = {}
         for index, row in df.iterrows():
             qa = row['question'].lower()
