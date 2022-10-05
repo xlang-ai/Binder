@@ -78,11 +78,10 @@ class OpenAIQAModel(object):
                                       qa_type="ans",
                                       prompting_method="new_db",
                                       db_mapping_token="😅",
-                                      eid=-1,
                                       verbose=True):
         prompt = "Question Answering Over Database:\n\n"
         if qa_type in ['map', 'ans'] and num_qa_shots > 0:
-            query_item = QAItem(id=eid, qa_question=question, table=sub_table, title=table_title)
+            query_item = QAItem(qa_question=question, table=sub_table, title=table_title)
             retrieved_items = self.retriever.retrieve(item=query_item, num_shots=num_qa_shots, qa_type=qa_type)
             few_shot_prompt_list = []
             for item in retrieved_items:
@@ -123,7 +122,7 @@ class OpenAIQAModel(object):
 
         return prompt
 
-    def qa(self, question, sub_tables, qa_type: str, eid: int, verbose: bool = True, **args):
+    def qa(self, question, sub_tables, qa_type: str, verbose: bool = True, **args):
         # If it is not a problem API can handle, answer it with a QA model.
         merged_table = OpenAIQAModel.merge_tables(sub_tables)
         if verbose:
@@ -139,7 +138,6 @@ class OpenAIQAModel(object):
                                                              args['table_title'],
                                                              self.answer_split_token,
                                                              qa_type,
-                                                             eid=eid,
                                                              prompting_method=self.prompting_method,
                                                              db_mapping_token=self.db_mapping_token,
                                                              verbose=verbose)
@@ -185,7 +183,6 @@ class OpenAIQAModel(object):
             prompt = self.wrap_with_prompt_for_table_qa(question,
                                                         merged_table,
                                                         args['table_title'],
-                                                        eid=eid,
                                                         prompting_method=self.prompting_method,
                                                         verbose=verbose)
             answers = [self.call_openai_for_completion_text(prompt).lower().strip(' []')]

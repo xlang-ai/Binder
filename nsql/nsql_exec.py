@@ -116,7 +116,6 @@ class Executor(object):
                                                            table_title=db.table_title,
                                                            qa_type="map",
                                                            new_col_name_s=step.produced_col_name_s,
-                                                           eid=db.eid,
                                                            verbose=verbose)
                         db.add_sub_table(sub_table, verbose=verbose)
                         col_idx += 1
@@ -126,7 +125,6 @@ class Executor(object):
                                                            table_title=db.table_title,
                                                            qa_type="map",
                                                            new_col_name_s=["col_{}".format(col_idx)],
-                                                           eid=db.eid,
                                                            verbose=verbose)
                         return extract_answers(sub_table)
 
@@ -137,7 +135,6 @@ class Executor(object):
                                                     sql_executed_sub_tables,
                                                     table_title=db.table_title,
                                                     qa_type="ans",
-                                                    eid=db.eid,
                                                     verbose=verbose)
                     if step.father:
                         step.rename_father_val(answer)
