@@ -10,6 +10,7 @@ from collections.abc import Iterable
 
 from datasets import load_dataset
 
+ROOT_DIR = os.path.join(os.path.dirname(__file__), "../")
 
 def _load_table(table_path) -> dict:
     """
@@ -144,7 +145,7 @@ def majority_vote(
     return pred_answer, pred_answer_nsqls
 
 
-def load_data_split(dataset_to_load, split, data_dir='../datasets/'):
+def load_data_split(dataset_to_load, split, data_dir=os.path.join(ROOT_DIR, 'datasets/')):
     dataset_split_loaded = load_dataset(
         path=os.path.join(data_dir, "{}.py".format(dataset_to_load)),
         cache_dir=os.path.join(data_dir, "data"))[split]
