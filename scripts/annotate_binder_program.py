@@ -111,6 +111,13 @@ def main():
     start_time = time.time()
     dataset = load_data_split(args.dataset, args.dataset_split)
 
+    # For TabFact test split, we load the small test set (about 2k examples) to test,
+    # since it is expensive to test on full set
+    if args.dataset == "tab_fact" and args.dataset_split == "test":
+        with open(os.path.join(ROOT_DIR, "utils", "tab_fact", "small_test_id.json"), "r") as f:
+            small_test_ids_for_iter = json.load(f)
+        dataset = [data_item for data_item in dataset if data_item['table']['id'] in small_test_ids_for_iter]
+
     # Load openai keys
     with open(args.api_keys_file, 'r') as f:
         keys = [line.strip() for line in f.readlines()]
