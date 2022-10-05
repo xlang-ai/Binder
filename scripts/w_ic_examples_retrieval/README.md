@@ -1,0 +1,3 @@
+We do `sample selection` -> `annotation` -> `in-context learning examples retrieval` -> `in-context learning with Large Language Model` in this setting, following the vote-k method of [Su et al.](https://arxiv.org/abs/2209.01975), for beating above state-of-the-art by annotating 200 examples.
+We provide this pre-processed examples' nsql for replicating the result.
+Please unzip the `tab_fact_in_context_examples_test_from_train.json.zip` then run the code.(The unzip-ed file is 100MB big because a lot of repetitive content contains in the file for easy loading, we will handle that with more beauty next time =)
