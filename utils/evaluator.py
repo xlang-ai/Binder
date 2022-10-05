@@ -2,6 +2,7 @@ import re
 
 from utils.normalizer import str_normalize
 from utils.wtq.evaluator import to_value_list, check_denotation
+from utils.mmqa.evaluator import acc
 
 
 class Evaluator:
@@ -20,14 +21,12 @@ class Evaluator:
             return self.eval_ex_match(pred_answer, gold_answer, allow_semantic, question)
         elif dataset == 'tab_fact':
             return self.eval_tabfact_match(pred_answer, gold_answer)
+        elif dataset == 'mmqa':
+            # For more metrics on MMQA,
+            # please use the utils/mmqa/eval_mmqa.py to call official on all prediction data
+            return self.eval_mmqa_match(pred_answer, gold_answer)
         else:
             raise ValueError(f'{dataset} evaluator is not supported.')
-
-    def eval_tabfact_match(self, pred, gold):
-        if isinstance(pred, list):
-            pred = pred[0]
-        pred, gold = str(pred), str(gold)
-        return pred == gold
 
     def eval_ex_match(self, pred, gold, allow_semantic=True, question=None):
         pred = [str(p).lower().strip() for p in pred]
@@ -95,3 +94,12 @@ class Evaluator:
             pred = to_value_list(pred)
             gold = to_value_list(gold)
             return check_denotation(pred, gold)
+
+    def eval_tabfact_match(self, pred, gold):
+        if isinstance(pred, list):
+            pred = pred[0]
+        pred, gold = str(pred), str(gold)
+        return pred == gold
+
+    def eval_mmqa_match(self, pred_answer, gold_answer):
+        return acc(pred_answer, gold_answer)

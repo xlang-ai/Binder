@@ -7,9 +7,9 @@ EXECUTION_RESULT_PATH = "../results_mmqa/unfiltered_mmqa_nsqls_mmqa_v2_all_stand
 if __name__ == '__main__':
     right = 0
     all_num = 0
-    with open("../results_mmqa/unfiltered_mmqa_nsqls_mmqa_v2_all_standard.json", "r") as f:
+    with open(ANNOTATION_RESULT_PATH, "r") as f:
         all_data = json.load(f)
-    with open("../results_mmqa/unfiltered_mmqa_nsqls_mmqa_v2_all_standard_new_qa_pool_bug_fixed_v1.json", "r") as f:
+    with open(EXECUTION_RESULT_PATH, "r") as f:
         pred_data = json.load(f)
 
     pred_dict = {eid: [str(a) for a in pred_data[eid]['pred_answer']] for eid in pred_data}
