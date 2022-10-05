@@ -181,7 +181,7 @@ def main():
     pool = multiprocessing.Pool(processes=args.n_processes)
     for pid in range(args.n_processes):
         from transformers import AutoTokenizer
-        tokenizer = AutoTokenizer.from_pretrained(pretrained_model_name_or_path="../utils/gpt2")
+        tokenizer = AutoTokenizer.from_pretrained(pretrained_model_name_or_path=os.path.join(ROOT_DIR, "utils", "gpt2"))
         worker_results.append(pool.apply_async(worker_annotate, args=(
             pid,
             args,
