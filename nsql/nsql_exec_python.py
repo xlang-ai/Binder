@@ -13,9 +13,9 @@ from subprocess import PIPE, Popen
 
 # For Python execution.
 class Executor(object):
-    def __init__(self):
+    def __init__(self, args, keys=None):
         self.new_col_name_id = 0
-        self.qa_model = OpenAIQAModel()
+        self.qa_model = OpenAIQAModel(args, keys)
 
     def nsql_exec(self, nsql: str, db: pd.DataFrame, verbose=True):
         # Add import part
