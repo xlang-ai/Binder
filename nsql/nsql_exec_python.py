@@ -4,8 +4,6 @@ import json
 import pandas as pd
 import pickle
 from nsql.qa_module.openai_qa import OpenAIQAModel
-from nsql.database import NeuralDB
-import copy
 import os
 import time
 from subprocess import PIPE, Popen
@@ -23,7 +21,6 @@ class Executor(object):
 import json
 import pandas as pd
 import pickle
-<<<<<<< HEAD
 import copy
 import os
 import time
@@ -31,13 +28,11 @@ import numpy as np
 from collections.abc import Iterable
 from nsql.qa_module.openai_qa import OpenAIQAModel
 from nsql.database import NeuralDB
-=======
 from nsql.qa_module.openai_qa import OpenAIQAModel
 from nsql.database import NeuralDB
 import copy
 import os
 import time
->>>>>>> 9798bacc323de9149d394762988997142b26fd87
 verbose = {}""".format(str(verbose))
 
         # Add qa_map function
@@ -98,10 +93,7 @@ verbose = {}""".format(str(verbose))
     with open("{}", "rb") as f:
         db = pickle.load(f)
     result = solve(db)
-<<<<<<< HEAD
     result = nested_to_python_number(result)
-=======
->>>>>>> 9798bacc323de9149d394762988997142b26fd87
     with open("{}", "w") as f:
         json.dump(result, f)""".format(db_path, result_path)
 
