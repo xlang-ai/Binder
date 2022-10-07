@@ -17,7 +17,7 @@ from generation.generator import Generator
 from utils.utils import load_data_split
 from nsql.database import NeuralDB
 
-ROOT_DIR = os.path.join(os.path.dirname(__file__), "../")
+ROOT_DIR = os.path.join(os.path.dirname(__file__), "../../")
 
 
 def worker_annotate(
@@ -36,7 +36,7 @@ def worker_annotate(
     built_few_shot_prompts = []
     # Hard encode, only work for test
     with open(os.path.join(ROOT_DIR, "scripts", "w_ic_examples_retrieval",
-                           "tab_fact_in_context_examples_test_from_train_ids.json", "r")) as f:
+                           "tab_fact_in_context_examples_test_from_train_ids.json"), "r") as f:
         tab_fact_in_context_examples_test_from_train_ids = json.load(f)
 
     with open(os.path.join(ROOT_DIR, "scripts", "w_ic_examples_retrieval",
@@ -44,7 +44,7 @@ def worker_annotate(
         nsql_annotations_tab_fact_train = json.load(f)
 
     tab_fact_in_context_examples_test = {}
-    for _id, ids in tab_fact_in_context_examples_test_from_train_ids.keys:
+    for _id, ids in tab_fact_in_context_examples_test_from_train_ids.items():
         nsqls_for_the_examples = [{"nid": nid, "nsql": nsql_annotations_tab_fact_train[nid]} for nid in ids]
         tab_fact_in_context_examples_test[_id] = nsqls_for_the_examples
 
