@@ -487,7 +487,7 @@ def post_process_sql(sql_str, df, table_title=None, process_program_with_fuzzy_m
 
         return new_sql_str
 
-    sql_str = basic_fix(sql_str, df.columns, table_title)
+    sql_str = basic_fix(sql_str, list(df.columns), table_title)
 
     if process_program_with_fuzzy_match_on_db:
         try:

@@ -1,7 +1,7 @@
 import os
 import pandas as pd
 
-ROOT_DIR = os.path.join(os.path.dirname(__file__), "../")
+ROOT_DIR = os.path.join(os.path.dirname(__file__), "../../")
 
 
 class Question_Passage_Match_Classifier(object):
