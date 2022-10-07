@@ -7,6 +7,7 @@ from nsql.qa_module.openai_qa import OpenAIQAModel
 import os
 import time
 from subprocess import PIPE, Popen
+import uuid
 
 
 # For Python execution.
@@ -32,7 +33,6 @@ verbose = {}""".format(str(verbose))
 
         # Add qa_map function
         qa_map_function_part = """def qa_map(db: pd.DataFrame, question, columns):
-    qa_model = OpenAIQAModel()
     new_db = NeuralDB([{"title": "", "table": {"header": db.columns.values.tolist(), "rows": db.values.tolist()}}])
     sql_executed_sub_tables = []
     for column in columns:
@@ -43,21 +43,19 @@ verbose = {}""".format(str(verbose))
                                           table_title=new_db.table_title,
                                           qa_type="map",
                                           new_col_name_s=[question],
-                                          eid=new_db.eid,
                                           verbose=verbose)
-        new_db.add_subtable(sub_table, verbose=verbose)
+        new_db.add_sub_table(sub_table, verbose=verbose)
     table = new_db.get_table()
     return pd.DataFrame(table["rows"], columns=table["header"])"""
 
         # Add qa_ans function
         qa_ans_function_part = """def qa_ans(db: pd.DataFrame, question, columns):
-    qa_model = OpenAIQAModel()
     new_db = NeuralDB([{"title": "", "table": {"header": db.columns.values.tolist(), "rows": db.values.tolist()}}])
     sql_executed_sub_tables = []
     for column in columns:
         column = f"`{column}`"
         sql_executed_sub_tables.append(new_db.execute_query(column))
-        answer = qa_model.qa(question,sql_executed_sub_tables,table_title=new_db.table_title,qa_type="ans",eid=new_db.eid,verbose=verbose)
+        answer = qa_model.qa(question,sql_executed_sub_tables,table_title=new_db.table_title,qa_type="ans",verbose=verbose)
     return answer"""
 
         # Convert np number type to python type
@@ -75,31 +73,41 @@ verbose = {}""".format(str(verbose))
         tmp_root_path = "tmp_python"
         os.makedirs(tmp_root_path, exist_ok=True)
         # Save the db
-        db_file_path = '{}.db'.format(hash(time.time()))
+        db_file_path = '{}.db'.format(format(uuid.uuid4()))
         db_path = os.path.join(tmp_root_path, db_file_path)
         with open(db_path, "wb") as f:
             pickle.dump(db, f)
 
-        result_file_path = '{}.json'.format(hash(time.time()))
+        # Save the qa_model
+        model_file_path = '{}.model'.format(format(uuid.uuid4()))
+        model_path = os.path.join(tmp_root_path, model_file_path)
+        with open(model_path, "wb") as f:
+            pickle.dump(self.qa_model, f)
+
+        # Set the result path
+        result_file_path = '{}.json'.format(format(uuid.uuid4()))
         result_path = os.path.join(tmp_root_path, result_file_path)
 
         # Read it and call solve function
         main_part = """if __name__ == '__main__':
     with open("{}", "rb") as f:
         db = pickle.load(f)
+    with open("{}", "rb") as f:
+        qa_model = pickle.load(f)
     result = solve(db)
     result = nested_to_python_number(result)
     with open("{}", "w") as f:
-        json.dump(result, f)""".format(db_path, result_path)
+        json.dump(result, f)""".format(db_path, model_path, result_path)
 
         # Concat the code and execute the python
-        all_code = "{}\n\n{}\n\n{}\n\n{}\n\n".format(import_part, qa_map_function_part, qa_ans_function_part, convert_part) + nsql + "\n\n" + main_part
+        all_code = "{}\n\n{}\n\n{}\n\n{}\n\n".format(import_part, qa_map_function_part, qa_ans_function_part,
+                                                     convert_part) + nsql + "\n\n" + main_part
 
         if verbose:
             print("----> Code <----")
             print(all_code)
 
-        python_file_path = '{}.py'.format(hash(time.time()))
+        python_file_path = '{}.py'.format(format(uuid.uuid4()))
         python_path = os.path.join(tmp_root_path, python_file_path)
         with open(python_path, "w") as f:
             f.write(all_code)
