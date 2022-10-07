@@ -21,13 +21,8 @@ class Executor(object):
 import json
 import pandas as pd
 import pickle
-import copy
-import os
-import time
 import numpy as np
 from collections.abc import Iterable
-from nsql.qa_module.openai_qa import OpenAIQAModel
-from nsql.database import NeuralDB
 from nsql.qa_module.openai_qa import OpenAIQAModel
 from nsql.database import NeuralDB
 import copy
