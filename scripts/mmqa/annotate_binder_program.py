@@ -18,7 +18,7 @@ from nsql.database import NeuralDB
 from utils.mmqa.qpmc import Question_Passage_Match_Classifier
 from utils.mmqa.qimc import Question_Image_Match_Classifier
 
-ROOT_DIR = os.path.join(os.path.dirname(__file__), "../")
+ROOT_DIR = os.path.join(os.path.dirname(__file__), "../../")
 
 
 def worker_annotate(

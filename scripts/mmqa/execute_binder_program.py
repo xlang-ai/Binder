@@ -13,7 +13,7 @@ from utils.normalizer import post_process_sql
 from utils.utils import load_data_split, majority_vote
 from utils.evaluator import Evaluator
 
-ROOT_DIR = os.path.join(os.path.dirname(__file__), "../")
+ROOT_DIR = os.path.join(os.path.dirname(__file__), "../../")
 
 
 def worker_execute(
