@@ -11,7 +11,7 @@ import pandas as pd
 import copy
 
 from utils.errors import DuplicateColumnsError
-from utils.image.image_stuff import get_caption_map
+from utils.mmqa.image_stuff import get_caption_map
 from retrieval.retrieve_pool import QAItem
 
 from utils.normalizer import prepare_df_for_neuraldb_from_table

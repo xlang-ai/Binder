@@ -205,7 +205,7 @@ if __name__ == '__main__':
                         help='Whether regarding none and empty executions as a valid answer.')
     parser.add_argument('--allow_error_answer', action='store_true',
                         help='Whether regarding error execution as a valid answer.')
-    parser.add_argument('--answer_placeholder', type=str, default='<error|empty>',
+    parser.add_argument('--answer_placeholder', type=int, default=0,
                         help='Placeholder answer if execution error occurs.')
     parser.add_argument('--vote_method', type=str, default='simple',
                         choices=['simple', 'prob', 'answer_biased'])
