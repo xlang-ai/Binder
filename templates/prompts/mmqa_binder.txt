@@ -1,0 +1,523 @@
+Generate SQL given the question, table, passages, image captions to answer the question correctly.
+If question-relevant column(s) contents are not suitable for SQL comparisons or calculations, map it to a new column with clean content by a new grammar QA("map@").
+If mapping to a new column still can not answer the question with valid SQL, turn to an end-to-end solution by a new grammar QA("ans@"). This grammar aims to solve all the rest of complex questions or tables or passages or image captions.
+
+CREATE TABLE Dutch Ruppersberger (Electoral history)(
+	row_id int,
+	year int,
+	office text,
+	election text,
+	filledcolumnname real,
+	subject text,
+	party text,
+	votes text,
+	% text,
+	filledcolumnname_2 real,
+	opponent text,
+	party_2 text,
+	votes_2 text,
+	%_2 text)
+/*
+3 example rows:
+SELECT * FROM w LIMIT 3;
+row_id	year	office	election	filledcolumnname	subject	party	votes	%	filledcolumnname_2	opponent	party_2	votes_2	%_2
+0	1994	baltimore county executive	general	nan	dutch ruppersberger	democratic	n/a	n/a	nan	n/a	n/a	n/a	n/a
+1	1998	baltimore county executive	general	nan	dutch ruppersberger	democratic	166482	70.47	nan	john j. bishop	republican	69449	29.4
+2	2002	none	general	nan	dutch ruppersberger	democratic	105718	54.16	nan	helen delich bentley	republican	88954	45.57
+*/
+Q: What year was Elizabeth Matory the opponent of Charles Albert Ruppersberger?
+NeuralSQL: SELECT year FROM w WHERE opponent = 'elizabeth matory'
+
+
+CREATE TABLE Virtual Console (Titles)(
+	row_id int,
+	system text,
+	japan int,
+	[[list of virtual console games for wii u (north america)|north  america]] real,
+	pal region - europe real,
+	pal region - australia real)
+/*
+3 example rows:
+SELECT * FROM w LIMIT 3;
+row_id	system	japan	[[list of virtual console games for wii u (north america)|north  america]]	pal region - europe	pal region - australia
+0	nes/famicom	148	94.0	89.0	89.0
+1	super nes/super famicom	101	51.0	49.0	49.0
+2	nintendo 64	22	21.0	21.0	21.0
+*/
+Q: Which system has a lower number for Japan of the virtual console systems: Game Boy Advance or the Japan-only console MSX?
+NeuralSQL: SELECT system FROM w WHERE system IN ('game boy advance', 'msx (japan only)') ORDER BY japan LIMIT 1
+
+
+CREATE TABLE 2018 Warrington Wolves season (Transfers | In)(
+	row_id int,
+	player text,
+	signed from text,
+	contract length text,
+	announced text)
+/*
+3 example rows:
+SELECT * FROM w LIMIT 3;
+row_id	player	signed from	contract length	announced
+0	sitaleki akauola	penrith panthers	p2y	2017-08-01 00:00:00
+1	bryson goodwin	south sydney rabbitohs	p2y	2017-10-01 00:00:00
+2	tyrone roberts	gold coast titans	p3y	2017-10-01 00:00:00
+*/
+CREATE TABLE Images(
+	row_id int,
+	gold coast titans text)
+/*
+All rows of the table:
+SELECT * FROM w;
+row_id	gold coast titans
+0	a logo for the golden knights is painted on the beach.
+*/
+Q: What player was transferred from the team that has crossed swords on its logo to the Warrington Wolves in the 2018 season?
+NeuralSQL: SELECT player FROM w WHERE QA("map@Has crossed swords on its logo?"; `signed from`) = 'yes'
+
+
+CREATE TABLE 2013 Arizona Cardinals season (Regular season)(
+	row_id int,
+	week int,
+	date text,
+	opponent text,
+	result text,
+	record text,
+	game site text,
+	nfl.com recap text)
+/*
+3 example rows:
+SELECT * FROM w LIMIT 3;
+row_id	week	date	opponent	result	record	game site	nfl.com recap
+0	1	september 8	at st. louis rams	l 24–27	0–1	edward jones dome	[http://www.nfl.com/gamecenter/2013090810/2013/reg1/cardinals@rams recap]
+1	2	september 15	detroit lions	w 25–21	1–1	university of phoenix stadium	[http://www.nfl.com/gamecenter/2013091509/2013/reg2/lions@cardinals recap]
+2	3	september 22	at new orleans saints	l 7–31	1–2	mercedes-benz superdome	[http://www.nfl.com/gamecenter/2013092207/2013/reg3/cardinals@saints recap]
+*/
+CREATE TABLE Passages(
+	row_id int,
+	candlestick park text)
+/*
+All rows of the table:
+SELECT * FROM w;
+row_id	candlestick park
+0	candlestick park was an outdoor sports and entertainment stadium in the west coast of the united states, located in san francisco, in the bayview heights area. the stadium was originally the home of major league baseball's san francisco giants, who played there from 1960 until moving into pacific bell park (since renamed at&t park) in 2000. it was also the home field of the san francisco 49ers of the national football league from 1971 through 2013. the 49ers moved to levi's stadium in santa clara for the 2014 season.
+*/
+Q: In which year did the San Francisco 49ers move to their new stadium, which was the location that the Arizona Cardinals lost a 2013 regular season game by the score of 20 to 32?
+NeuralSQL: SELECT QA("map@In which year did the San Francisco 49ers move to their new stadium?"; `game site`) FROM w WHERE opponent LIKE '%san francisco 49ers%' AND result = 'l 20–32'
+
+
+CREATE TABLE PNC Park (Concerts)(
+	row_id int,
+	date text,
+	artist text,
+	opening act(s) text,
+	tour / concert name text,
+	attendance text,
+	revenue text,
+	notes text)
+/*
+3 example rows:
+SELECT * FROM w LIMIT 3;
+row_id	date	artist	opening act(s)	tour / concert name	attendance	revenue	notes
+0	2003-08-06 00:00:00	bruce springsteen & the e street band	—	the rising tour	42301 / 48074	$3137575	none
+1	2005-06-26 00:00:00	jimmy buffett	—	a salty piece of land tour	—	—	sonny landreth and jake shimabukuro were special guests http://www.buffettworld.com/archives/2005-a-salty-piece-of-land/6-26/
+2	2005-09-28 00:00:00	the rolling stones	pearl jam	a bigger bang	—	—	none
+*/
+CREATE TABLE Passages(
+	row_id int,
+	can't stop won't stop (usher song) text,
+	uptown girl text)
+/*
+All rows of the table:
+SELECT * FROM w;
+row_id	can't stop won't stop (usher song)	uptown girl
+0	"can't stop won't stop" is a song recorded by american recording artist usher for his seventh studio album looking 4 myself (2012). written and produced by will "will.i.am" adams and keith harris, the song contains an interpolation of the bridge to billy joel's 1983 hit single "uptown girl". musically, "can't stop won't stop" is a eurodance and dance-pop song that incorporates elements of dubstep.	"uptown girl" is a song written and performed by american musician billy joel. it was released on 1983-9-29, on his ninth studio album an innocent man (1983). the lyrics describe a working-class "downtown man" attempting to woo a wealthy "uptown girl."
+*/
+Q: This song released on September 29, 1983 and inspired a hit song by Usher was written by who?
+NeuralSQL: QA("ans@This song released on September 29, 1983 and inspired a hit song by Usher was written by who?"; Uptown Girl; Can't Stop Won't Stop (Usher song) )
+
+
+CREATE TABLE 2000 DirecTV 500 (Top 10 results)(
+	row_id int,
+	pos int,
+	grid int,
+	car number (no.) int,
+	driver text,
+	team text,
+	manufacturer text,
+	laps completed (laps) int,
+	points int)
+/*
+3 example rows:
+SELECT * FROM w LIMIT 3;
+row_id	pos	grid	car number (no.)	driver	team	manufacturer	laps completed (laps)	points
+0	1	4	8	dale earnhardt, jr. (r)	dale earnhardt, inc.	chevrolet	334	185
+1	2	37	99	jeff burton	roush racing	ford	334	175
+2	3	14	18	bobby labonte	joe gibbs racing	pontiac	334	170
+*/
+CREATE TABLE Images(
+	row_id int,
+	dale earnhardt text)
+/*
+All rows of the table:
+SELECT * FROM w;
+row_id	dale earnhardt
+0	a man wearing a number of neckties and a mustache.
+*/
+Q: The 2000 DirecTv 500 Top 10 Driver with 146 points has a person behind them holding what?
+NeuralSQL: SELECT QA("map@what is the person behind holding?"; driver) FROM w WHERE points = 146
+
+
+CREATE TABLE Oliver Mellor (Credits | Television)(
+	row_id int,
+	year text,
+	title text,
+	role text,
+	notes text)
+/*
+3 example rows:
+SELECT * FROM w LIMIT 3;
+row_id	year	title	role	notes
+0	2006	the royal	dr. guy fitzgerald	none
+1	2006	hollyoaks: in the city	detective monroe	3 episodes
+2	2006	doctor who	matt	episode "army of ghosts"
+*/
+CREATE TABLE Passages(
+	row_id int,
+	charlie stubbs (coronation street) text)
+/*
+All rows of the table:
+SELECT * FROM w;
+row_id	charlie stubbs (coronation street)
+0	in 2005, charlie began a relationship with tracy barlow (kate ford). he convinced her to move in with him and later in february 2006, manipulated her into having her daughter amy (amber chadwick) move in with her parents. in turn, tracy began to manipulate charlie. she pretended to be pregnant and used the money he gave her for an abortion to buy expensive shoes and used her "grief" to have him allow amy to move back in. when shelley visited before her mother’s marriage to fred elliott (john savident), she and charlie had a 1-tni stand. she told tracy about their tni of passion, who accused her of lying. shelley later revealed that she was pregnant with charlie’s baby but didn’t allow charlie to have anything to do with the baby, and left. he and tracy briefly split but reconciled. charlie later began an affair with maria sutherland (samia smith), who was renting his flat. when david platt (jack p. shepherd) discovered the affair he tried to blackmail charlie, threatening to reveal the affair to tracy. charlie retaliated by trying to drown david in the bath. when tracy eventually found out about the affair, they split once more. tracy began to plot revenge against charlie and pretended to make amends with charlie. she pretended he was abusing her to the point of burning herself with an iron to make it look like charlie was responsible for her injuries. charlie eventually realized his partner was seeking revenge and when he was about to tell her their relationship was over, she insisted on performing a lap dance for him. she hit him round the head with a heavy ornament, and he later died in hospital. she claimed she’d killed him in self-defence but the court found her guilty and she was given a life sentence.
+*/
+Q: Oliver Mellor played Dr. Matt Carter on the TV show that had Tracy Barlow kill who?
+NeuralSQL: QA("ans@Oliver Mellor played Dr. Matt Carter on the TV show that had Tracy Barlow kill who?"; SELECT title FROM w WHERE role = 'dr. matt carter'; Charlie Stubbs (Coronation Street))
+
+
+CREATE TABLE Peter Egan (Filmography)(
+	row_id int,
+	year text,
+	title text,
+	role text,
+	notes text)
+/*
+3 example rows:
+SELECT * FROM w LIMIT 3;
+row_id	year	title	role	notes
+0	1971	1 brief su	bill denton	none
+1	1971	elizabeth r	earl of southampton	episode: "sweet englands pride"
+2	1973	the hireling	captain hugh cantrip	none
+*/
+CREATE TABLE Passages(
+	row_id int,
+	wampanoag text)
+/*
+All rows of the table:
+SELECT * FROM w;
+row_id	wampanoag
+0	traditionally wampanoag people have been semi-sedentary, with seasonal movements between fixed sites in present-day southern new england. the men often traveled far north and south along the eastern seaboard for seasonal fishing expeditions, and sometimes stayed in those distant locations for weeks and months at a time. the women cultivated varieties of the "3 sisters" (the intercropping of maize, climbing beans, and squash) as the staples of their diet, supplemented by fish and game caught by the men. each community had authority over a well-defined territory from which the people derived their livelihood through a seasonal round of fishing, planting, harvesting, and hunting. because southern new england was thickly populated by indigenous peoples, hunting grounds had strictly defined boundaries.
+*/
+Q: corn beans and squash the three most important crops of the wampanoag were also known as
+NeuralSQL: QA("ans@corn beans and squash the three most important crops of the wampanoag were also known as?"; Wampanoag)
+
+
+CREATE TABLE 1980 in home video (Movie releases)(
+	row_id int,
+	u.s./canada release date text,
+	title text,
+	studio text,
+	notes text)
+/*
+3 example rows:
+SELECT * FROM w LIMIT 3;
+row_id	u.s./canada release date	title	studio	notes
+0	january 1	the muppet movie	magnetic video	betamax release laserdisc release   vhs release
+1	march 4	20000 leagues under the sea	walt disney home entertainment	betamax release vhs release
+2	march 4	the apple dumpling gang	walt disney home entertainment	betamax release vhs release
+*/
+CREATE TABLE Passages(
+	row_id int,
+	bert lahr text)
+/*
+All rows of the table:
+SELECT * FROM w;
+row_id	bert lahr
+0	bert lahr ((1895-8-131967-12-4,p26410d)) was an american actor, particularly of stage and film, and comedian. lahr is known for his role as the cowardly lion, as well as his counterpart kansas farmworker zeke, in the wizard of oz (1939). he was well known for his explosive humor, but also adapted well to dramatic roles and his work in burlesque, vaudeville, and on broadway.
+*/
+Q: In the 1980 movie that was put out by the MGM/CBS Home Video studio, who played the part of the Cowardly Lion?
+NeuralSQL: QA("ans@who played the part of the Cowardly Lion?"; SELECT title FROM w WHERE studio = 'mgm/cbs home video';  Bert Lahr)
+
+
+CREATE TABLE List of newspapers in Italy (National daily newspapers)(
+	row_id int,
+	newspaper text,
+	circulation text,
+	headquarters text,
+	est. int,
+	political alignment text,
+	nameplate text)
+/*
+3 example rows:
+SELECT * FROM w LIMIT 3;
+row_id	newspaper	circulation	headquarters	est.	political alignment	nameplate
+0	corriere della sera	242684	milan	1876	centrism	200x200px
+1	la repubblica	198835	rome	1976	social democracy	150x150px
+2	la gazzetta dello sport	161796	milan	1896	—	200x200px
+*/
+CREATE TABLE Passages(
+	row_id int,
+	early middle ages text)
+/*
+All rows of the table:
+SELECT * FROM w;
+row_id	early middle ages
+0	for almost p1000y, rome was the most politically important, richest and largest city in europe. around 100 ce, it had a population of about 450000, and declined to a mere 20000 during the early middle ages, reducing the sprawling city to groups of inhabited buildings interspersed among large areas of ruins and vegetation.
+*/
+CREATE TABLE Images(
+	row_id int,
+	rome text)
+/*
+All rows of the table:
+SELECT * FROM w;
+row_id	rome
+0	a series of photographs showing a colorful scene.
+*/
+Q: In the city that was the center of imperial life in the roman empire in the early fifth century, the building in the top right has what at its top?
+NeuralSQL: QA("ans@he building in the top right has what at its top?"; QA("ans@what is the city that was the center of imperial life in the roman empire in the early fifth century?"; Imperial fora))
+
+
+CREATE TABLE International League (Current teams)(
+	row_id int,
+	division text,
+	team text,
+	founded int,
+	mlb affiliation text,
+	affiliated int,
+	city text,
+	stadium text,
+	capacity int)
+/*
+3 example rows:
+SELECT * FROM w LIMIT 3;
+row_id	division	team	founded	mlb affiliation	affiliated	city	stadium	capacity
+0	north	buffalo bisons	1985	toronto blue jays	2013	buffalo, new york	sahlen field	16600
+1	north	lehigh valley ironpigs	2008	philadelphia phillies	2007	allentown, pennsylvania	coca-cola park	10100
+2	north	pawtucket red sox	1973	boston red sox	1970	pawtucket, rhode island	mccoy stadium	10031
+*/
+CREATE TABLE Images(
+	row_id int,
+	columbus clippers text)
+/*
+All rows of the table:
+SELECT * FROM w;
+row_id	columbus clippers
+0	a large blue and white clock on the side of a building.
+*/
+Q: Was the Team that has a ship in logo or Charlotte Knights, the one with earlier affiliation in Current teams of International League?
+NeuralSQL: SELECT team FROM w WHERE team = 'charlotte knights' OR QA("map@Has a ship in logo or Charlotte Knights?"; team) = 'yes' ORDER BY founded LIMIT 1
+
+
+CREATE TABLE Warren Burton (Filmography)(
+	row_id int,
+	year int,
+	title text,
+	role text,
+	notes text)
+/*
+3 example rows:
+SELECT * FROM w LIMIT 3;
+row_id	year	title	role	notes
+0	1976	baby blue marine	second serviceman	none
+1	1977	chatterbox	tv reporter	none
+2	1977	the world's greatest lover	ludwig	none
+*/
+CREATE TABLE Images(
+	row_id int,
+	green lantern (film) text)
+/*
+All rows of the table:
+SELECT * FROM w;
+row_id	green lantern (film)
+0	a picture of a green and white costume and glasses.
+*/
+Q: How many people are on the poster for Green Lantern (film)?
+NeuralSQL: QA("ans@How many people are on the poster for Green Lantern (film)?";  Green Lantern (film))
+
+
+CREATE TABLE One Hour Photo (Accolades)(
+	row_id int,
+	award text,
+	category text,
+	recipients text,
+	result real)
+/*
+3 example rows:
+SELECT * FROM w LIMIT 3;
+row_id	award	category	recipients	result
+0	critics' choice movie awards	best actor	robin williams	nan
+1	dallas–fort worth film critics association	best actor	robin williams	nan
+2	online film critics society	best actor	robin williams	nan
+*/
+CREATE TABLE Images(
+	row_id int,
+	saturn award text)
+/*
+All rows of the table:
+SELECT * FROM w;
+row_id	saturn award
+0	a man in a suit and tie holding a glass.
+*/
+Q: What is he holding in Saturn Award?
+NeuralSQL: QA("ans@What is he holding?"; Saturn Award)
+
+
+CREATE TABLE 2013 Detroit Lions season (2013 Draft class)(
+	row_id int,
+	draft order - round int,
+	draft order - choice int,
+	draft order - overall int,
+	player name text,
+	position text,
+	height text,
+	weight text,
+	college text,
+	contract text,
+	notes text,
+	source text)
+/*
+3 example rows:
+SELECT * FROM w LIMIT 3;
+row_id	draft order - round	draft order - choice	draft order - overall	player name	position	height	weight	college	contract	notes	source
+0	1	5	5	ezekiel ansah	defensive end	6ft 5 in	271lbs	byu	p5y /	none	[http://www.mlive.com/lions/index.ssf/2013-4/detroit_lions_select_ezekiel_a.html detroit lions select ezekiel ansah in first round of 2013 nfl draft] mlive.com, 2013-4-26
+1	2	4	36	darius slay	defensive back	6ft 1 in	190lbs	mississippi state	p4y /	none	[http://www.mlive.com/lions/index.ssf/2013-4/detroit_lions_select_mississip.html detroit lions select mississippi state cb darius slay in second round of 2013 nfl draft] mlive.com, 2013-4-27
+2	3	3	65	larry warford	offensive lineman	6ft 3 in	343lbs	kentucky	p4y /	none	[http://www.mlive.com/lions/index.ssf/2013-4/detroit_lions_fill_massive_nee.html detroit lions fill massive need with massive guard prospect larry warford] mlive.com, 2013-4-27
+*/
+CREATE TABLE Images(
+	row_id int,
+	south carolina gamecocks football text,
+	seattle seahawks text)
+/*
+All rows of the table:
+SELECT * FROM w;
+row_id	south carolina gamecocks football	seattle seahawks
+0	a group of people standing next to each other.	a large green and white bird with numbers.
+*/
+Q: What educational institution has a rooster on its logo and was the school listed in the 2013 Detroit Lions draft class for the defensive end player position?
+NeuralSQL: QA("ans@which one has a rooster on his logo?"; SELECT college FROM w WHERE position='defensive end')
+
+
+CREATE TABLE Melia Kreiling (Filmography |  Film roles)(
+	row_id int,
+	year int,
+	title text,
+	role text,
+	notes text)
+/*
+3 example rows:
+SELECT * FROM w LIMIT 3;
+row_id	year	title	role	notes
+0	2012	suspension of disbelief	juliette	none
+1	2013	company of heroes	kestrel	direct-to-video film
+2	2013	leopard	kara	none
+*/
+CREATE TABLE Passages(
+	row_id int,
+	list of marvel cinematic universe films text)
+/*
+All rows of the table:
+SELECT * FROM w;
+row_id	list of marvel cinematic universe films
+0	the first film in the marvel cinematic universe was iron man (2008), which was distributed by paramount pictures. paramount also distributed iron man 2 (2010), thor (2011) and captain america: the first avenger (2011), while universal pictures distributed the incredible hulk (2008). walt disney studios motion pictures began distributing the films with the 2012 crossover film the avengers, which concluded phase 1 of the franchise. phase 2 includes iron man 3 (2013), thor: the dark world (2013), captain america: wi soldier (2014), guardians of the galaxy (2014), avengers: age of ultron (2015), and ant-man (2015).
+*/
+Q: What was Melia Kreiling's role in the film that is the next Marvel movie after 'Captain America the Winter Soldier'?
+NeuralSQL: SELECT role FROM w WHERE title = QA("ans@which is the next  Marvel movie after 'Captain America the Winter Soldier'?"; List of Marvel Cinematic Universe films)
+
+
+CREATE TABLE 2006 Grand Prix of Portland (Qualifying results)(
+	row_id int,
+	pos int,
+	nat real,
+	name text,
+	team text,
+	qual 1 text,
+	qual 2 text,
+	best text)
+/*
+3 example rows:
+SELECT * FROM w LIMIT 3;
+row_id	pos	nat	name	team	qual 1	qual 2	best
+0	1	nan	bruno junqueira	newman/haas racing	59.576	57.631	57.631
+1	2	nan	a. j. allmendinger	forsythe racing	58.378	57.639	57.639
+2	3	nan	sébastien bourdais	newman/haas racing	58.464	57.646	57.646
+*/
+CREATE TABLE Passages(
+	row_id int,
+	jtg daugherty racing text)
+/*
+All rows of the table:
+SELECT * FROM w;
+row_id	jtg daugherty racing
+0	jtg daugherty racing (formerly st motorsports and jtg racing) is an american professional stock car racing team that currently competes in the monster energy nascar cup series. the team is owned by former advertising executive tad geschickter and his wife jodi, along with current espn analyst brad daugherty. the team formerly had alliances with wood brothers racing, then michael waltrip racing, and currently has a technical alliance with richard childress racing. the team currently fields the no. 37 cottonelle chevrolet ss driven by roush development driver chris buescher and the no. 47 clorox/bush's/scott products chevrolet ss driven by a. j. allmendinger in the monster energy nascar cup series.
+*/
+Q: The driver of Nascar number 47 qualified for the 2006 Grand Prix of Portland for which team?
+NeuralSQL: SELECT name FROM w WHERE team = QA("ans@which driver is number 47?"; JTG Daugherty Racing)
+
+
+CREATE TABLE List of churches in Copenhagen ([[Amager]])(
+	row_id int,
+	name text,
+	denomination text,
+	year int,
+	coordinates real,
+	image text,
+	refs real)
+/*
+3 example rows:
+SELECT * FROM w LIMIT 3;
+row_id	name	denomination	year	coordinates	image	refs
+0	all saints' church	church of denmark	1932	nan	150px	nan
+1	dragør church	church of denmark	1885	nan	150px	nan
+2	hans tausen's church	church of denmark	1924	nan	150px	nan
+*/
+CREATE TABLE Images(
+	row_id int,
+	all saints' church, copenhagen text,
+	dragør church text,
+	nathanael's church text,
+	st. anne's church, copenhagen text,
+	sundby church text)
+/*
+All rows of the table:
+SELECT * FROM w;
+row_id	all saints' church, copenhagen	dragør church	nathanael's church	st. anne's church, copenhagen	sundby church
+0	 type of place of worship	 church of the holy trinity	 church of the holy trinity	 the building where the hotel is located	 a red brick church with a steeple and a flagpole in front of it.
+*/
+Q: Among Copenhagen churches on the "Amager" list, which have spires and are affiliated with the Church of Denmark denomination?
+NeuralSQL: SELECT name FROM w WHERE denomination = 'church of denmark' AND QA("map@does it have spires?"; name) = 'yes'
+
+
+CREATE TABLE Final Straw Tour (UK Tour (Leg III))(
+	row_id int,
+	date text,
+	city text,
+	country text,
+	venue text)
+/*
+3 example rows:
+SELECT * FROM w LIMIT 3;
+row_id	date	city	country	venue
+0	support acts: terra diablo & astrid	support acts: terra diablo & astrid	support acts: terra diablo & astrid	support acts: terra diablo & astrid
+1	2004-3-2	newcastle	england	newcastle university
+2	2004-3-3	liverpool	england	carling academy
+*/
+CREATE TABLE Images(
+	row_id int,
+	oxford text)
+/*
+All rows of the table:
+SELECT * FROM w;
+row_id	oxford
+0	 a guide to the city of edinburgh
+*/
+Q: The final straw tour held leg 3 of the UK tour on March 13, 2004 in this city with how many views on the bottom?
+NeuralSQL: SELECT QA("map@how many views on the bottom?"; city) FROM w WHERE date = '2004-3-13'

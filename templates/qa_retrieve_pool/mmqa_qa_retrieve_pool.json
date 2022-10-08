@@ -1,0 +1,1600 @@
+[
+    {
+        "id": 15127,
+        "qa_question": "map@Is its title screen featuring 5 women and 1 man?",
+        "qa_column": [
+            "Title"
+        ],
+        "qa_answer": [
+            "no",
+            "no",
+            "no",
+            "no",
+            "no",
+            "no",
+            "yes",
+            "no",
+            "no",
+            "no",
+            "no"
+        ],
+        "table": {
+            "header": [
+                "Title"
+            ],
+            "rows": [
+                [
+                    "Endurance (an image of the endurance logo.)"
+                ],
+                [
+                    "Jack & Bobby (a poster with a boy and jack & bobby words.)"
+                ],
+                [
+                    "Into the West (indian silhouette and a man holding a gun and a woman.)"
+                ],
+                [
+                    "Without a Trace (a black and white photo of a city without a trade)"
+                ],
+                [
+                    "CSI: Miami (a sign that says csi miami on a glass window)"
+                ],
+                [
+                    "Rizzoli & Isles (how to draw the numbers of the 100th anniversary of birth of a child)"
+                ],
+                [
+                    "The Lying Game (a group of people standing next to each other)"
+                ],
+                [
+                    "NCIS (a close up of the ncis logo on a computer screen)"
+                ],
+                [
+                    "Scream Queens (the logo for scream queens is shown in red)"
+                ],
+                [
+                    "All Hail King Julien: Exiled (all hail king julien movie poster)"
+                ],
+                [
+                    "All Hail King Julien (all hail king julien movie poster)"
+                ]
+            ]
+        },
+        "title": "Glen Powell (Television)"
+    },
+    {
+        "id": 16173,
+        "qa_question": "map@Does its logo has stars?",
+        "qa_column": [
+            "Team"
+        ],
+        "qa_answer": [
+            "no",
+            "yes",
+            "no",
+            "no",
+            "no",
+            "no",
+            "no",
+            "yes",
+            "no",
+            "no"
+        ],
+        "table": {
+            "header": [
+                "Team"
+            ],
+            "rows": [
+                [
+                    "Spokane Chiefs (an image of the boston spokane chiefs team logo, a alphabet s with wing)"
+                ],
+                [
+                    "Tri-City Americans (the logo of the tri-City americans team, three stars in the middle, with wing of american red and blue)"
+                ],
+                [
+                    "Kamloops Blazers (logo of kamloops blazers, a alphabet B contain a orange fire inside)"
+                ],
+                [
+                    "Spokane Chiefs (an image of the boston spokane chiefs team logo, a alphabet s with wing)"
+                ],
+                [
+                    "Lethbridge Hurricanes (the logo of lethbridge hurricanes, a red alphabet capital h with a red and black ring around it)"
+                ],
+                [
+                    "Medicine Hat Tigers (the logo of medicine hat tigers, a tiger head)"
+                ],
+                [
+                    "Lethbridge Hurricanes (the logo of lethbridge hurricanes, a red alphabet capital h with a red and black ring around it)"
+                ],
+                [
+                    "Tri-City Americans (the logo of the tri-City americans team, three stars in the middle, with wing of american red and blue)"
+                ],
+                [
+                    "Prince Albert Raiders (the logo of prince albert raiders, the capital fa form as a shield, and a sword go through its middle, slogan raiders on the top of the shield)"
+                ],
+                [
+                    "Swift Current Broncos (the logo of the swift current broncos team, a silhouette of a bull on a blue background passes through a green arch and the letters SC with a slogan consisting of uppercase blue Broncos)"
+                ]
+            ]
+        },
+        "title": "1990\u201391 WHL season (Scoring leaders)"
+    },
+    {
+        "id": 17770,
+        "qa_question": "map@Is it the city where 1988 Olympics were held?",
+        "qa_column": [
+            "Location"
+        ],
+        "qa_answer": [
+            "no",
+            "yes",
+            "no",
+            "no",
+            "no",
+            "no",
+            "no",
+            "no",
+            "yes",
+            "no",
+            "yes",
+            "no",
+            "no",
+            "no",
+            "no",
+            "yes",
+            "no",
+            "no",
+            "no",
+            "no",
+            "no",
+            "no",
+            "no",
+            "no"
+        ],
+        "table": {
+            "header": [
+                "Location"
+            ],
+            "rows": [
+                [
+                    "Tokyo, Japan"
+                ],
+                [
+                    "Seoul, South Korea"
+                ],
+                [
+                    "Melbourne, Australia"
+                ],
+                [
+                    "Gold Coast, Australia (a beach with a city skyline in the background)"
+                ],
+                [
+                    "Tokyo, Japan"
+                ],
+                [
+                    "Stockholm, Sweden"
+                ],
+                [
+                    "Hiroshima, Japan"
+                ],
+                [
+                    ""
+                ],
+                [
+                    "Seoul, South Korea"
+                ],
+                [
+                    "Tokyo, Japan"
+                ],
+                [
+                    "Seoul, South Korea"
+                ],
+                [
+                    "Tokyo, Japan"
+                ],
+                [
+                    ""
+                ],
+                [
+                    "Yokohama, Japan"
+                ],
+                [
+                    "Tokyo, Japan"
+                ],
+                [
+                    "Seoul, South Korea"
+                ],
+                [
+                    "Tokyo, Japan"
+                ],
+                [
+                    "Yokohama, Japan"
+                ],
+                [
+                    "Tokyo, Japan"
+                ],
+                [
+                    ""
+                ],
+                [
+                    "Busan, South Korea"
+                ],
+                [
+                    "Yokohama, Japan"
+                ],
+                [
+                    "Tokyo, Japan"
+                ],
+                [
+                    ""
+                ]
+            ]
+        },
+        "title": "Virgil Kalakoda (Kickboxing record)"
+    },
+    {
+        "id": 14982,
+        "qa_question": "map@Does poster have a silhouette on it?",
+        "qa_column": [
+            "Title"
+        ],
+        "qa_answer": [
+            "yes",
+            "no",
+            "no",
+            "no",
+            "no",
+            "no"
+        ],
+        "table": {
+            "header": [
+                "Title"
+            ],
+            "rows": [
+                [
+                    "Ladybug Ladybug ()"
+                ],
+                [
+                    "Bonnie and Clyde (a poster for the movie starring a man and a woman on a motorcycle)"
+                ],
+                [
+                    "Rachel, Rachel (a poster of a girl with a pink doll)"
+                ],
+                [
+                    "Don't Drink the Water (a poster for the movie they re caught in a security leak, a group of people block the grim reaper pouring from the giant water tap)"
+                ],
+                [
+                    "Watermelon Man (a very funny thing happened to jeff gerber advertising poster, a black man's head aside by a watermelon with american sign)"
+                ],
+                [
+                    "I Walk the Line (a poster for the movie walk the line, a man is holding on to a woman with blond hair)"
+                ]
+            ]
+        },
+        "title": "Estelle Parsons (Kickboxing record)"
+    },
+    {
+        "id": 561,
+        "qa_question": "map@What sport is shown in the logo?",
+        "qa_column": [
+            "Club"
+        ],
+        "qa_answer": [
+            "/",
+            "/",
+            "/",
+            "soccer",
+            "soccer"
+        ],
+        "table": {
+            "header": [
+                "Club"
+            ],
+            "rows": [
+                [
+                    "Bolton Wanderers (the symbol for peace with a red ribbon in front of it)"
+                ],
+                [
+                    "St Johnstone (loan)"
+                ],
+                [
+                    "Macclesfield Town (loan)"
+                ],
+                [
+                    "Crawley Town (A shield with an alternating grid of red and white, with a soccer on it.)"
+                ],
+                [
+                    "Kilmarnock (the logo for the manhattan football league 150 years ago, soccer, shield, hands with two fingers)"
+                ]
+            ]
+        },
+        "title": "Mark Connolly (Career statistics)"
+    },
+    {
+        "id": 2488,
+        "qa_question": "map@Does it has an instrument in its cover?",
+        "qa_column": [
+            "Title"
+        ],
+        "qa_answer": [
+            "yes",
+            "yes",
+            "no",
+            "no",
+            "no",
+            "yes",
+            "yes"
+        ],
+        "table": {
+            "header": [
+                "Title"
+            ],
+            "rows": [
+                [
+                    "Gettin' to It (a man playing a cello in front of a car)"
+                ],
+                [
+                    "Number Two Express (a man standing next to a cello)"
+                ],
+                [
+                    "A Family Affair (a man wearing sunglasses standing in front of a wall)"
+                ],
+                [
+                    "SciFi (a man on a screen with a glass window)"
+                ],
+                [
+                    "The Philadelphia Experiment (a poster for the philadelphia experiment with three people looking at a city)"
+                ],
+                [
+                    "Vertical Vision (a man in the middle of a guitar's string)"
+                ],
+                [
+                    "Live at Tonic (a man is standing on the sidewalk with a cello)"
+                ]
+            ]
+        },
+        "title": "Christian McBride (Discography  |  As leader)"
+    },
+    {
+        "id": 20323,
+        "qa_question": "map@Is it features a man on its logo?",
+        "qa_column": [
+            "Title"
+        ],
+        "qa_answer": [
+            "no",
+            "no",
+            "no",
+            "no",
+            "yes"
+        ],
+        "table": {
+            "header": [
+                "Title"
+            ],
+            "rows": [
+                [
+                    "Guiding Light (a neon sign that says guildlight in the dark)"
+                ],
+                [
+                    "Hack (a man in a car with his face on a screen)"
+                ],
+                [
+                    "Everwood (a neon sign that says everwood in front of mountains)"
+                ],
+                [
+                    "Law & Order: Criminal Intent (a neon law  order criminal intent sign on a dark)"
+                ],
+                [
+                    "Deception (a man standing in the darkness)"
+                ]
+            ]
+        },
+        "title": "Jess Weixler (Television)"
+    },
+    {
+        "id": 7157,
+        "qa_question": "map@Does it has a flower on its logo?",
+        "qa_column": [
+            "Title"
+        ],
+        "qa_answer": [
+            "yes",
+            "no",
+            "no",
+            "no",
+            "no",
+            "no",
+            "no",
+            "yes"
+        ],
+        "table": {
+            "header": [
+                "Title"
+            ],
+            "rows": [
+                [
+                    "Aldershot"
+                ],
+                [
+                    "Barrow (the logo of the barrow afc and the bee logo, with flower and football and submarine on the shield)"
+                ],
+                [
+                    "Bradford City (the logo of the bcaf afc announces its new logo, a rooster on a sheild)"
+                ],
+                [
+                    "Brentford (the logo for the brentford football club, a bee in the red circle)"
+                ],
+                [
+                    "Chester (a crest of a lion wearing a crown and a laurel wreath)"
+                ],
+                [
+                    "Crewe Alexandra (the logo of the glen alexandra football club, a red dragon among golden ears of wheat)"
+                ],
+                [
+                    "Darlington (the logo for the quakers, an orange and white shield, unfolding a tractor and a top hat)"
+                ],
+                [
+                    "Halifax Town (the logo of the shaymen football club, a blue striped and white shield with a floral pattern, the uppercase ntfc letters nesting a football)"
+                ]
+            ]
+        },
+        "title": "1962\u201363 Football League Cup (First round | Ties)"
+    },
+    {
+        "id": 21652,
+        "qa_question": "map@Is he/she has blonde hair that is curly in the back and has sideburns?",
+        "qa_column": [
+            "Player"
+        ],
+        "qa_answer": [
+            "no",
+            "no",
+            "no",
+            "no",
+            "yes"
+        ],
+        "table": {
+            "header": [
+                "Player"
+            ],
+            "rows": [
+                [
+                    "David Duval (a man wearing a hat and sunglasses and a shirt)"
+                ],
+                [
+                    "Niclas Fasth (a man standing in front of a cricket field with blue shirt and gold chain)"
+                ],
+                [
+                    "Darren Clarke (a man wearing a hat smiles at the camera)"
+                ],
+                [
+                    "Ernie Els (a man in a black shirt holding a golf club)"
+                ],
+                [
+                    "Miguel \u00c1ngel Jim\u00e9nez (a man wearing a baseball cap and a blue shirt is looking off into the distance)"
+                ]
+            ]
+        },
+        "title": "2001 Open Championship (Final round)"
+    },
+    {
+        "id": 9492,
+        "qa_question": "ans@Did the team that has a logo shaped like a quarter note with wings and is listed in the leading goaltenders in the 2008-09 National Hockey League season make the playoffs for the Stanley Cup?",
+        "qa_column": [
+            "St. Louis Blues"
+        ],
+        "qa_answer": [
+            "no"
+        ],
+        "table": {
+            "header": [
+                "St. Louis Blues"
+            ],
+            "rows": [
+                [
+                    "The team is named after the famous W.C. Handy song \"Saint Louis Blues.\" The franchise was founded in 1967 as an expansion team during the league's 1967 NHL Expansion, which expanded the league from six teams to twelve. The Blues are the oldest active NHL team never to have won the Stanley Cup, although they played in the Stanley Cup Finals three times in 1968, 1969 and 1970.St. Louis Blues. The logo has wings on it."
+                ]
+            ]
+        },
+        "title": "2008\u201309 NHL season"
+    },
+    {
+        "id": 5555,
+        "qa_question": "map@Is the film poster with a male reaching his hand out?",
+        "qa_column": "film",
+        "qa_answer": [
+            "no",
+            "no",
+            "yes",
+            "no",
+            "no"
+        ],
+        "table": {
+            "header": [
+                "film"
+            ],
+            "rows": [
+                [
+                    "sethu ( a naked man and a beautiful woman )"
+                ],
+                [
+                    "nandha ( two men are staring at someone )"
+                ],
+                [
+                    "pithamagan ( a man is reaching the hand out )"
+                ],
+                [
+                    "maayavi ( a man is smiling and a woman is shocked )"
+                ],
+                [
+                    "naan kadavul ( a man is running in the sea )"
+                ]
+            ]
+        },
+        "title": "Bala (director)"
+    },
+    {
+        "id": 4456,
+        "qa_question": "ans@Which resort was it filmed at?",
+        "qa_column": [
+            "title",
+            "Couples Retreat"
+        ],
+        "qa_answer": [
+            "the St. Regis Bora Bora Resort, Bora Bora in French Polynesia"
+        ],
+        "table": {
+            "header": [
+                "title",
+                "Couples Retreat"
+            ],
+            "rows": [
+                [
+                    "couples retreat (The primary location for filming was at the St. Regis Bora Bora Resort, Bora Bora in French Polynesia.[citation needed] Other filming locations include Los Angeles, Universal Studios and O'Hare International Airport.) (A man and a woman are standing in the water.)"
+                ],
+                [
+                    "The primary location for filming was at the St. Regis Bora Bora Resort, Bora Bora in French Polynesia.[citation needed] Other filming locations include Los Angeles, Universal Studios and O'Hare International Airport. water is listed (or ranked) 2 on the list what to watch if you love life"
+                ]
+            ]
+        },
+        "title": "Justin Deeley"
+    },
+    {
+        "id": 13437,
+        "qa_question": "map@Was he/she playing the violin?",
+        "qa_column": "artist",
+        "qa_answer": [
+            "no",
+            "no",
+            "no",
+            "no",
+            "no",
+            "no",
+            "yes"
+        ],
+        "table": {
+            "header": [
+                "artist"
+            ],
+            "rows": [
+                [
+                    "tina turner ( a singer is singing on the stage )"
+                ],
+                [
+                    "soundgarden ( a band is playing the song )"
+                ],
+                [
+                    "live ( a band is playing with a naked lead singer )"
+                ],
+                [
+                    "r.e.m. ( a bald singer is singing in the dark )"
+                ],
+                [
+                    "tom petty ( a man is playing the guitar )"
+                ],
+                [
+                    "bruce springsteen ( a man is playing the guitar )"
+                ],
+                [
+                    "tracy bonham ( a woman is playing the violin )"
+                ]
+            ]
+        },
+        "title": "Bala (director)"
+    },
+    {
+        "id": 10968,
+        "qa_question": "ans@When was the last time the player in the 2nd round of the Players 2013 championship when the score was 67-67=134 was number 1?",
+        "qa_column": [
+            "player",
+            "List of World Number One male golfers"
+        ],
+        "qa_answer": [
+            "2009"
+        ],
+        "table": {
+            "header": [
+                "player",
+                "List of World Number One male golfers"
+            ],
+            "rows": [
+                [
+                    "tiger woods ( this is a close up of golfer.)"
+                ],
+                [
+                    "The following is a list of the 20 golfers who have risen to the top of the Official World Golf Ranking. As of January 21, 2018, Dustin Johnson is the number one ranked golfer. Tiger Woods has spent the most consecutive weeks (281) and most total weeks (683) in that position. Three golfers have spent an entire calendar year atop the rankings: Nick Faldo (1993), Greg Norman (1996), and Woods (2000, 2001, 2002, 2003, 2006, 2007, 2008, 2009)."
+                ]
+            ]
+        },
+        "title": "2013 Players Championship"
+    },
+    {
+        "id": 9184,
+        "qa_question": "ans@When did this season of the show where Jerrika Hinton plays Stephanie Edwards start?",
+        "qa_column": [
+            "title",
+            "Grey's Anatomy"
+        ],
+        "qa_answer": [
+            "September 28, 2017"
+        ],
+        "table": {
+            "header": [
+                "title",
+                "Grey's Anatomy"
+            ],
+            "rows": [
+                [
+                    "grey's anatomy (On February 10, 2017, ABC renewed Grey's Anatomy for a fourteenth season, which premiered on September 28, 2017. The series' success catapulted such long-running cast members as Pompeo, Dempsey, and Oh to worldwide recognition; they were among the top five highest-earning television actors in 2013.)"
+                ],
+                [
+                    "On February 10, 2017, ABC renewed Grey's Anatomy for a fourteenth season, which premiered on September 28, 2017. The series' success catapulted such long-running cast members as Pompeo, Dempsey, and Oh to worldwide recognition; they were among the top five highest-earning television actors in 2013."
+                ]
+            ]
+        },
+        "title": "Jerrika Hinton"
+    },
+    {
+        "id": 13726,
+        "qa_question": "ans@The place where the he first international earth summit held has how many photos in its collage?",
+        "qa_column": [
+            "Earth Summit",
+            "Rio de Janeiro"
+        ],
+        "qa_answer": [
+            "six"
+        ],
+        "table": {
+            "header": [
+                "Earth Summit",
+                "Rio de Janeiro"
+            ],
+            "rows": [
+                [
+                    "The United Nations Conference on Environment and Development (UNCED), also known as the Rio de Janeiro Earth Summit, the Rio Summit, the Rio Conference, and the Earth Summit (Portuguese: ECO92), was a major United Nations conference held in Rio de Janeiro from 3 to 14 June 1992."
+                ],
+                [
+                    "six views of city rio de janeiro, brazil"
+                ]
+            ]
+        },
+        "title": "2014\u201315 NBB season"
+    },
+    {
+        "id": 14059,
+        "qa_question": "ans@What color is the Young Artist Award?",
+        "qa_column": [
+            "Young Artist Award"
+        ],
+        "qa_answer": [
+            "gold"
+        ],
+        "table": {
+            "header": [
+                "Young Artist Award"
+            ],
+            "rows": [
+                [
+                    "The Young Artist Award (originally known as the Youth in Film Award) is an accolade presented by the Young Artist Association, a non-profit organization founded in 1978 to honor excellence of youth performers, and to provide scholarships for young artists who may be physically disabled or financially unstable. a gold sculpture holding a star."
+                ]
+            ]
+        },
+        "title": "Jenna Boyd"
+    },
+    {
+        "id": 6031,
+        "qa_question": "map@Does the video game produced by Mark Meer feature a view of Earth from space on its cover?",
+        "qa_column": "title",
+        "qa_answer": [
+            "no",
+            "no",
+            "yes",
+            "no",
+            "no",
+            "no"
+        ],
+        "table": {
+            "header": [
+                "title"
+            ],
+            "rows": [
+                [
+                    "baldur's gate ii: shadows of amn \uff08 card of shadows of amn \uff09"
+                ],
+                [
+                    "baldur's gate ii: throne of bhaal ( card of throne of bhaal )"
+                ],
+                [
+                    "Mass Effect 3 ( mass effect 3 with a view of the earth)"
+                ],
+                [
+                    "baldur's gate: enhanced edition ( a sword at the bottom )"
+                ],
+                [
+                    "baldur's gate: enhanced edition ( a man versus a dragon )"
+                ],
+                [
+                    "dragon age: inquisition ( a man is battling with a dragon)"
+                ]
+            ]
+        },
+        "title": "Mark Meer"
+    },
+    {
+        "id": 21257,
+        "qa_question": "ans@The location with two tall narrow pointed towers near the waterfront, in Individual podiums of Riitta-Liisa Roponen, is?",
+        "qa_column": [
+            "Lahti"
+        ],
+        "qa_answer": [
+            "Lahti"
+        ],
+        "table": {
+            "header": [
+                "Lahti"
+            ],
+            "rows": [
+                [
+                    "a photo of lake geneva at night and at night in lahti"
+                ]
+            ]
+        },
+        "title": "Riitta-Liisa Roponen"
+    },
+    {
+        "id": 8555,
+        "qa_question": "ans@Was the film in which the role of Shannon was played by Madeline Carroll based on a true story?",
+        "qa_column": [
+            "title",
+            "I Can Only Imagine (film)"
+        ],
+        "qa_answer": [
+            "yes"
+        ],
+        "table": {
+            "header": [
+                "title",
+                "I Can Only Imagine (film)"
+            ],
+            "rows": [
+                [
+                    "i can only imagine (I Can Only Imagine is a 2018 American Christian drama film directed by the Erwin Brothers and written by Alex Cramer, Jon Erwin, and Brent McCorkle, based on the story behind the MercyMe song of the same name, the best-selling Christian single of all time. The film stars J. Michael Finley as Bart Millard, the lead singer who wrote the song about his relationship with his father (Dennis Quaid). Madeline Carroll, Priscilla Shirer, Cloris Leachman, and Trace Adkins also star.) ( the only machine is listed (or ranked) 10 on the list the best movies and tv)"
+                ],
+                [
+                    "I Can Only Imagine is a 2018 American Christian drama film directed by the Erwin Brothers and written by Alex Cramer, Jon Erwin, and Brent McCorkle, based on the story behind the MercyMe song of the same name, the best-selling Christian single of all time. The film stars J. Michael Finley as Bart Millard, the lead singer who wrote the song about his relationship with his father (Dennis Quaid). Madeline Carroll, Priscilla Shirer, Cloris Leachman, and Trace Adkins also star. the only machine is listed (or ranked) 10 on the list the best movies and tv"
+                ]
+            ]
+        },
+        "title": "Madeline Carroll"
+    },
+    {
+        "id": 3145,
+        "qa_question": "ans@In fourth round proper of 1957\u201358 FA Cup, who got promoted to premier league this year and was the Home team when the Score was 4\u20131?",
+        "qa_column": [
+            "home team"
+        ],
+        "qa_answer": [
+            "Cardiff City"
+        ],
+        "table": {
+            "header": [
+                "home team"
+            ],
+            "rows": [
+                [
+                    "darlington ( railroads of the quakers logo)",
+                    "cardiff city"
+                ]
+            ]
+        },
+        "title": "1957\u201358 FA Cup"
+    },
+    {
+        "id": 2936,
+        "qa_question": "ans@Who does the voice in the show?",
+        "qa_column": [
+            "title",
+            "the Belko Experiment"
+        ],
+        "qa_answer": [
+            "gregg henry"
+        ],
+        "table": {
+            "header": [
+                "title",
+                "the Belko Experiment"
+            ],
+            "rows": [
+                [
+                    "the belko experiment (In a rage, Mike kills Barry with a tape dispenser. The building is then unsealed, as he is the last survivor, and the soldiers escort him to the hangar next door. There, he meets the owner of the voice (Gregg Henry), who introduces himself as a social scientist who believes that discoveries about human nature can only come from placing people in extreme environments. As he and his colleagues begin to question Mike about his emotional and mental state, Mike notices a panel of switches that correspond to the eighty employees. Having planted the trackers that Marty collected on the soldiers and the Voice, he flips every switch except his own. The trackers explode, killing the soldiers and wounding the Voice, before Mike grabs a gun and kills the remaining scientists. The Voice attempts to reason with Mike but Mike kills him. He then leaves the warehouse in a state of shock. The view zooms out to reveal that Mike is one of many sole survivors from similar experiments, being watched by another group through security cameras. A new voice states \"end stage one\" and \"commence stage two.\") ( actor in a still from the movie)"
+                ],
+                [
+                    "In a rage, Mike kills Barry with a tape dispenser. The building is then unsealed, as he is the last survivor, and the soldiers escort him to the hangar next door. There, he meets the owner of the voice (Gregg Henry), who introduces himself as a social scientist who believes that discoveries about human nature can only come from placing people in extreme environments. As he and his colleagues begin to question Mike about his emotional and mental state, Mike notices a panel of switches that correspond to the eighty employees. Having planted the trackers that Marty collected on the soldiers and the Voice, he flips every switch except his own. The trackers explode, killing the soldiers and wounding the Voice, before Mike grabs a gun and kills the remaining scientists. The Voice attempts to reason with Mike but Mike kills him. He then leaves the warehouse in a state of shock. The view zooms out to reveal that Mike is one of many sole survivors from similar experiments, being watched by another group through security cameras. A new voice states \"end stage one\" and \"commence stage two.\" actor in a still from the movie"
+                ]
+            ]
+        },
+        "title": "Sean Gunn"
+    },
+    {
+        "id": 23229,
+        "qa_question": "ans@in Tournaments of 1998 Ladies European Tour, does Spain share a land border with the location that has a star in the exact center of the flag?",
+        "qa_column": [
+            "Morocco\u2013Spain border",
+            "Morocco"
+        ],
+        "qa_answer": [
+            "yes"
+        ],
+        "table": {
+            "header": [
+                "Morocco\u2013Spain border",
+                "Morocco"
+            ],
+            "rows": [
+                [
+                    "The Morocco-Spain border is located along the Plazas de soberan\u00eda, Ceuta, Melilla, and Albor\u00e1n Island along the north coast of Morocco."
+                ],
+                [
+                    "flag of the islamic republic of morocco with a star in the center"
+                ]
+            ]
+        },
+        "title": "1998 Ladies European Tour"
+    },
+    {
+        "id": 14260,
+        "qa_question": "map@Is there a wildcat on the logo?",
+        "qa_column": "wnba team",
+        "qa_answer": [
+            "no",
+            "no",
+            "yes",
+            "no"
+        ],
+        "table": {
+            "header": [
+                "wnba team"
+            ],
+            "rows": [
+                [
+                    "houston comets"
+                ],
+                [
+                    "san antonio silver stars ( san antonio starts logo with a boom )"
+                ],
+                [
+                    "minnesota lynx ( a logo with wildcat of minnesota lynx )"
+                ],
+                [
+                    "phoenix mercury ( the phoenix mercury logo with the sun )"
+                ]
+            ]
+        },
+        "title": "2006 WNBA draft"
+    },
+    {
+        "id": 2376,
+        "qa_question": "ans@How many times did the opponent that have a bird on their logo, been in the super bowl?",
+        "qa_column": [
+            "History of the Philadelphia Eagles",
+            "Philadelphia Eagles"
+        ],
+        "qa_answer": [
+            "3"
+        ],
+        "table": {
+            "header": [
+                "History of the Philadelphia Eagles",
+                "Philadelphia Eagles"
+            ],
+            "rows": [
+                [
+                    "The history of the Philadelphia Eagles begins in 1933. In their history, the Eagles have appeared in the Super Bowl three times, losing in their first two appearances but winning the third, in 2018. They won three NFL Championships, the precursor to the Super Bowl, in four appearances."
+                ],
+                [
+                    "the logo with an eagle on it"
+                ]
+            ]
+        },
+        "title": "1951 Green Bay Packers season"
+    },
+    {
+        "id": 200,
+        "qa_question": "ans@This song released on September 29, 1983 and inspired a hit song by Usher was written by who?",
+        "qa_column": [
+            "Uptown Girl",
+            "Can't Stop Won't Stop (Usher song)"
+        ],
+        "qa_answer": [
+            "Billy Joel"
+        ],
+        "table": {
+            "header": [
+                "Uptown Girl",
+                "Can't Stop Won't Stop (Usher song)"
+            ],
+            "rows": [
+                [
+                    "\"Uptown Girl\" is a song written and performed by American musician Billy Joel. It was released on September 29, 1983, on his ninth studio album An Innocent Man (1983). The lyrics describe a working-class \"downtown man\" attempting to woo a wealthy \"uptown girl.\"",
+                    "\"Can't Stop Won't Stop\" is a song recorded by American recording artist Usher for his seventh studio album Looking 4 Myself (2012). Written and produced by Will \"will.i.am\" Adams and Keith Harris, the song contains an interpolation of the bridge to Billy Joel's 1983 hit single \"Uptown Girl\". Musically, \"Can't Stop Won't Stop\" is a eurodance and dance-pop song that incorporates elements of dubstep."
+                ]
+            ]
+        },
+        "title": "PNC Park"
+    },
+    {
+        "id": 300,
+        "qa_question": "ans@Oliver Mellor played Dr. Matt Carter on the TV show that had Tracy Barlow kill who?",
+        "qa_column": [
+            "title",
+            "Charlie Stubbs (Coronation Street)"
+        ],
+        "qa_answer": [
+            "Charlie"
+        ],
+        "table": {
+            "header": [
+                "title",
+                "Charlie Stubbs (Coronation Street)"
+            ],
+            "rows": [
+                [
+                    "coronation street( a screenshot of the coronation street soundtrack.)",
+                    "In 2005, Charlie began a relationship with Tracy Barlow (Kate Ford). He convinced her to move in with him and later in February 2006, manipulated her into having her daughter Amy (Amber Chadwick) move in with her parents. In turn, Tracy began to manipulate Charlie. She pretended to be pregnant and used the money he gave her for an abortion to buy expensive shoes and used her \"grief\" to have him allow Amy to move back in. When Shelley visited before her mother\u2019s marriage to Fred Elliott (John Savident), she and Charlie had a one-night stand. She told Tracy about their night of passion, who accused her of lying. Shelley later revealed that she was pregnant with Charlie\u2019s baby but didn\u2019t allow Charlie to have anything to do with the baby, and left. He and Tracy briefly split but reconciled. Charlie later began an affair with Maria Sutherland (Samia Smith), who was renting his flat. When David Platt (Jack P. Shepherd) discovered the affair he tried to blackmail Charlie, threatening to reveal the affair to Tracy. Charlie retaliated by trying to drown David in the bath. When Tracy eventually found out about the affair, they split once more. Tracy began to plot revenge against Charlie and pretended to make amends with Charlie. She pretended he was abusing her to the point of burning herself with an iron to make it look like Charlie was responsible for her injuries. Charlie eventually realized his partner was seeking revenge and when he was about to tell her their relationship was over, she insisted on performing a lap dance for him. She hit him round the head with a heavy ornament, and he later died in hospital. She claimed she\u2019d killed him in self-defence but the court found her guilty and she was given a life sentence."
+                ]
+            ]
+        },
+        "title": "Oliver Mellor"
+    },
+    {
+        "id": 350,
+        "qa_question": "ans@corn beans and squash the three most important crops of the wampanoag were also known as?",
+        "qa_column": [
+            "Wampanoag"
+        ],
+        "qa_answer": [
+            "three sisters"
+        ],
+        "table": {
+            "header": [
+                "Wampanoag"
+            ],
+            "rows": [
+                [
+                    "Traditionally Wampanoag people have been semi-sedentary, with seasonal movements between fixed sites in present-day southern New England. The men often traveled far north and south along the Eastern seaboard for seasonal fishing expeditions, and sometimes stayed in those distant locations for weeks and months at a time. The women cultivated varieties of the \"three sisters\" (the intercropping of maize, climbing beans, and squash) as the staples of their diet, supplemented by fish and game caught by the men. Each community had authority over a well-defined territory from which the people derived their livelihood through a seasonal round of fishing, planting, harvesting, and hunting. Because southern New England was thickly populated by indigenous peoples, hunting grounds had strictly defined boundaries."
+                ]
+            ]
+        },
+        "title": "Peter Egan"
+    },
+    {
+        "id": 402,
+        "qa_question": "ans@who played the part of the Cowardly Lion?",
+        "qa_column": [
+            "title",
+            "Bert Lahr"
+        ],
+        "qa_answer": [
+            "Bert Lahr"
+        ],
+        "table": {
+            "header": [
+                "title",
+                "Bert Lahr"
+            ],
+            "rows": [
+                [
+                    "the wizard of oz( theatrical poster for silent film.)",
+                    "Bert Lahr (August 13, 1895 \u2013 December 4, 1967) was an American actor, particularly of stage and film, and comedian. Lahr is known for his role as the Cowardly Lion, as well as his counterpart Kansas farmworker Zeke, in The Wizard of Oz (1939). He was well known for his explosive humor, but also adapted well to dramatic roles and his work in burlesque, vaudeville, and on Broadway."
+                ]
+            ]
+        },
+        "title": "1980 in home video"
+    },
+    {
+        "id": 410,
+        "qa_question": "ans@what is the city that was the center of imperial life in the roman empire in the early fifth century?",
+        "qa_column": [
+            "Imperial fora"
+        ],
+        "qa_answer": [
+            "Rome"
+        ],
+        "table": {
+            "header": [
+                "Imperial fora"
+            ],
+            "rows": [
+                [
+                    "The Imperial Fora (\"Fori Imperiali \" in Italian) are a series of monumental \"fora\" (public squares), constructed in Rome over a period of one and a half centuries, between 46 BC and 113 AD. The forums were the center of the Roman Republic and of the Roman Empire."
+                ]
+            ]
+        },
+        "title": "List of newspapers in Italy"
+    },
+    {
+        "id": 2005,
+        "qa_question": "ans@which one has a rooster on his logo?",
+        "qa_column": [
+            "college"
+        ],
+        "qa_answer": [
+            "South Carolina"
+        ],
+        "table": {
+            "header": [
+                "college"
+            ],
+            "rows": [
+                [
+                    "byu( this is the new yankee stadium that will be used at the super bowl of the)"
+                ],
+                [
+                    "south carolina( i pinned this because i think this is what the logo would look like on sports equipment business)"
+                ]
+            ]
+        },
+        "title": "2013 Detroit Lions season"
+    },
+    {
+        "id": 2015,
+        "qa_question": "ans@who is the guy in call me maybe video?",
+        "qa_column": [
+            "Call Me Maybe"
+        ],
+        "qa_answer": [
+            "Holden Nowell"
+        ],
+        "table": {
+            "header": [
+                "Call Me Maybe"
+            ],
+            "rows": [
+                [
+                    "The video begins with Jepsen spying on her attractive tattooed neighbour (Holden Nowell) as he is working on his lawn. As he takes his shirt off and notices she is staring at him, Jepsen slips on her high heels and falls below her window. She is reading the books Love at First Sight (Men In Uniform) by B.J. Daniels and Skylar's Outlaw by Linda Warren. The scene then cuts to her garage, where she is rehearsing the track with her band. Following the rehearsals, her bandmates push her to go and wash her car, where she tries to gain her neighbour's attention with various provocative poses only to fall from the hood of the car. She is briefly knocked out from the fall, during which she dreams of a romance novel-type encounter with her crush against the backdrop of Peggys Cove. As she comes to, the neighbour then helps her get up, and watches the band rehearse the track again. After turning and writing down her telephone number, Jepsen sees her neighbour pass one of her male bandmates (Tavish Crowe) his own number, indicating he doesn't like women at all and is gay, where the very end shows that Jepsen is taken aback by this. The video received three nominations on the 2012 MuchMusic Video Awards in the categories of UR Fave Video, Pop Video of the Year, and Video of the Year. wallpaper with a well dressed girl titled pop artist"
+                ]
+            ]
+        },
+        "title": "The Voice UK (series 2)"
+    },
+    {
+        "id": 410,
+        "qa_question": "ans@the building in the top right has what at its top?",
+        "qa_column": [
+            "val"
+        ],
+        "qa_answer": [
+            "Dome"
+        ],
+        "table": {
+            "header": [
+                "val"
+            ],
+            "rows": [
+                [
+                    "rome( visit the vatican city and sistine chapel in rome with a dome.)"
+                ]
+            ]
+        },
+        "title": "List of newspapers in Italy"
+    },
+    {
+        "id": 100,
+        "qa_question": "map@Has crossed swords on its logo?",
+        "qa_column": "signed from",
+        "qa_answer": [
+            "no",
+            "no",
+            "yes",
+            "no",
+            "no",
+            "no",
+            "no",
+            "no",
+            "no"
+        ],
+        "table": {
+            "header": [
+                "signed from"
+            ],
+            "rows": [
+                [
+                    "penrith panthers (Logo of Penrith Panthers, a cartoon picture of a black leopard)"
+                ],
+                [
+                    "south sydney rabbitohs (Logo of South Sydney Rabbitohs, A white rabbit jumps on an oval pattern with a green frame on a red background )"
+                ],
+                [
+                    "gold coast titans (Logo of Gold Coast Titans, a warrior in golden armor holding two swords in a cross shape)"
+                ],
+                [
+                    "salford red devils"
+                ],
+                [
+                    "leigh centurions (Logo of Leigh Centurions, a warrior wearing a half-moon helmet and holding a red-edged shield)"
+                ],
+                [
+                    "castleford tigers (Logo of Castleford Tigers, the head of a roaring tiger in the middle)"
+                ],
+                [
+                    "sale sharks (Logo of Sale Sharks, a shark in deep blue)"
+                ],
+                [
+                    "l\u00e9zignan sangliers (Logo of L\u00e9zignan Sangliers, a pink and green logo with name on the right and a windmill-like logo on the left)"
+                ],
+                [
+                    "leigh centurions (Logo of Leigh Centurions, a warrior wearing a half-moon helmet and holding a red-edged shield)"
+                ]
+            ]
+        },
+        "title": "2018 Warrington Wolves season (Transfers | In)"
+    },
+    {
+        "id": 150,
+        "qa_question": "map@In which year did the San Francisco 49ers move to their new stadium?",
+        "qa_column": "game site",
+        "qa_answer": [
+            "/",
+            "/",
+            "/",
+            "/",
+            "/",
+            "1971",
+            "/",
+            "/",
+            "/",
+            "/",
+            "/",
+            "/",
+            "/",
+            "/",
+            "/",
+            "/",
+            "/"
+        ],
+        "table": {
+            "header": [
+                "game site"
+            ],
+            "rows": [
+                [
+                    "edward jones dome"
+                ],
+                [
+                    "university of phoenix stadium"
+                ],
+                [
+                    "mercedes-benz superdome (The logo of mercedes-benz superdome, in a beautiful font)"
+                ],
+                [
+                    "raymond james stadium (The logo of raymond james stadium, in a beautiful font)"
+                ],
+                [
+                    "university of phoenix stadium"
+                ],
+                [
+                    "candlestick park (Candlestick Park was an outdoor sports and entertainment stadium in the West Coast of the United States, located in San Francisco, in the Bayview Heights area. The stadium was originally the home of Major League Baseball's San Francisco Giants, who played there from 1960 until moving into Pacific Bell Park (since renamed AT&T Park) in 2000. It was also the home field of the San Francisco 49ers of the National Football League from 1971 through 2013. The 49ers moved to Levi's Stadium in Santa Clara for the 2014 season.)"
+                ],
+                [
+                    "university of phoenix stadium"
+                ],
+                [
+                    "university of phoenix stadium"
+                ],
+                [
+                    "bye"
+                ],
+                [
+                    "university of phoenix stadium"
+                ],
+                [
+                    "everbank field"
+                ],
+                [
+                    "university of phoenix stadium"
+                ],
+                [
+                    "lincoln financial field"
+                ],
+                [
+                    "university of phoenix stadium"
+                ],
+                [
+                    "lp field"
+                ],
+                [
+                    "centurylink field (The logo of CenturyLink Field, on the left is a minimalist icon of a stadium, on the right is a text logo)"
+                ],
+                [
+                    "university of phoenix stadium"
+                ]
+            ]
+        },
+        "title": "2013 Arizona Cardinals season (Regular season)"
+    },
+    {
+        "id": 250,
+        "qa_question": "map@what is the person behind holding?",
+        "qa_column": "driver",
+        "qa_answer": [
+            "/",
+            "water",
+            "/",
+            "/",
+            "/",
+            "/",
+            "camera",
+            "/",
+            "/",
+            "/"
+        ],
+        "table": {
+            "header": [
+                "driver"
+            ],
+            "rows": [
+                [
+                    "dale earnhardt, jr. (r)"
+                ],
+                [
+                    "jeff burton (A man with a sunglasses and racing jacket just finish the game. The man behind him is holding a bottle of water.)"
+                ],
+                [
+                    "bobby labonte (A man with a sunglasses and racing jacket is waving his hands on the left and grabbing a coke on the right.)"
+                ],
+                [
+                    "rusty wallace (A man with a sunglasses and racing jacket is smiling, a man is behind him trying to push something.)"
+                ],
+                [
+                    "kevin lepage (A man with sunglasses and black racing jacket is smiling.)"
+                ],
+                [
+                    "jeremy mayfield (A man with a cap and racing jacket is cheering.)"
+                ],
+                [
+                    "dale earnhardt (A man with mustache is wearing a racing jacket, sunglasses, smiling. The man behind him is holding a camera and taking photo.)"
+                ],
+                [
+                    "terry labonte (A man with mustache is wearing a yellow racing jacket and smiling.)"
+                ],
+                [
+                    "tony stewart (A man with beard, grey hair and sunglasses is looking towards the left side of the picture.)"
+                ],
+                [
+                    "ricky rudd (A man in racing jacket and sunglasses gets out of his car before the race.)"
+                ]
+            ]
+        },
+        "title": "2000 DirecTV 500 (Top 10 results)"
+    },
+    {
+        "id": 450,
+        "qa_question": "map@Has a ship in logo or Charlotte Knights?",
+        "qa_column": "team",
+        "qa_answer": [
+            "no",
+            "no",
+            "yes",
+            "no",
+            "no",
+            "no",
+            "yes",
+            "no",
+            "no",
+            "no"
+        ],
+        "table": {
+            "header": [
+                "team"
+            ],
+            "rows": [
+                [
+                    "scranton/wilkes-barre railriders (An angry porcupine riding a railroad)"
+                ],
+                [
+                    "syracuse mets (An icon with orange words on a blue background)"
+                ],
+                [
+                    "charlotte knights (A knight's helmet surrounded by a crescent moon with the word art of Charlotte Knights under it and a crown above it)"
+                ],
+                [
+                    "durham bulls (A puffing bull is crossing the blue letter D)"
+                ],
+                [
+                    "gwinnett stripers (A green fish with an open mouth is swimming over the letter G of the word art for \"Gwinnett Stripers\")"
+                ],
+                [
+                    "norfolk tides (A toothy seahorse holding a sea god's fork stands in the middle of a circle with the word Norfolk Tides)"
+                ],
+                [
+                    "columbus clippers (A ship sails on word art on Columbus Clippers)"
+                ],
+                [
+                    "indianapolis indians (An indian style octagon pattern)"
+                ],
+                [
+                    "louisville bats (A flying bat clutching a baseball bat, flying over a baseball as a background and Louisville Bats as a circled icon)"
+                ],
+                [
+                    "toledo mud hens (A chicken in a baseball cap with the letter T is waving a baseball bat with word art by Toledo Mud Hens)"
+                ]
+            ]
+        },
+        "title": "International League (Current teams)"
+    },
+    {
+        "id": 142,
+        "qa_question": "map@What is the time span?",
+        "qa_column": "Term",
+        "qa_answer": [
+            "5",
+            "5",
+            "11",
+            "/",
+            "1",
+            "6",
+            "3",
+            "9",
+            "4",
+            "3",
+            "/",
+            "11",
+            "5",
+            "4",
+            "3",
+            "/"
+        ],
+        "table": {
+            "header": [
+                "Term"
+            ],
+            "rows": [
+                [
+                    "1859\u20131864"
+                ],
+                [
+                    "1864\u20131869"
+                ],
+                [
+                    "1869\u20131880"
+                ],
+                [
+                    "Term"
+                ],
+                [
+                    "1894\u20131895"
+                ],
+                [
+                    "1895\u20131901"
+                ],
+                [
+                    "1901\u20131904"
+                ],
+                [
+                    "1904\u20131913"
+                ],
+                [
+                    "1913\u20131917"
+                ],
+                [
+                    "1917\u20131920"
+                ],
+                [
+                    "Term"
+                ],
+                [
+                    "1927\u20131938"
+                ],
+                [
+                    "1938\u20131943"
+                ],
+                [
+                    "1943\u20131947"
+                ],
+                [
+                    "1947\u20131950"
+                ],
+                [
+                    "Term"
+                ]
+            ]
+        },
+        "title": "Electoral district of Lachlan"
+    },
+    {
+        "id": 145,
+        "qa_question": "map@Is the date during in 1900's?",
+        "qa_column": "Created",
+        "qa_answer": [
+            "no",
+            "no",
+            "no",
+            "yes",
+            "no",
+            "yes",
+            "no",
+            "yes",
+            "yes",
+            "yes",
+            "yes",
+            "yes",
+            "yes",
+            "yes",
+            "no"
+        ],
+        "table": {
+            "header": [
+                "Created"
+            ],
+            "rows": [
+                [
+                    "29 October 1874"
+                ],
+                [
+                    "2 January 1857"
+                ],
+                [
+                    "26 October 1874"
+                ],
+                [
+                    "15 July 1949"
+                ],
+                [
+                    "4 August 1821"
+                ],
+                [
+                    "24 April 1940"
+                ],
+                [
+                    "2 January 1857"
+                ],
+                [
+                    "3 March 1970"
+                ],
+                [
+                    "12 December 1961"
+                ],
+                [
+                    "6 January 1965"
+                ],
+                [
+                    "16 March 1964"
+                ],
+                [
+                    "13 December 1963"
+                ],
+                [
+                    "6 February 1962"
+                ],
+                [
+                    "16 August 1921"
+                ],
+                [
+                    "2 January 1857"
+                ]
+            ]
+        },
+        "title": "List of districts of Lima"
+    },
+    {
+        "id": 155,
+        "qa_question": "map@Is the time less than a week?",
+        "qa_column": "Length of use",
+        "qa_answer": [
+            "no",
+            "no",
+            "no",
+            "no",
+            "no",
+            "no",
+            "yes",
+            "no",
+            "no",
+            "no",
+            "no",
+            "yes"
+        ],
+        "table": {
+            "header": [
+                "Length of use"
+            ],
+            "rows": [
+                [
+                    "14 days"
+                ],
+                [
+                    "10 days"
+                ],
+                [
+                    "21 days"
+                ],
+                [
+                    "7 days"
+                ],
+                [
+                    "10 days"
+                ],
+                [
+                    "10 days"
+                ],
+                [
+                    "Daily"
+                ],
+                [
+                    "14 days"
+                ],
+                [
+                    "10 days"
+                ],
+                [
+                    "14 days"
+                ],
+                [
+                    "20 days"
+                ],
+                [
+                    "2 hours"
+                ]
+            ]
+        },
+        "title": "Crest Whitestrips"
+    },
+    {
+        "id": 578,
+        "qa_question": "map@Is this player from Norway?",
+        "qa_column": "Player",
+        "qa_answer": [
+            "no",
+            "no",
+            "no",
+            "no",
+            "no",
+            "no"
+        ],
+        "table": {
+            "header": [
+                "Player"
+            ],
+            "rows": [
+                [
+                    "Raymond van Barneveld"
+                ],
+                [
+                    "Raymond van Barneveld"
+                ],
+                [
+                    "Adrian Lewis"
+                ],
+                [
+                    "Dean Winstanley"
+                ],
+                [
+                    "Michael van Gerwen"
+                ],
+                [
+                    "Terry Jenkins"
+                ]
+            ]
+        },
+        "title": "PDC World Darts Championship"
+    }
+]
