@@ -33,23 +33,29 @@ Activate the environment by running
 conda activate binder
 ``````
 
-### Environment Variable Set Up
-It's better to set environment variable to `TOKENIZERS_PARALLELISM` to `false`, if you use our multiprocess script to run code.
-
 ### Add key
 Get `private key`(sk-xxxx like) from OpenAI, and save the key in `key.txt` file, make sure you have the rights to access the model you need.
 
 ### Run
-Take running WikiTableQuestion as an example, first cd into its directory `scripts`. (For TabFact and MultiModalQA, they are `scripts_tab_fact` and `scripts_mmqa` respectively.)
+Check out commands in `run.py`
 
-Then run the script of each setting for End2end QA, SQL and NSQL(SQL Binder). 
-```bash
-python multiprocess_annotate_fixprompt_NSQL.py
+## Citation
+If you find our work helpful, please cite as
+```
+@inproceedings{Cheng2022BindingLM,
+  title={Binding Language Models in Symbolic Languages},
+  author={Zhoujun Cheng and Tianbao Xie and Peng Shi and Chengzu Li and R.K. Nadkarni and Yushi Hu and Caiming Xiong and Dragomir Radev and Marilyn Ostendorf and Luke Zettlemoyer and Noah A. Smith and Tao Yu},
+  journal={arXiv preprint arXiv:2210.02875},
+  year={2022}
+}
 ```
 
-After the annotation generation, feed the file name of the generated file into the execution script to perform execution on it.
-```bash
-python multiprocess_execute_NSQL.py
-```
+## Contributors
+<a href="https://github.com/BlankCheng">  <img src="https://avatars.githubusercontent.com/u/34505296?v=4"  width="50" /></a> 
+<a href="https://github.com/Timothyxxx">  <img src="https://avatars.githubusercontent.com/u/47296835?v=4"  width="50" /></a> 
+<a href="https://github.com/Impavidity">  <img src="https://avatars.githubusercontent.com/u/9245607?v=4"  width="50" /></a> 
+<a href="https://github.com/chengzu-li"><img src="https://avatars.githubusercontent.com/u/69832207?v=4"  width="50" /></a>
+<a href="https://github.com/Yushi-Hu"><img src="https://avatars.githubusercontent.com/u/65428713?v=4"  width="50" /></a>
+<a href="https://github.com/taoyds"><img src="https://avatars.githubusercontent.com/u/14208639?v=4"  width="50" /></a>
 
-Worth noticing that, due to the speed limitation from OpenAI, if the program get stuck at request, please adjust hyper-parameter `num_parallel_prompts`(which control the number of examples to be packed into a request) to shorten the tokens per request.
+
