@@ -52,9 +52,9 @@ If you find our work helpful, please cite as
 
 ## Contributors
 <a href="https://github.com/BlankCheng">  <img src="https://avatars.githubusercontent.com/u/34505296?v=4"  width="50" /></a> 
-<a href="https://github.com/Timothyxxx">  <img src="https://avatars.githubusercontent.com/u/47296835?v=4"  width="50" /></a> 
-<a href="https://github.com/Impavidity">  <img src="https://avatars.githubusercontent.com/u/9245607?v=4"  width="50" /></a> 
+<a href="https://github.com/Timothyxxx">  <img src="https://avatars.githubusercontent.com/u/47296835?v=4"  width="50" /></a>
 <a href="https://github.com/chengzu-li"><img src="https://avatars.githubusercontent.com/u/69832207?v=4"  width="50" /></a>
+<a href="https://github.com/Impavidity">  <img src="https://avatars.githubusercontent.com/u/9245607?v=4"  width="50" /></a> 
 <a href="https://github.com/Yushi-Hu"><img src="https://avatars.githubusercontent.com/u/65428713?v=4"  width="50" /></a>
 <a href="https://github.com/taoyds"><img src="https://avatars.githubusercontent.com/u/14208639?v=4"  width="50" /></a>
 
