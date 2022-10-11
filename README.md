@@ -9,7 +9,7 @@
     <br/>
 </p>
 
-Code for paper [Binding Language Models in Symbolic Languages](https://arxiv.org/abs/2210.02875). Please refer to our [demo page]() to have an instant experience of Binder.
+Code for paper [Binding Language Models in Symbolic Languages](https://arxiv.org/abs/2210.02875). Please refer to our [demo page](https://huggingface.co/spaces/hkunlp/Binder) to have an instant experience of Binder.
 
 <img src="pics/binder.png" align="middle" width="100%">
 
