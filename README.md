@@ -1,4 +1,4 @@
-# Binder
+# Binder🔗: Binding Language Models in Symbolic Languages
 <p align="left">
     <a href="https://img.shields.io/badge/PRs-Welcome-red">
         <img src="https://img.shields.io/badge/PRs-Welcome-red">
@@ -9,12 +9,14 @@
     <br/>
 </p>
 
-Code for paper [Binding Language Models in Symbolic Languages](https://arxiv.org/abs/2210.02875). Please refer to our [demo page](https://huggingface.co/spaces/hkunlp/Binder) to have an instant experience of Binder.
+Code for paper [Binding Language Models in Symbolic Languages](https://arxiv.org/abs/2210.02875). 
+Please refer to our [project page](https://lm-code-binder.github.io/) for more demonstrations and up-to-date related resources 
+Check out our [demo page](https://huggingface.co/spaces/hkunlp/Binder) to have an instant experience of Binder, which achieves SOTA or comparable performance with **only dozens of(~10) program annotations**.
 
 <img src="pics/binder.png" align="middle" width="100%">
 
-
 ## Updates
+- **2022-10-06**: We released our [code](https://github.com/HKUNLP/binder), [huggingface spaces demo](https://huggingface.co/spaces/hkunlp/Binder) and [project page](https://lm-code-binder.github.io/). Check it out!
 
 ## Dependencies
 To establish the environment run this code in the shell:
@@ -34,7 +36,7 @@ conda activate binder
 ``````
 
 ### Add key
-Get `private key`(sk-xxxx like) from OpenAI, and save the key in `key.txt` file, make sure you have the rights to access the model you need.
+Apply and get `API keys`(sk-xxxx like) from [OpenAI API](https://openai.com/api/), save the key in `key.txt` file, make sure you have the rights to access the model(in the implementation of this repo, `code-davinci-002`) you need.
 
 ### Run
 Check out commands in `run.py`
@@ -42,11 +44,12 @@ Check out commands in `run.py`
 ## Citation
 If you find our work helpful, please cite as
 ```
-@inproceedings{Cheng2022BindingLM,
+@article{Cheng2022BindingLM,
   title={Binding Language Models in Symbolic Languages},
-  author={Zhoujun Cheng and Tianbao Xie and Peng Shi and Chengzu Li and R.K. Nadkarni and Yushi Hu and Caiming Xiong and Dragomir Radev and Marilyn Ostendorf and Luke Zettlemoyer and Noah A. Smith and Tao Yu},
-  journal={arXiv preprint arXiv:2210.02875},
-  year={2022}
+  author={Zhoujun Cheng and Tianbao Xie and Peng Shi and Chengzu Li and Rahul Nadkarni and Yushi Hu and Caiming Xiong and Dragomir Radev and Mari Ostendorf and Luke Zettlemoyer and Noah A. Smith and Tao Yu},
+  journal={ArXiv},
+  year={2022},
+  volume={abs/2210.02875}
 }
 ```
 
