@@ -10,8 +10,8 @@
 </p>
 
 Code for paper [Binding Language Models in Symbolic Languages](https://arxiv.org/abs/2210.02875). 
-Please refer to our [project page](https://lm-code-binder.github.io/) for more demonstrations and up-to-date related resources 
-Check out our [demo page](https://huggingface.co/spaces/hkunlp/Binder) to have an instant experience of Binder, which achieves SOTA or comparable performance with **only dozens of(~10) program annotations**.
+Please refer to our [project page](https://lm-code-binder.github.io/) for more demonstrations and up-to-date related resources. 
+Check out our [demo page](https://huggingface.co/spaces/hkunlp/Binder) to have an instant experience of Binder, which achieves **sota or comparable performance with only dozens of(~10) program annotations**.
 
 <img src="pics/binder.png" align="middle" width="100%">
 
