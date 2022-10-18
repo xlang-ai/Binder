@@ -189,7 +189,7 @@ if __name__ == '__main__':
     parser.add_argument('--dataset_split', type=str, default='validation', choices=['train', 'validation', 'test'])
     parser.add_argument('--api_keys_file', type=str, default='key.txt')
     parser.add_argument('--save_dir', type=str, default='results/')
-    parser.add_argument('--qa_retrieve_pool_file', type=str, default='templates/qa_retrieve_pool.json')
+    parser.add_argument('--qa_retrieve_pool_file', type=str, default='templates/qa_retrieve_pool/qa_retrieve_pool.json')
     parser.add_argument('--input_program_file', type=str,
                         default='binder_program_tab_fact_validation.json')
     parser.add_argument('--output_program_execution_file', type=str,

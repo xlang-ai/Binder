@@ -168,7 +168,7 @@ if __name__ == '__main__':
                         choices=['wikitq', 'tab_fact'])
     parser.add_argument('--dataset_split', type=str, default='validation', choices=['train', 'validation', 'test'])
     parser.add_argument('--api_keys_file', type=str, default='key.txt')
-    parser.add_argument('--prompt_file', type=str, default='templates/prompts/prompt_wikitq_v3.txt')
+    parser.add_argument('--prompt_file', type=str, default='templates/prompts/wikitq_binder.txt')
     parser.add_argument('--save_dir', type=str, default='results/')
 
     # Multiprocess options
