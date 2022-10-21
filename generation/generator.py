@@ -100,8 +100,6 @@ class Generator(object):
             result_idx_to_eid.extend([p[0]] * self.args.sampling_n)
         prompts = [p[1] for p in prompts]
 
-        start_time = time.time()
-
         result = self._call_codex_api(
             engine=self.args.engine,
             prompt=prompts,
@@ -111,7 +109,6 @@ class Generator(object):
             n=self.args.sampling_n,
             stop=self.args.stop_tokens
         )
-        print(f'Openai api one inference time: {time.time() - start_time}')
 
         if verbose:
             print('\n', '*' * 20, 'Codex API Call', '*' * 20)
