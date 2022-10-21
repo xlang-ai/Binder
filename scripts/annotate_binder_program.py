@@ -149,7 +149,6 @@ def main():
     pool.join()
 
     # Save annotation results
-    # "_".join(["{}={}".format(k, str(args.__dict__[k])) for k in args.__dict__ if k not in ['api_keys_file', 'prompt_file', 'save_dir', 'stop_tokens']])
     save_file_name = f'binder_program_{args.dataset}_{args.dataset_split}.json'
     with open(os.path.join(args.save_dir, save_file_name), 'w') as f:
         json.dump(g_dict, f, indent=4)
