@@ -97,10 +97,7 @@ def worker_annotate(
             while len(tokenizer.tokenize(prompt)) >= max_prompt_tokens:  # TODO: Add shrink rows
                 n_shots -= 1
                 assert n_shots >= 0
-                few_shot_prompt = generator.build_few_shot_prompt_from_file(
-                    file_path=args.prompt_file,
-                    n_shots=n_shots
-                )
+                few_shot_prompt = "\n\n\n".join(few_shot_prompt.split("\n\n\n")[:-1])
                 prompt = few_shot_prompt + "\n\n" + generate_prompt
 
             print(f"Process#{pid}: Building prompt for eid#{g_eid}, original_id#{g_data_item['id']}")
@@ -137,7 +134,6 @@ def worker_annotate(
 def main():
     # Build paths
     args.api_keys_file = os.path.join(ROOT_DIR, args.api_keys_file)
-    args.prompt_file = os.path.join(ROOT_DIR, args.prompt_file)
     args.save_dir = os.path.join(ROOT_DIR, args.save_dir)
     os.makedirs(args.save_dir, exist_ok=True)
 
@@ -209,7 +205,6 @@ if __name__ == '__main__':
                         choices=['wikitq', 'tab_fact', 'mmqa'])
     parser.add_argument('--dataset_split', type=str, default='validation', choices=['train', 'validation', 'test'])
     parser.add_argument('--api_keys_file', type=str, default='key.txt')
-    parser.add_argument('--prompt_file', type=str, default='templates/prompts/prompt_wikitq_v3.txt')
     parser.add_argument('--save_dir', type=str, default='results/')
 
     # Multiprocess options
