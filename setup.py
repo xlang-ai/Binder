@@ -1,3 +1,4 @@
+import glob
 from setuptools import find_packages, setup
 
 REQUIRES_PYTHON = ">=3.7.0"
@@ -18,4 +19,5 @@ setup(
     python_requires=REQUIRES_PYTHON,
     packages=find_packages(),
     install_requires=install_requires,
+    include_package_data=True
 )
