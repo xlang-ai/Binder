@@ -16,6 +16,6 @@ setup(
     name=NAME,
     version="0.0.1",
     python_requires=REQUIRES_PYTHON,
-    packages=find_packages(exclude=("tests*")),
+    packages=find_packages(),
     install_requires=install_requires,
 )
