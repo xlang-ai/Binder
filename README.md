@@ -45,7 +45,7 @@ Check out commands in `run.py`
 ## Citation
 If you find our work helpful, please cite as
 ```
-@article{Cheng2022BindingLM,
+@article{Binder,
   title={Binding Language Models in Symbolic Languages},
   author={Zhoujun Cheng and Tianbao Xie and Peng Shi and Chengzu Li and Rahul Nadkarni and Yushi Hu and Caiming Xiong and Dragomir Radev and Mari Ostendorf and Luke Zettlemoyer and Noah A. Smith and Tao Yu},
   journal={ArXiv},
