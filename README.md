@@ -16,6 +16,7 @@ Check out our [demo page](https://huggingface.co/spaces/hkunlp/Binder) to have a
 <img src="pics/binder.png" align="middle" width="100%">
 
 ## Updates
+- **2023-01-22**: Accepted by ICLR 2023 (Spotlight)
 - **2022-12-04**: Due to the fact OpenAI's new policy on request limitation, the n sampling couldn't be done as previously, we will add features to call multiple times to be the same usage soon!
 - **2022-10-06**: We released our [code](https://github.com/HKUNLP/binder), [huggingface spaces demo](https://huggingface.co/spaces/hkunlp/Binder) and [project page](https://lm-code-binder.github.io/). Check it out!
 
