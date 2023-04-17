@@ -34,7 +34,7 @@ class OpenAIQAModel(object):
         self.db_mapping_token = "\t"
 
     def call_openai_api_completion(self, prompt):
-        completion = self.generator._call_codex_api(engine="code-davinci-002",
+        completion = self.generator._call_codex_api(engine="text-davinci-002",
                                                     prompt=prompt,
                                                     max_tokens=max_tokens,
                                                     temperature=0,
