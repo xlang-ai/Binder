@@ -51,7 +51,7 @@ If you find our work helpful, please cite as
   title={Binding Language Models in Symbolic Languages},
   author={Zhoujun Cheng and Tianbao Xie and Peng Shi and Chengzu Li and Rahul Nadkarni and Yushi Hu and Caiming Xiong and Dragomir Radev and Mari Ostendorf and Luke Zettlemoyer and Noah A. Smith and Tao Yu},
   journal={ICLR},
-  year={2022},
+  year={2023},
   volume={abs/2210.02875}
 }
 ```
