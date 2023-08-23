@@ -2,29 +2,29 @@ name: binder
 channels:
   - defaults
 dependencies:
-  - brotlipy=0.7.0=py37h9ed2024_1003
-  - ca-certificates=2022.4.26=hecd8cb5_0
-  - certifi=2022.6.15=py37hecd8cb5_0
-  - cffi=1.15.0=py37hc55c11b_1
-  - cryptography=37.0.1=py37hf6deb26_0
-  - idna=3.3=pyhd3eb1b0_0
-  - libcxx=12.0.0=h2f01273_0
-  - libffi=3.3=hb1e8313_2
-  - ncurses=6.3=hca72f7f_2
-  - openssl=1.1.1o=hca72f7f_0
-  - pip=21.2.2=py37hecd8cb5_0
-  - pycparser=2.21=pyhd3eb1b0_0
-  - pyopenssl=22.0.0=pyhd3eb1b0_0
-  - pysocks=1.7.1=py37hecd8cb5_0
-  - python=3.7.11=h88f2d9e_0
-  - readline=8.1.2=hca72f7f_1
-  - setuptools=58.0.4=py37hecd8cb5_0
-  - sqlite=3.37.2=h707629a_0
-  - tk=8.6.11=h7bc2e8c_0
-  - urllib3=1.26.9=py37hecd8cb5_0
-  - wheel=0.37.1=pyhd3eb1b0_0
-  - xz=5.2.5=h1de35cc_0
-  - zlib=1.2.11=h4dc903c_4
+  - brotlipy=0.7.0
+  - ca-certificates=2022.4.26
+  - certifi=2022.6.15
+  - cffi=1.15.0
+  - cryptography=37.0.1
+  - idna=3.3
+  - libcxx
+  - libffi=3.3
+  - ncurses=6.3
+  - openssl=1.1.1o
+  - pip=21.2.2
+  - pycparser=2.21
+  - pyopenssl=22.0.0
+  - pysocks=1.7.1
+  - python=3.7.11
+  - readline=8.1.2
+  - setuptools=58.0.4
+  - sqlite=3.37.2
+  - tk=8.6.11
+  - urllib3=1.26.9
+  - wheel=0.37.1
+  - xz=5.2.5
+  - zlib=1.2.11
   - pip:
     - aiohttp==3.8.1
     - aiosignal==1.2.0
