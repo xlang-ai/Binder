@@ -221,6 +221,17 @@ class Generator(object):
                     result = {"choices": choices}
                     print('Openai api inference time:', time.time() - start_time)
                     return result
+            except openai.error.InvalidRequestError as e:
+                # fixme: hardcoded, fix when refactoring
+                if "This model's maximum context length is" in str(e):
+                    print(e)
+                    print("Set a place holder, and skip this example")
+                    result = {"choices": [{"message": {"content": "PLACEHOLDER"}}]} if is_chat \
+                        else {"choices": [{"text": "PLACEHOLDER"}]}
+                    print('Openai api inference time:', time.time() - start_time)
+                else:
+                    print(e, 'Retry.')
+                    time.sleep(3)
             except Exception as e:
                 print(e, 'Retry.')
                 time.sleep(3)
