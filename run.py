@@ -6,6 +6,7 @@ ROOT_DIR = os.path.join(os.path.dirname(__file__))
 TOKENIZER_FALSE = "export TOKENIZERS_PARALLELISM=false\n"
 
 # wikitq nsql annotation command
+<<<<<<< HEAD
 os.system(fr"""{TOKENIZER_FALSE}python {ROOT_DIR}/scripts/annotate_binder_program.py --dataset wikitq \
 --dataset_split test \
 --prompt_file templates/prompts/wikitq_binder.txt \
@@ -14,6 +15,16 @@ os.system(fr"""{TOKENIZER_FALSE}python {ROOT_DIR}/scripts/annotate_binder_progra
 --temperature 0.4 \
 --sampling_n 20 \
 -v""")
+=======
+# os.system(fr"""{TOKENIZER_FALSE}python {ROOT_DIR}/scripts/annotate_binder_program.py --dataset wikitq \
+# --dataset_split test \
+# --prompt_file templates/prompts/wikitq_binder.txt \
+# --n_parallel_prompts 1 \
+# --max_generation_tokens 512 \
+# --temperature 0.4 \
+# --sampling_n 20 \
+# -v""")
+>>>>>>> 45f79534743af891a9788db9375367dbe3851f17
 
 # wikitq nsql execution command
 # os.system(fr"""{TOKENIZER_FALSE}python {ROOT_DIR}/scripts/execute_binder_program.py --dataset wikitq \

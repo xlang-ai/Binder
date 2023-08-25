@@ -99,7 +99,6 @@ class Generator(object):
         for p in prompts:
             result_idx_to_eid.extend([p[0]] * self.args.sampling_n)
         prompts = [p[1] for p in prompts]
-
         start_time = time.time()
 
         # fixme: hardcoded, fix later
