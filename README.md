@@ -17,7 +17,8 @@ Check out our [demo page](https://huggingface.co/spaces/hkunlp/Binder) to have a
 <img src="pics/binder.png" align="middle" width="100%">
 
 ## Updates
-- **2023-03-23**: Since OpenAI no longer support Codex series models, we will sooner test and update the engine from "code-davinci-002" to "gpt-3.5-turbo".
+- **2023-08-25**: 🔥 Update to support OpenAI chat series models like `gpt-3.5-xxx` and `gpt-4-xxx`, code will be further refactor later to support more!
+- **2023-03-23**: Since OpenAI no longer supports Codex series models, we will sooner test and update the engine from "code-davinci-002" to "gpt-3.5-turbo".
 - **2023-01-22**: Accepted by ICLR 2023 (Spotlight)
 - **2022-12-04**: Due to the fact OpenAI's new policy on request limitation, the n sampling couldn't be done as previously, we will add features to call multiple times to be the same usage soon!
 - **2022-10-06**: We released our [code](https://github.com/HKUNLP/binder), [huggingface spaces demo](https://huggingface.co/spaces/hkunlp/Binder) and [project page](https://lm-code-binder.github.io/). Check it out!
