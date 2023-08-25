@@ -29,6 +29,10 @@ class Evaluator:
             raise ValueError(f'{dataset} evaluator is not supported.')
 
     def eval_ex_match(self, pred, gold, allow_semantic=True, question=None):
+        if not isinstance(pred, list):
+            pred = [pred]
+            gold = [gold]
+
         pred = [str(p).lower().strip() for p in pred]
         gold = [str(g).lower().strip() for g in gold]
 

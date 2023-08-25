@@ -82,6 +82,8 @@ def worker_annotate(
 
             built_few_shot_prompts = []
         except Exception as e:
+            import traceback
+            traceback.print_exc()
             print(f"Process#{pid}: eid#{g_eid}, wtqid#{g_data_item['id']} generation error: {e}")
 
     # Final generation inference
@@ -150,7 +152,7 @@ def main():
 
     # Save annotation results
     # "_".join(["{}={}".format(k, str(args.__dict__[k])) for k in args.__dict__ if k not in ['api_keys_file', 'prompt_file', 'save_dir', 'stop_tokens']])
-    save_file_name = f'binder_program_{args.dataset}_{args.dataset_split}.json'
+    save_file_name = f'binder_program_{args.dataset}_{args.dataset_split}_chatgpt.json'
     with open(os.path.join(args.save_dir, save_file_name), 'w') as f:
         json.dump(g_dict, f, indent=4)
 
@@ -164,15 +166,15 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
 
     # File path or name
-    parser.add_argument('--dataset', type=str, default='tab_fact',
+    parser.add_argument('--dataset', type=str, default='wikitq',
                         choices=['wikitq', 'tab_fact'])
-    parser.add_argument('--dataset_split', type=str, default='validation', choices=['train', 'validation', 'test'])
+    parser.add_argument('--dataset_split', type=str, default='test', choices=['train', 'validation', 'test'])
     parser.add_argument('--api_keys_file', type=str, default='key.txt')
     parser.add_argument('--prompt_file', type=str, default='templates/prompts/wikitq_binder.txt')
     parser.add_argument('--save_dir', type=str, default='results/')
 
     # Multiprocess options
-    parser.add_argument('--n_processes', type=int, default=2)
+    parser.add_argument('--n_processes', type=int, default=3)
 
     # Binder program generation options
     parser.add_argument('--prompt_style', type=str, default='create_table_select_3_full_table',
@@ -185,16 +187,16 @@ if __name__ == '__main__':
                                  'no_table'])
     parser.add_argument('--generate_type', type=str, default='nsql',
                         choices=['nsql', 'sql', 'answer', 'npython', 'python'])
-    parser.add_argument('--n_shots', type=int, default=14)
+    parser.add_argument('--n_shots', type=int, default=8)
     parser.add_argument('--seed', type=int, default=42)
 
     # Codex options
-    parser.add_argument('--engine', type=str, default="code-davinci-002")
-    parser.add_argument('--n_parallel_prompts', type=int, default=2)
-    parser.add_argument('--max_generation_tokens', type=int, default=512)
-    parser.add_argument('--max_api_total_tokens', type=int, default=8001)
+    parser.add_argument('--engine', type=str, default="gpt-3.5-turbo")
+    parser.add_argument('--n_parallel_prompts', type=int, default=1)
+    parser.add_argument('--max_generation_tokens', type=int, default=256)
+    parser.add_argument('--max_api_total_tokens', type=int, default=3800)
     parser.add_argument('--temperature', type=float, default=0.4)
-    parser.add_argument('--sampling_n', type=int, default=20)
+    parser.add_argument('--sampling_n', type=int, default=5)
     parser.add_argument('--top_p', type=float, default=1.0)
     parser.add_argument('--stop_tokens', type=str, default='\n\n',
                         help='Split stop tokens by ||')

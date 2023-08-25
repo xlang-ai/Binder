@@ -102,14 +102,20 @@ class Generator(object):
 
         start_time = time.time()
 
-        result = self._call_codex_api(
+        # fixme: hardcoded, fix later
+        is_chat = self.args.engine in ["gpt-3.5-turbo", "gpt-3.5-turbo-16k", "gpt-3.5-turbo-0613",
+                                       "gpt-3.5-turbo-16k-0613",
+                                       "gpt-4", "gpt-4-0613"]
+
+        result = self._call_openai_api(
             engine=self.args.engine,
             prompt=prompts,
             max_tokens=self.args.max_generation_tokens,
             temperature=self.args.temperature,
             top_p=self.args.top_p,
             n=self.args.sampling_n,
-            stop=self.args.stop_tokens
+            stop=self.args.stop_tokens,
+            is_chat=is_chat
         )
         print(f'Openai api one inference time: {time.time() - start_time}')
 
@@ -124,8 +130,13 @@ class Generator(object):
         response_dict = dict()
         for idx, g in enumerate(result['choices']):
             try:
-                text = g['text']
-                logprob = sum(g['logprobs']['token_logprobs'])
+                # fixme: hardcoded, fix later
+                text = g['message']['content'] if is_chat else g['text']
+                if 'logprobs' not in g:
+                    # Since the logprobs are not returned after the chatgpt era
+                    logprob = 1
+                else:
+                    logprob = sum(g['logprobs']['token_logprobs'])
                 eid = result_idx_to_eid[idx]
                 eid_pairs = response_dict.get(eid, None)
                 if eid_pairs is None:
@@ -136,7 +147,9 @@ class Generator(object):
                 if verbose:
                     print(text)
 
-            except ValueError as e:
+            except Exception as e:
+                import traceback
+                traceback.print_exc()
                 if verbose:
                     print('----------- Error Msg--------')
                     print(e)
@@ -146,7 +159,7 @@ class Generator(object):
 
         return response_dict
 
-    def _call_codex_api(
+    def _call_openai_api(
             self,
             engine: str,
             prompt: Union[str, List],
@@ -154,7 +167,8 @@ class Generator(object):
             temperature: float,
             top_p: float,
             n: int,
-            stop: List[str]
+            stop: List[str],
+            is_chat=True
     ):
         start_time = time.time()
         result = None
@@ -163,19 +177,51 @@ class Generator(object):
                 key = self.keys[self.current_key_id]
                 self.current_key_id = (self.current_key_id + 1) % len(self.keys)
                 print(f"Using openai api key: {key}")
-                result = openai.Completion.create(
-                    engine=engine,
-                    prompt=prompt,
-                    api_key=key,
-                    max_tokens=max_tokens,
-                    temperature=temperature,
-                    top_p=top_p,
-                    n=n,
-                    stop=stop,
-                    logprobs=1
-                )
-                print('Openai api inference time:', time.time() - start_time)
-                return result
+
+                if is_chat:
+                    choices = []
+                    if isinstance(prompt, str):
+                        prompt = [prompt]
+                    for prompt_item in prompt:
+                        re = openai.ChatCompletion.create(
+                            model=engine,
+                            messages=[
+                                {"role": "system",
+                                 "content": "I will give you some x-y examples followed by a x, you need to give me the y, and no other content."},
+                                {"role": "user", "content": prompt_item},
+                            ],
+                            api_key=key,
+                            max_tokens=max_tokens,
+                            temperature=temperature,
+                            top_p=top_p,
+                            n=n,
+                            stop=stop,
+                        )
+                        choices += re["choices"]
+                    result = {"choices": choices}
+                    print('Openai api inference time:', time.time() - start_time)
+                    return result
+
+                else:
+                    choices = []
+                    if isinstance(prompt, str):
+                        prompt = [prompt]
+                    for prompt_item in prompt:
+                        re = openai.Completion.create(
+                            engine=engine,
+                            prompt=prompt_item,
+                            api_key=key,
+                            max_tokens=max_tokens,
+                            temperature=temperature,
+                            top_p=top_p,
+                            n=n,
+                            stop=stop,
+                            logprobs=1
+                        )
+                        choices += re["choices"]
+                    result = {"choices": choices}
+                    print('Openai api inference time:', time.time() - start_time)
+                    return result
             except Exception as e:
                 print(e, 'Retry.')
-                time.sleep(5)
+                time.sleep(3)

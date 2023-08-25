@@ -27,6 +27,7 @@ class OpenAIQAModel(object):
             data_path=os.path.join(ROOT_DIR, args.qa_retrieve_pool_file)
         )
         self.retriever = OpenAIQARetriever(retrieve_pool)
+        self.engine = args.engine
         self.generator = Generator(args=None, keys=self.keys)  # Just to use its call api function
 
         self.prompting_method = 'new_db'
@@ -34,19 +35,26 @@ class OpenAIQAModel(object):
         self.db_mapping_token = "\t"
 
     def call_openai_api_completion(self, prompt):
-        completion = self.generator._call_codex_api(engine="code-davinci-002",
-                                                    prompt=prompt,
-                                                    max_tokens=max_tokens,
-                                                    temperature=0,
-                                                    top_p=1,
-                                                    n=1,
-                                                    stop=["\n\n"])
+        completion = self.generator._call_openai_api(engine=self.engine,
+                                                     prompt=prompt,
+                                                     max_tokens=max_tokens,
+                                                     temperature=0,
+                                                     top_p=1,
+                                                     n=1,
+                                                     stop=["\n\n"])
         return completion
 
     def call_openai_for_completion_text(self, prompt, openai_usage_type="completion"):
         if openai_usage_type == "completion":
             completion = self.call_openai_api_completion(prompt)
-            return completion.choices[0].text
+
+            # fixme: hard code for now, fix later
+            is_chat = self.engine in ["gpt-3.5-turbo", "gpt-3.5-turbo-16k", "gpt-3.5-turbo-0613",
+                                      "gpt-3.5-turbo-16k-0613",
+                                      "gpt-4", "gpt-4-0613"]
+
+            text = completion['choices'][0]['message']['content'] if is_chat else completion['choices'][0]['text']
+            return text
         else:
             raise ValueError("The model usage type '{}' doesn't exists!".format(openai_usage_type))
 

@@ -100,6 +100,10 @@ def worker_execute(
             print(f'Process#{pid}: Wrong.')
         print(f'Process#{pid}: Accuracy: {n_correct_samples}/{n_total_samples}')
 
+        # Save tmp execution answers
+    with open(os.path.join(args.save_dir, f"{pid}.json"), 'w') as f:
+        json.dump(nsql_dict, f, indent=4)
+
     return result_dict
 
 
@@ -184,21 +188,22 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
 
     # File path or name
-    parser.add_argument('--dataset', type=str, default='tab_fact',
+    parser.add_argument('--dataset', type=str, default='wikitq',
                         choices=['wikitq', 'tab_fact'])
-    parser.add_argument('--dataset_split', type=str, default='validation', choices=['train', 'validation', 'test'])
+    parser.add_argument('--dataset_split', type=str, default='test', choices=['train', 'validation', 'test'])
     parser.add_argument('--api_keys_file', type=str, default='key.txt')
     parser.add_argument('--save_dir', type=str, default='results/')
     parser.add_argument('--qa_retrieve_pool_file', type=str, default='templates/qa_retrieve_pool/qa_retrieve_pool.json')
     parser.add_argument('--input_program_file', type=str,
-                        default='binder_program_tab_fact_validation.json')
+                        default='binder_program_wikitq_test_chatgpt.json')
     parser.add_argument('--output_program_execution_file', type=str,
-                        default='binder_program_execution_tab_fact_validation.json')
+                        default='binder_program_wikitq_test_chatgpt_exec.json')
 
     # Multiprocess options
-    parser.add_argument('--n_processes', type=str, default=4)
+    parser.add_argument('--n_processes', type=str, default=1)
 
     # Execution options
+    parser.add_argument('--engine', type=str, default="gpt-3.5-turbo")
     parser.add_argument('--use_majority_vote', action='store_false',
                         help='Whether use majority vote to determine the prediction answer.')
     parser.add_argument('--allow_none_and_empty_answer', action='store_true',
